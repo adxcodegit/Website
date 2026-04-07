@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aditya Nair</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --cream:#F8F5EF;
+  --ink:#0D1B2A;
+  --muted:#5A6270;
+  --rule:#E3DACE;
+  --accent:#C8B99A;
+  --accent-deep:#8C7355;
+  --accent-light:#F5F0E6;
+  --navy:#0D1B2A;
+  --navy-mid:#1B3A5C;
+  --sans:'DM Sans',sans-serif;
+  --serif:'EB Garamond',Georgia,serif;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:60px;background:rgba(13,27,42,0.97);border-bottom:1px solid rgba(200,185,154,0.15);}
+.nav-name{font-family:var(--serif);font-size:1.1rem;color:var(--accent);text-decoration:none;}
+.nav-links{display:flex;gap:1.8rem;list-style:none;}
+.nav-links a{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover{color:var(--accent);}
+#hero{min-height:100vh;display:flex;align-items:center;background:linear-gradient(135deg,#0D1B2A 0%,#1B3A5C 100%);padding:100px 0 4rem;}
+.hero-inner{max-width:700px;margin:0 auto;padding:0 3rem;width:100%;}
+.hero-eyebrow{font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:1.2rem;}
+h1{font-family:var(--serif);font-size:clamp(3rem,7vw,5.5rem);font-weight:400;line-height:1.05;color:#fff;margin-bottom:1.5rem;}
+h1 em{font-style:italic;color:var(--accent);}
+.hero-sub{font-size:1.05rem;color:rgba(255,255,255,0.55);max-width:480px;line-height:1.75;margin-bottom:2.5rem;}
+.hero-cta{display:flex;gap:0.9rem;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:0.4rem;padding:0.65rem 1.4rem;font-family:var(--sans);font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:all 0.2s;}
+.btn-primary{background:var(--accent);color:var(--navy);border:1px solid var(--accent);font-weight:500;}
+.btn-primary:hover{background:#b8a888;border-color:#b8a888;}
+.btn-ghost{background:transparent;color:rgba(255,255,255,0.75);border:1px solid rgba(255,255,255,0.2);}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
+section{max-width:900px;margin:0 auto;padding:5rem 3rem;border-top:1px solid var(--rule);}
+.section-label{font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent-deep);margin-bottom:2.5rem;}
+h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:400;line-height:1.15;margin-bottom:1.5rem;}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+.about-text p{color:var(--muted);margin-bottom:1rem;font-size:0.97rem;}
+.about-stats{display:flex;flex-direction:column;gap:1.5rem;}
+.stat-item{padding-bottom:1.5rem;border-bottom:1px solid var(--rule);}
+.stat-item:last-child{border-bottom:none;padding-bottom:0;}
+.stat-num{font-family:var(--serif);font-size:2.2rem;color:var(--navy-mid);line-height:1;margin-bottom:0.2rem;}
+.stat-label{font-size:0.78rem;color:var(--muted);}
+.exp-item{display:grid;grid-template-columns:200px 1fr;gap:2rem;padding:2rem 0;border-bottom:1px solid var(--rule);}
+.exp-item:first-child{padding-top:0;}
+.exp-item:last-child{border-bottom:none;}
+.exp-dates{font-size:0.78rem;color:var(--muted);margin-bottom:0.3rem;}
+.exp-company{font-size:0.8rem;font-weight:500;color:var(--accent-deep);}
+.exp-location{font-size:0.75rem;color:var(--muted);margin-top:0.15rem;}
+.exp-role{font-family:var(--serif);font-size:1.2rem;font-weight:400;margin-bottom:0.8rem;}
+.exp-bullets{list-style:none;display:flex;flex-direction:column;gap:0.5rem;}
+.exp-bullets li{font-size:0.9rem;color:var(--muted);padding-left:1.1rem;position:relative;line-height:1.65;}
+.exp-bullets li::before{content:'--';position:absolute;left:0;color:var(--accent-deep);}
+.edu-item{display:grid;grid-template-columns:200px 1fr;gap:2rem;padding:2rem 0;border-bottom:1px solid var(--rule);}
+.edu-item:first-child{padding-top:0;}
+.edu-item:last-child{border-bottom:none;}
+.edu-year{font-size:0.78rem;color:var(--muted);padding-top:0.15rem;}
+.edu-school{font-family:var(--serif);font-size:1.2rem;font-weight:400;margin-bottom:0.25rem;}
+.edu-degree{font-size:0.85rem;color:var(--muted);margin-bottom:0.5rem;}
+.edu-detail{font-size:0.82rem;color:var(--muted);line-height:1.6;}
+.tag{display:inline-block;background:var(--accent-light);color:var(--accent-deep);font-size:0.7rem;padding:0.25rem 0.65rem;border-radius:2px;letter-spacing:0.04em;margin-top:0.5rem;}
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
+.skill-group-title{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink);margin-bottom:0.9rem;font-weight:500;}
+.skill-group ul{list-style:none;display:flex;flex-direction:column;gap:0.45rem;}
+.skill-group li{font-size:0.88rem;color:var(--muted);padding-left:0.9rem;position:relative;}
+.skill-group li::before{content:'*';position:absolute;left:0;color:var(--accent-deep);}
+.cert-list{display:flex;flex-direction:column;}
+.cert-item{display:flex;align-items:flex-start;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--rule);}
+.cert-item:last-child{border-bottom:none;}
+.cert-dot{width:6px;height:6px;min-width:6px;background:var(--accent-deep);border-radius:50%;margin-top:0.55rem;}
+.cert-text{font-size:0.9rem;color:var(--muted);line-height:1.6;}
+.cert-text strong{color:var(--ink);font-weight:500;}
+.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;}
+.project-card{background:#fff;border:1px solid var(--rule);padding:1.6rem;border-radius:3px;transition:border-color 0.2s,box-shadow 0.2s;}
+.project-card:hover{border-color:var(--navy-mid);box-shadow:0 4px 20px rgba(13,27,42,0.07);}
+.project-ticker{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-deep);margin-bottom:0.6rem;}
+.project-title{font-family:var(--serif);font-size:1.15rem;font-weight:400;margin-bottom:0.6rem;}
+.project-desc{font-size:0.87rem;color:var(--muted);line-height:1.65;}
+.project-tags{margin-top:1rem;display:flex;gap:0.4rem;flex-wrap:wrap;}
+.project-btn{display:inline-flex;align-items:center;gap:0.35rem;margin-top:1.1rem;padding:0.45rem 1rem;font-family:var(--sans);font-size:0.72rem;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none;border:1px solid var(--rule);border-radius:2px;color:var(--accent-deep);background:transparent;transition:border-color 0.2s,background 0.2s;}
+.project-btn:hover{border-color:var(--accent-deep);background:var(--accent-light);}
+.report-item{display:flex;align-items:center;justify-content:space-between;padding:1.4rem 0;border-bottom:1px solid var(--rule);gap:1.5rem;}
+.report-item:first-child{border-top:1px solid var(--rule);}
+.report-type{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-deep);margin-bottom:0.25rem;}
+.report-title{font-family:var(--serif);font-size:1.05rem;font-weight:400;color:var(--ink);}
+.report-btn{display:inline-flex;align-items:center;gap:0.4rem;padding:0.5rem 1.1rem;font-size:0.72rem;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none;border:1px solid var(--rule);border-radius:2px;color:var(--ink);background:#fff;white-space:nowrap;transition:border-color 0.2s,background 0.2s;flex-shrink:0;}
+.report-btn:hover{border-color:var(--navy-mid);background:var(--accent-light);}
+.report-btn-navy{background:var(--navy);color:var(--accent);border-color:var(--navy);}
+.report-btn-navy:hover{background:var(--navy-mid);border-color:var(--navy-mid);color:var(--accent);}
+.report-note{font-size:0.82rem;color:var(--muted);margin-bottom:2rem;font-style:italic;}
+.contact-inner{max-width:560px;}
+.contact-desc{color:var(--muted);margin-bottom:2.5rem;font-size:0.97rem;}
+.contact-link{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;border-bottom:1px solid var(--rule);text-decoration:none;color:var(--ink);transition:color 0.2s;}
+.contact-link:first-child{border-top:1px solid var(--rule);}
+.contact-link:hover{color:var(--accent-deep);}
+.contact-link-label{font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);width:100px;}
+.contact-link:hover .contact-link-label{color:var(--accent-deep);}
+.contact-link-value{flex:1;font-size:0.95rem;}
+.contact-link-arrow{font-size:1rem;opacity:0.4;transition:opacity 0.2s,transform 0.2s;}
+.contact-link:hover .contact-link-arrow{opacity:1;transform:translate(3px,-3px);}
+footer{border-top:1px solid var(--rule);max-width:900px;margin:0 auto;padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;}
+.footer-name{font-family:var(--serif);font-size:0.95rem;color:var(--muted);}
+.footer-copy{font-size:0.78rem;color:var(--muted);}
+.fade-in{opacity:0;transform:translateY(16px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.fade-in.visible{opacity:1;transform:none;}
+@media(max-width:700px){
+  nav{padding:0 1.2rem;}
+  .nav-links{gap:0.8rem;}
+  .nav-links a{font-size:0.62rem;}
+  #hero{padding:100px 0 3rem;}
+  .hero-inner{padding:0 1.5rem;}
+  section{padding:3.5rem 1.5rem;}
+  .about-grid,.exp-item,.edu-item{grid-template-columns:1fr;gap:0.6rem;}
+  .skills-grid{grid-template-columns:1fr 1fr;}
+  .projects-grid{grid-template-columns:1fr;}
+  .report-item{flex-direction:column;align-items:flex-start;gap:0.8rem;}
+  footer{padding:1.5rem;flex-direction:column;gap:0.5rem;text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-name" href="#hero">Aditya Nair</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#reports">Reports</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div id="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow fade-in">Master of Science in Finance &middot; Simon Business School</p>
+    <h1 class="fade-in" style="transition-delay:0.1s">Aditya<br><em>Nair</em></h1>
+    <p class="hero-sub fade-in" style="transition-delay:0.2s">Investment professional with a track record spanning equity research, portfolio management, and valuation. CFA Level II candidate. Available June 2026.</p>
+    <div class="hero-cta fade-in" style="transition-delay:0.3s">
+      <a href="#contact" class="btn btn-primary">Get in touch</a>
+      <a href="#experience" class="btn btn-ghost">View experience</a>
+      <a href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener" class="btn btn-ghost">Resume</a>
+    </div>
+  </div>
+</div>
+
+<section id="about">
+  <p class="section-label fade-in">About</p>
+  <div class="about-grid">
+    <div class="about-text fade-in" style="transition-delay:0.05s">
+      <p>I'm a finance professional trained at the University of Rochester's Simon Business School, where I'm pursuing an MS in Finance with a focus on Investment Management and Financial Analysis, graduating December 2026.</p>
+      <p>Prior to graduate school, I spent two years at Lifelong Wealth in Mumbai as an investment analyst, managing a $5M+ multi-asset book, producing equity research across 200+ securities, and building the analytical frameworks the team still relies on today.</p>
+      <p>I care deeply about rigorous fundamental analysis, capital markets, and building things that last. Outside of finance, I'm drawn to Formula One, strength training, poker strategy, and the occasional marathon.</p>
+    </div>
+    <div class="about-stats fade-in" style="transition-delay:0.15s">
+      <div class="stat-item">
+        <div class="stat-num">$5M+</div>
+        <div class="stat-label">Multi-asset book managed at Lifelong Wealth</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">200+</div>
+        <div class="stat-label">Equity securities analyzed through fundamental research</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3.92</div>
+        <div class="stat-label">GPA at Simon Business School, Dean's List</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">CFA</div>
+        <div class="stat-label">Level I passed Aug 2024, Level II candidate</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <p class="section-label fade-in">Experience</p>
+
+  <div class="exp-item fade-in">
+    <div>
+      <div class="exp-dates">Aug 2025 - Present</div>
+      <div class="exp-company">Simon School Venture Fund</div>
+      <div class="exp-location">Rochester, NY</div>
+    </div>
+    <div>
+      <div class="exp-role">Associate, Portfolio Management</div>
+      <ul class="exp-bullets">
+        <li>Lead a team of 3 analysts in deal-level due diligence on portfolio companies, conducting management discussions, evaluating operating performance, unit economics, capital requirements, and valuation assumptions across 5+ holdings.</li>
+        <li>Led an internal initiative to streamline knowledge transfer, develop SOPs, and optimize workflows; presented outcomes to Fund Board Members, improving future team efficiency.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="exp-item fade-in">
+    <div>
+      <div class="exp-dates">Jan 2024 - Apr 2025</div>
+      <div class="exp-company">Lifelong Wealth</div>
+      <div class="exp-location">Mumbai, India</div>
+    </div>
+    <div>
+      <div class="exp-role">Senior Analyst, Investments</div>
+      <ul class="exp-bullets">
+        <li>Generated consistent benchmark outperformance on a $5M+ multi-asset book through conviction-driven security selection, sector rotation, and dynamic rebalancing across public equities and structured products.</li>
+        <li>Applied DCF, EV/EBITDA, and NAV-based frameworks to evaluate new opportunities; produced buy/sell recommendations with risk-adjusted return targets and downside scenario analysis.</li>
+        <li>Conducted quarterly portfolio reviews for 50+ HNI portfolios, reassessing allocations based on macro conditions and forward-looking return expectations.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="exp-item fade-in">
+    <div>
+      <div class="exp-dates">Jan 2023 - Dec 2023</div>
+      <div class="exp-company">Lifelong Wealth</div>
+      <div class="exp-location">Mumbai, India</div>
+    </div>
+    <div>
+      <div class="exp-role">Analyst, Investments</div>
+      <ul class="exp-bullets">
+        <li>Conducted fundamental analysis on 200+ equity securities; managed strategies using Sharpe, Alpha, Beta, IRR, and sector-level valuation screens.</li>
+        <li>Produced 100+ macroeconomic, industry, and company-specific research reports to support tactical allocation decisions.</li>
+        <li>Built standardized due-diligence frameworks including financial modeling templates, investment checklists, and risk models, improving research accuracy by 15% and turnaround time by 20%.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="exp-item fade-in">
+    <div>
+      <div class="exp-dates">Dec 2022 - Jan 2023</div>
+      <div class="exp-company">Lifelong Wealth</div>
+      <div class="exp-location">Mumbai, India</div>
+    </div>
+    <div>
+      <div class="exp-role">Intern, Investments</div>
+      <ul class="exp-bullets">
+        <li>Improved portfolio monitoring efficiency by 25% by building automated performance dashboards integrating portfolio analytics, risk metrics, and cash-flow projections.</li>
+        <li>Developed standardized portfolio construction frameworks to streamline onboarding and scale long-term investment strategies across multiple portfolios.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <p class="section-label fade-in">Education</p>
+
+  <div class="edu-item fade-in">
+    <div class="edu-year">Dec 2026</div>
+    <div>
+      <div class="edu-school">Simon Business School, University of Rochester</div>
+      <div class="edu-degree">Master of Science in Finance (STEM) - Investment Management and Financial Analysis</div>
+      <div class="edu-detail">GPA 3.92 / 4.0 - Dean's List - Dean's Scholarship Recipient<br>Portfolio Management Associate, Simon School Venture Fund - VP Finance and Operations, Master's Advisory Council<br>Coursework: Asset Management, Quantitative Investing, Debt Markets, Financial Markets and Investments, Options Strategy</div>
+      <span class="tag">CPT Eligible - Available June 2026</span>
+    </div>
+  </div>
+
+  <div class="edu-item fade-in">
+    <div class="edu-year">May 2022</div>
+    <div>
+      <div class="edu-school">S.K. Somaiya Degree College, University of Mumbai</div>
+      <div class="edu-degree">Bachelor of Management Studies - Major in Finance and Investments</div>
+      <div class="edu-detail">GPA 9.78 / 10 - Top 1% of graduating class - Class Representative for three years</div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <p class="section-label fade-in">Skills</p>
+  <div class="skills-grid fade-in">
+    <div class="skill-group">
+      <div class="skill-group-title">Financial Modeling</div>
+      <ul>
+        <li>DCF Valuation</li>
+        <li>LBO Modeling</li>
+        <li>3-Statement Model</li>
+        <li>Merger / Accretion-Dilution</li>
+        <li>Comparable Company Analysis</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Research and Analytics</div>
+      <ul>
+        <li>Financial Statement Analysis</li>
+        <li>Credit Analysis</li>
+        <li>Portfolio Risk Management</li>
+        <li>Performance Attribution</li>
+        <li>Factor Analysis</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Tools and Platforms</div>
+      <ul>
+        <li>Bloomberg Terminal</li>
+        <li>S&amp;P Capital IQ</li>
+        <li>Advanced Excel (VBA)</li>
+        <li>Python for Finance</li>
+        <li>PowerPoint / Pitch Books</li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--rule);">
+    <p class="section-label fade-in">Certifications</p>
+    <div class="cert-list fade-in">
+      <div class="cert-item">
+        <div class="cert-dot"></div>
+        <div class="cert-text"><strong>CFA Level I Passed</strong> - August 2024, Level II candidate</div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-dot"></div>
+        <div class="cert-text"><strong>Wall Street Prep</strong> - Financial Statement Analysis, DCF, LBO, Buy-Side Investment, Sell-Side Equity Research, M&amp;A Modeling</div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-dot"></div>
+        <div class="cert-text"><strong>Bloomberg Market Concepts (BMC)</strong> - 2026</div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-dot"></div>
+        <div class="cert-text"><strong>Financial Edge Training</strong> - 2025, Python for Finance, Capital IQ Training</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <p class="section-label fade-in">Transaction and Valuation Work</p>
+  <div class="projects-grid">
+    <div class="project-card fade-in">
+      <div class="project-ticker">Equity Valuation - LLY</div>
+      <div class="project-title">Eli Lilly - Full Equity Valuation</div>
+      <div class="project-desc">Built a fully integrated 3-statement model and DCF valuation incorporating revenue drivers, pipeline risk, and margin assumptions. Produced a 12-month price target with upside/downside scenarios and a final buy/sell recommendation.</div>
+      <div class="project-tags">
+        <span class="tag">DCF</span>
+        <span class="tag">3-Statement</span>
+        <span class="tag">Pharma</span>
+      </div>
+      <a href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener" class="project-btn">View on Drive</a>
+    </div>
+
+    <div class="project-card fade-in" style="transition-delay:0.05s">
+      <div class="project-ticker">Equity Valuation - MSFT</div>
+      <div class="project-title">Microsoft - Equity Research</div>
+      <div class="project-desc">Full integrated model with revenue driver analysis, margin assumptions, and DCF valuation. Delivered a 12-month price target with scenario analysis and an investment recommendation.</div>
+      <div class="project-tags">
+        <span class="tag">DCF</span>
+        <span class="tag">3-Statement</span>
+        <span class="tag">Tech</span>
+      </div>
+      <a href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener" class="project-btn">View on Drive</a>
+    </div>
+
+    <div class="project-card fade-in" style="transition-delay:0.1s">
+      <div class="project-ticker">Equity Valuation - ASIANPAINT</div>
+      <div class="project-title">Asian Paints - Equity Research</div>
+      <div class="project-desc">Covered one of India's leading consumer companies with a full 3-statement model and DCF, benchmarked against sector peers, with final recommendation including downside scenario analysis.</div>
+      <div class="project-tags">
+        <span class="tag">DCF</span>
+        <span class="tag">Consumer</span>
+        <span class="tag">India</span>
+      </div>
+      <a href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener" class="project-btn">View on Drive</a>
+    </div>
+
+    <div class="project-card fade-in" style="transition-delay:0.15s">
+      <div class="project-ticker">LBO Model - DELL</div>
+      <div class="project-title">Dell Technologies - LBO Analysis</div>
+      <div class="project-desc">Constructed a full leveraged buyout model including sources and uses, debt schedule, operating projections, and returns analysis (IRR, MOIC). Stress-tested across entry multiples and exit scenarios.</div>
+      <div class="project-tags">
+        <span class="tag">LBO</span>
+        <span class="tag">IRR / MOIC</span>
+        <span class="tag">Tech</span>
+      </div>
+      <a href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener" class="project-btn">View on Drive</a>
+    </div>
+  </div>
+</section>
+
+<section id="reports">
+  <p class="section-label fade-in">Investment Reports</p>
+  <h2 class="fade-in">Research and Analysis</h2>
+  <p class="report-note fade-in">A selection of equity research reports, macro analyses, and investment memos. Update each button below with the direct link to each report once available.</p>
+
+  <div class="fade-in">
+    <div class="report-item">
+      <div>
+        <div class="report-type">Equity Research - Buy-Side</div>
+        <div class="report-title">Eli Lilly (LLY) - Full Equity Valuation Report</div>
+      </div>
+      <a href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener" class="report-btn report-btn-navy">Open Report</a>
+    </div>
+
+    <div class="report-item">
+      <div>
+        <div class="report-type">Equity Research - Buy-Side</div>
+        <div class="report-title">Microsoft (MSFT) - Equity Research Report</div>
+      </div>
+      <a href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener" class="report-btn report-btn-navy">Open Report</a>
+    </div>
+
+    <div class="report-item">
+      <div>
+        <div class="report-type">Equity Research - Buy-Side</div>
+        <div class="report-title">Asian Paints (ASIANPAINT) - Equity Research Report</div>
+      </div>
+      <a href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener" class="report-btn report-btn-navy">Open Report</a>
+    </div>
+
+    <div class="report-item">
+      <div>
+        <div class="report-type">LBO Analysis</div>
+        <div class="report-title">Dell Technologies (DELL) - Leveraged Buyout Model and Memo</div>
+      </div>
+      <a href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener" class="report-btn report-btn-navy">Open Report</a>
+    </div>
+
+    <div class="report-item">
+      <div>
+        <div class="report-type">All Work</div>
+        <div class="report-title">Full Portfolio - Google Drive Folder</div>
+      </div>
+      <a href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener" class="report-btn">Browse Drive</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="padding-bottom:7rem;">
+  <p class="section-label fade-in">Contact</p>
+  <div class="contact-inner">
+    <h2 class="fade-in">Let's connect.</h2>
+    <p class="contact-desc fade-in">I'm currently exploring full-time opportunities in investment banking, asset management, and equity research - available from June 2026. Always open to a conversation.</p>
+    <div class="fade-in">
+      <a href="mailto:adityanair.cv@gmail.com" class="contact-link">
+        <span class="contact-link-label">Email</span>
+        <span class="contact-link-value">adityanair.cv@gmail.com</span>
+        <span class="contact-link-arrow">&#8599;</span>
+      </a>
+      <a href="https://linkedin.com/in/adityanair" target="_blank" rel="noopener" class="contact-link">
+        <span class="contact-link-label">LinkedIn</span>
+        <span class="contact-link-value">linkedin.com/in/adityanair</span>
+        <span class="contact-link-arrow">&#8599;</span>
+      </a>
+      <a href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener" class="contact-link">
+        <span class="contact-link-label">Resume</span>
+        <span class="contact-link-value">View on Google Drive</span>
+        <span class="contact-link-arrow">&#8599;</span>
+      </a>
+      <a href="tel:+15852021576" class="contact-link">
+        <span class="contact-link-label">Phone</span>
+        <span class="contact-link-value">+1 (585) 202-1576</span>
+        <span class="contact-link-arrow">&#8599;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-name">Aditya Nair</span>
+  <span class="footer-copy">2026</span>
+</footer>
+
+<script>
+var observer = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){ e.target.classList.add('visible'); }
+  });
+},{threshold:0.08,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.fade-in').forEach(function(el){ observer.observe(el); });
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var t = document.querySelector(a.getAttribute('href'));
+    if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth',block:'start'}); }
+  });
+});
+</script>
+</body>
+</html>
