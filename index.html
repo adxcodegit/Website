@@ -1,486 +1,1530 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aditya Nair</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Aditya Nair — Investment Professional</title>
+<meta name="description" content="Aditya Nair — MS in Finance candidate at Simon Business School. Investment professional with experience in equity research, portfolio management, and valuation. Available June 2026." />
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-:root{
-  --cream:#F8F5EF;
-  --ink:#0D1B2A;
-  --muted:#5A6270;
-  --rule:#E3DACE;
-  --accent:#C8B99A;
-  --accent-deep:#8C7355;
-  --accent-light:#F5F0E6;
-  --navy:#0D1B2A;
-  --navy-mid:#1B3A5C;
-  --sans:'DM Sans',sans-serif;
-  --serif:'EB Garamond',Georgia,serif;
-}
-html{scroll-behavior:smooth;}
-body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased;}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:60px;background:rgba(13,27,42,0.97);border-bottom:1px solid rgba(200,185,154,0.15);}
-.nav-name{font-family:var(--serif);font-size:1.1rem;color:var(--accent);text-decoration:none;}
-.nav-links{display:flex;gap:1.8rem;list-style:none;}
-.nav-links a{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.2s;}
-.nav-links a:hover{color:var(--accent);}
-#hero{min-height:100vh;display:flex;align-items:center;background:linear-gradient(135deg,#0D1B2A 0%,#1B3A5C 100%);padding:100px 0 4rem;}
-.hero-inner{max-width:700px;margin:0 auto;padding:0 3rem;width:100%;}
-.hero-eyebrow{font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:1.2rem;}
-h1{font-family:var(--serif);font-size:clamp(3rem,7vw,5.5rem);font-weight:400;line-height:1.05;color:#fff;margin-bottom:1.5rem;}
-h1 em{font-style:italic;color:var(--accent);}
-.hero-sub{font-size:1.05rem;color:rgba(255,255,255,0.55);max-width:480px;line-height:1.75;margin-bottom:2.5rem;}
-.hero-cta{display:flex;gap:0.9rem;flex-wrap:wrap;}
-.btn{display:inline-flex;align-items:center;gap:0.4rem;padding:0.65rem 1.4rem;font-family:var(--sans);font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:all 0.2s;}
-.btn-primary{background:var(--accent);color:var(--navy);border:1px solid var(--accent);font-weight:500;}
-.btn-primary:hover{background:#b8a888;border-color:#b8a888;}
-.btn-ghost{background:transparent;color:rgba(255,255,255,0.75);border:1px solid rgba(255,255,255,0.2);}
-.btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
-section{max-width:900px;margin:0 auto;padding:5rem 3rem;border-top:1px solid var(--rule);}
-.section-label{font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent-deep);margin-bottom:2.5rem;}
-h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:400;line-height:1.15;margin-bottom:1.5rem;}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
-.about-text p{color:var(--muted);margin-bottom:1rem;font-size:0.97rem;}
-.about-stats{display:flex;flex-direction:column;gap:1.5rem;}
-.stat-item{padding-bottom:1.5rem;border-bottom:1px solid var(--rule);}
-.stat-item:last-child{border-bottom:none;padding-bottom:0;}
-.stat-num{font-family:var(--serif);font-size:2.2rem;color:var(--navy-mid);line-height:1;margin-bottom:0.2rem;}
-.stat-label{font-size:0.78rem;color:var(--muted);}
-.exp-item{display:grid;grid-template-columns:200px 1fr;gap:2rem;padding:2rem 0;border-bottom:1px solid var(--rule);}
-.exp-item:first-child{padding-top:0;}
-.exp-item:last-child{border-bottom:none;}
-.exp-dates{font-size:0.78rem;color:var(--muted);margin-bottom:0.3rem;}
-.exp-company{font-size:0.8rem;font-weight:500;color:var(--accent-deep);}
-.exp-location{font-size:0.75rem;color:var(--muted);margin-top:0.15rem;}
-.exp-role{font-family:var(--serif);font-size:1.2rem;font-weight:400;margin-bottom:0.8rem;}
-.exp-bullets{list-style:none;display:flex;flex-direction:column;gap:0.5rem;}
-.exp-bullets li{font-size:0.9rem;color:var(--muted);padding-left:1.1rem;position:relative;line-height:1.65;}
-.exp-bullets li::before{content:'--';position:absolute;left:0;color:var(--accent-deep);}
-.edu-item{display:grid;grid-template-columns:200px 1fr;gap:2rem;padding:2rem 0;border-bottom:1px solid var(--rule);}
-.edu-item:first-child{padding-top:0;}
-.edu-item:last-child{border-bottom:none;}
-.edu-year{font-size:0.78rem;color:var(--muted);padding-top:0.15rem;}
-.edu-school{font-family:var(--serif);font-size:1.2rem;font-weight:400;margin-bottom:0.25rem;}
-.edu-degree{font-size:0.85rem;color:var(--muted);margin-bottom:0.5rem;}
-.edu-detail{font-size:0.82rem;color:var(--muted);line-height:1.6;}
-.tag{display:inline-block;background:var(--accent-light);color:var(--accent-deep);font-size:0.7rem;padding:0.25rem 0.65rem;border-radius:2px;letter-spacing:0.04em;margin-top:0.5rem;}
-.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
-.skill-group-title{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink);margin-bottom:0.9rem;font-weight:500;}
-.skill-group ul{list-style:none;display:flex;flex-direction:column;gap:0.45rem;}
-.skill-group li{font-size:0.88rem;color:var(--muted);padding-left:0.9rem;position:relative;}
-.skill-group li::before{content:'*';position:absolute;left:0;color:var(--accent-deep);}
-.cert-list{display:flex;flex-direction:column;}
-.cert-item{display:flex;align-items:flex-start;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--rule);}
-.cert-item:last-child{border-bottom:none;}
-.cert-dot{width:6px;height:6px;min-width:6px;background:var(--accent-deep);border-radius:50%;margin-top:0.55rem;}
-.cert-text{font-size:0.9rem;color:var(--muted);line-height:1.6;}
-.cert-text strong{color:var(--ink);font-weight:500;}
-.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;}
-.project-card{background:#fff;border:1px solid var(--rule);padding:1.6rem;border-radius:3px;transition:border-color 0.2s,box-shadow 0.2s;}
-.project-card:hover{border-color:var(--navy-mid);box-shadow:0 4px 20px rgba(13,27,42,0.07);}
-.project-ticker{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-deep);margin-bottom:0.6rem;}
-.project-title{font-family:var(--serif);font-size:1.15rem;font-weight:400;margin-bottom:0.6rem;}
-.project-desc{font-size:0.87rem;color:var(--muted);line-height:1.65;}
-.project-tags{margin-top:1rem;display:flex;gap:0.4rem;flex-wrap:wrap;}
-.project-btn{display:inline-flex;align-items:center;gap:0.35rem;margin-top:1.1rem;padding:0.45rem 1rem;font-family:var(--sans);font-size:0.72rem;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none;border:1px solid var(--rule);border-radius:2px;color:var(--accent-deep);background:transparent;transition:border-color 0.2s,background 0.2s;}
-.project-btn:hover{border-color:var(--accent-deep);background:var(--accent-light);}
-.report-item{display:flex;align-items:center;justify-content:space-between;padding:1.4rem 0;border-bottom:1px solid var(--rule);gap:1.5rem;}
-.report-item:first-child{border-top:1px solid var(--rule);}
-.report-type{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-deep);margin-bottom:0.25rem;}
-.report-title{font-family:var(--serif);font-size:1.05rem;font-weight:400;color:var(--ink);}
-.report-btn{display:inline-flex;align-items:center;gap:0.4rem;padding:0.5rem 1.1rem;font-size:0.72rem;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none;border:1px solid var(--rule);border-radius:2px;color:var(--ink);background:#fff;white-space:nowrap;transition:border-color 0.2s,background 0.2s;flex-shrink:0;}
-.report-btn:hover{border-color:var(--navy-mid);background:var(--accent-light);}
-.report-btn-navy{background:var(--navy);color:var(--accent);border-color:var(--navy);}
-.report-btn-navy:hover{background:var(--navy-mid);border-color:var(--navy-mid);color:var(--accent);}
-.report-note{font-size:0.82rem;color:var(--muted);margin-bottom:2rem;font-style:italic;}
-.contact-inner{max-width:560px;}
-.contact-desc{color:var(--muted);margin-bottom:2.5rem;font-size:0.97rem;}
-.contact-link{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;border-bottom:1px solid var(--rule);text-decoration:none;color:var(--ink);transition:color 0.2s;}
-.contact-link:first-child{border-top:1px solid var(--rule);}
-.contact-link:hover{color:var(--accent-deep);}
-.contact-link-label{font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);width:100px;}
-.contact-link:hover .contact-link-label{color:var(--accent-deep);}
-.contact-link-value{flex:1;font-size:0.95rem;}
-.contact-link-arrow{font-size:1rem;opacity:0.4;transition:opacity 0.2s,transform 0.2s;}
-.contact-link:hover .contact-link-arrow{opacity:1;transform:translate(3px,-3px);}
-footer{border-top:1px solid var(--rule);max-width:900px;margin:0 auto;padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;}
-.footer-name{font-family:var(--serif);font-size:0.95rem;color:var(--muted);}
-.footer-copy{font-size:0.78rem;color:var(--muted);}
-.fade-in{opacity:0;transform:translateY(16px);transition:opacity 0.6s ease,transform 0.6s ease;}
-.fade-in.visible{opacity:1;transform:none;}
-@media(max-width:700px){
-  nav{padding:0 1.2rem;}
-  .nav-links{gap:0.8rem;}
-  .nav-links a{font-size:0.62rem;}
-  #hero{padding:100px 0 3rem;}
-  .hero-inner{padding:0 1.5rem;}
-  section{padding:3.5rem 1.5rem;}
-  .about-grid,.exp-item,.edu-item{grid-template-columns:1fr;gap:0.6rem;}
-  .skills-grid{grid-template-columns:1fr 1fr;}
-  .projects-grid{grid-template-columns:1fr;}
-  .report-item{flex-direction:column;align-items:flex-start;gap:0.8rem;}
-  footer{padding:1.5rem;flex-direction:column;gap:0.5rem;text-align:center;}
-}
+  :root {
+    --navy-900: #0a1628;
+    --navy-800: #11243f;
+    --navy-700: #1a3055;
+    --navy-600: #243d6a;
+    --navy-line: rgba(235, 228, 211, 0.12);
+    --navy-line-soft: rgba(235, 228, 211, 0.06);
+
+    --cement: #ebe4d3;
+    --cement-2: #ddd4be;
+    --cement-3: #c9bfa5;
+    --cement-text: #4a4537;
+
+    --gold-bright: #d4b27a;
+    --gold: #c19858;
+    --gold-deep: #8a6b35;
+
+    --text-on-navy: #ebe4d3;
+    --text-on-navy-soft: rgba(235, 228, 211, 0.7);
+    --text-on-navy-muted: rgba(235, 228, 211, 0.45);
+
+    --serif: "Fraunces", "Times New Roman", serif;
+    --sans: "Inter Tight", -apple-system, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--navy-900);
+    color: var(--text-on-navy);
+    line-height: 1.55;
+    font-size: 16px;
+    overflow-x: hidden;
+    background-image:
+      radial-gradient(1100px 600px at 85% -10%, rgba(212, 178, 122, 0.10), transparent 60%),
+      radial-gradient(800px 500px at -10% 30%, rgba(36, 61, 106, 0.5), transparent 60%);
+  }
+
+  body::before {
+    content: "";
+    position: fixed; inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.5;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.85 0 0 0 0 0.78 0 0 0 0 0.6 0 0 0 0.05 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+
+  a { color: inherit; text-decoration: none; }
+  ::selection { background: var(--gold); color: var(--navy-900); }
+
+  .container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* NAV */
+  .nav {
+    position: sticky; top: 0;
+    z-index: 50;
+    background: rgba(10, 22, 40, 0.78);
+    backdrop-filter: saturate(140%) blur(14px);
+    -webkit-backdrop-filter: saturate(140%) blur(14px);
+    border-bottom: 1px solid var(--navy-line);
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .brand {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0.01em;
+    display: flex; align-items: baseline; gap: 10px;
+    color: var(--text-on-navy);
+  }
+  .brand .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--gold-bright);
+    display: inline-block;
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px rgba(212, 178, 122, 0.6);
+  }
+  .nav-links {
+    display: flex; gap: 28px;
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-on-navy-soft);
+  }
+  .nav-links a {
+    position: relative;
+    transition: color .25s ease;
+  }
+  .nav-links a:hover { color: var(--gold-bright); }
+  .nav-links a::after {
+    content: "";
+    position: absolute; left: 0; bottom: -6px;
+    width: 0; height: 1px;
+    background: var(--gold-bright);
+    transition: width .3s ease;
+  }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-cta {
+    font-size: 12px;
+    font-family: var(--mono);
+    color: var(--text-on-navy);
+    border: 1px solid var(--gold-deep);
+    padding: 8px 14px;
+    border-radius: 999px;
+    transition: all .25s;
+  }
+  .nav-cta:hover {
+    background: var(--gold-bright);
+    color: var(--navy-900);
+    border-color: var(--gold-bright);
+  }
+
+  /* HERO */
+  .hero { padding: 100px 0 80px; position: relative; }
+  .hero-meta {
+    display: flex; align-items: center; gap: 14px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-on-navy-muted);
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+  }
+  .hero-meta .pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 12px;
+    border: 1px solid var(--navy-line);
+    border-radius: 999px;
+    background: rgba(26, 48, 85, 0.4);
+    color: var(--text-on-navy-soft);
+  }
+  .hero-meta .pulse {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--gold-bright);
+    box-shadow: 0 0 0 0 rgba(212, 178, 122, 0.6);
+    animation: pulse 2.2s infinite;
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(212, 178, 122, 0.55); }
+    70% { box-shadow: 0 0 0 8px rgba(212, 178, 122, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(212, 178, 122, 0); }
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 80px;
+    align-items: end;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(72px, 11vw, 168px);
+    line-height: 0.92;
+    letter-spacing: -0.035em;
+    color: var(--text-on-navy);
+    font-variation-settings: "opsz" 144;
+  }
+  .hero h1 .italic {
+    font-style: italic;
+    color: var(--gold-bright);
+    font-weight: 300;
+  }
+  .hero-sub {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.45;
+    color: var(--text-on-navy-soft);
+    max-width: 560px;
+    margin-top: 28px;
+    font-weight: 300;
+  }
+  .hero-side {
+    border-left: 1px solid var(--gold-deep);
+    padding-left: 28px;
+    padding-bottom: 16px;
+  }
+  .hero-side .label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-bright);
+    margin-bottom: 10px;
+  }
+  .hero-side .quote {
+    font-family: var(--serif);
+    font-size: 16px;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--text-on-navy-soft);
+    margin-bottom: 24px;
+  }
+  .hero-side .school {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--text-on-navy);
+    font-weight: 500;
+    line-height: 1.5;
+  }
+  .hero-side .school span {
+    color: var(--text-on-navy-muted);
+    font-weight: 400;
+  }
+  .hero-actions {
+    display: flex; gap: 14px; align-items: center;
+    margin-top: 56px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    padding: 14px 22px;
+    border-radius: 4px;
+    transition: all .3s ease;
+    border: 1px solid transparent;
+    cursor: pointer;
+  }
+  .btn-primary {
+    background: var(--gold-bright);
+    color: var(--navy-900);
+  }
+  .btn-primary:hover {
+    background: var(--cement);
+    transform: translateY(-1px);
+  }
+  .btn-ghost {
+    border-color: var(--navy-line);
+    color: var(--text-on-navy);
+    background: rgba(26, 48, 85, 0.25);
+  }
+  .btn-ghost:hover {
+    border-color: var(--gold-bright);
+    color: var(--gold-bright);
+  }
+  .btn .arrow { transition: transform .3s ease; }
+  .btn:hover .arrow { transform: translateX(4px); }
+
+  /* TICKER */
+  .ticker {
+    margin-top: 90px;
+    border-top: 1px solid var(--navy-line);
+    border-bottom: 1px solid var(--navy-line);
+    padding: 18px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    background: rgba(26, 48, 85, 0.25);
+  }
+  .ticker-track {
+    display: inline-flex;
+    gap: 48px;
+    animation: scroll 50s linear infinite;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-on-navy-soft);
+    letter-spacing: 0.08em;
+  }
+  .ticker-item { display: inline-flex; gap: 10px; align-items: center; }
+  .ticker-item .tk-tag { color: var(--gold-bright); font-weight: 500; }
+  .ticker-item .tk-up { color: var(--cement); }
+  .ticker-item .sep { color: var(--gold-deep); }
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* SECTION */
+  section { padding: 120px 0; position: relative; }
+  .section-header {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 60px;
+    margin-bottom: 80px;
+    align-items: baseline;
+    border-top: 1px solid var(--gold-deep);
+    padding-top: 28px;
+  }
+  .section-num {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    color: var(--gold-bright);
+    text-transform: uppercase;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(36px, 5vw, 60px);
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    color: var(--text-on-navy);
+  }
+  .section-title em {
+    font-style: italic;
+    color: var(--gold-bright);
+    font-weight: 300;
+  }
+
+  /* sub-header for split sections */
+  .subgroup-header {
+    display: flex; align-items: baseline; gap: 16px;
+    margin: 80px 0 28px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--navy-line);
+  }
+  .subgroup-header:first-of-type { margin-top: 0; }
+  .subgroup-marker {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-bright);
+  }
+  .subgroup-title {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 22px;
+    color: var(--text-on-navy);
+    letter-spacing: -0.005em;
+  }
+  .subgroup-flag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--text-on-navy-muted);
+    margin-left: auto;
+  }
+
+  /* ABOUT (cement break) */
+  .about-section {
+    background: var(--cement);
+    color: var(--cement-text);
+    margin: 0 calc(50% - 50vw);
+    padding: 120px calc(50vw - 50%);
+    position: relative;
+  }
+  .about-section .section-header { border-top-color: var(--navy-800); }
+  .about-section .section-num { color: var(--navy-700); }
+  .about-section .section-title { color: var(--navy-900); }
+  .about-section .section-title em { color: var(--gold-deep); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .about-prose p {
+    font-family: var(--serif);
+    font-size: 19px;
+    line-height: 1.65;
+    color: var(--cement-text);
+    margin-bottom: 22px;
+    font-weight: 400;
+  }
+  .about-prose p:first-child::first-letter {
+    font-family: var(--serif);
+    font-size: 78px;
+    font-weight: 400;
+    float: left;
+    line-height: 0.85;
+    margin: 8px 12px 0 -2px;
+    color: var(--gold-deep);
+    font-style: italic;
+  }
+  .about-prose p strong { color: var(--navy-900); font-weight: 500; }
+  .stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--cement-3);
+    background: rgba(255,255,255,0.25);
+  }
+  .stat {
+    padding: 36px 28px;
+    border-right: 1px solid var(--cement-3);
+    border-bottom: 1px solid var(--cement-3);
+    transition: background .3s;
+  }
+  .stat:nth-child(2n) { border-right: none; }
+  .stat:nth-last-child(-n+2) { border-bottom: none; }
+  .stat:hover { background: rgba(255,255,255,0.55); }
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 52px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--navy-900);
+    margin-bottom: 14px;
+  }
+  .stat-num em { color: var(--gold-deep); font-style: italic; }
+  .stat-label {
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--cement-text);
+    line-height: 1.5;
+  }
+
+  /* EXPERIENCE */
+  .exp-list { display: flex; flex-direction: column; }
+  .exp-item {
+    display: grid;
+    grid-template-columns: 180px 1fr 1.1fr;
+    gap: 60px;
+    padding: 40px 0;
+    border-top: 1px solid var(--navy-line-soft);
+    transition: background .3s ease;
+    position: relative;
+  }
+  .exp-item:hover {
+    background: linear-gradient(90deg, rgba(26, 48, 85, 0.4), transparent);
+  }
+  .exp-item:last-child { border-bottom: 1px solid var(--navy-line-soft); }
+  .exp-date {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--gold-bright);
+    letter-spacing: 0.06em;
+    padding-top: 6px;
+  }
+  .exp-meta { display: flex; flex-direction: column; gap: 6px; }
+  .exp-co {
+    font-family: var(--serif);
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--text-on-navy);
+  }
+  .exp-tagline {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--gold-bright);
+    margin-top: -2px;
+  }
+  .exp-role {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--text-on-navy-soft);
+    font-weight: 500;
+    margin-top: 6px;
+  }
+  .exp-loc {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-on-navy-muted);
+    letter-spacing: 0.08em;
+    margin-top: 4px;
+  }
+  .exp-desc ul {
+    list-style: none;
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .exp-desc li {
+    font-family: var(--sans);
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-on-navy-soft);
+    padding-left: 18px;
+    position: relative;
+  }
+  .exp-desc li::before {
+    content: "—";
+    position: absolute; left: 0; top: 0;
+    color: var(--gold-bright);
+    font-weight: 500;
+  }
+
+  /* EDUCATION */
+  .edu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  .edu-card {
+    border: 1px solid var(--navy-line);
+    padding: 40px 36px;
+    background: rgba(26, 48, 85, 0.3);
+    position: relative;
+    transition: all .3s;
+  }
+  .edu-card:hover {
+    border-color: var(--gold-bright);
+    transform: translateY(-2px);
+    background: rgba(26, 48, 85, 0.5);
+  }
+  .edu-date {
+    position: absolute;
+    top: 36px; right: 36px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--gold-bright);
+  }
+  .edu-school {
+    font-family: var(--serif);
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    max-width: 80%;
+    letter-spacing: -0.01em;
+    color: var(--text-on-navy);
+  }
+  .edu-degree {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--text-on-navy-soft);
+    font-weight: 500;
+    margin-bottom: 24px;
+  }
+  .edu-details {
+    display: flex; flex-direction: column; gap: 8px;
+    padding-top: 20px;
+    border-top: 1px solid var(--navy-line);
+    font-family: var(--sans);
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--text-on-navy-soft);
+  }
+  .edu-details strong { color: var(--text-on-navy); font-weight: 500; }
+  .edu-details em { color: var(--gold-bright); font-style: italic; }
+  .edu-tag {
+    display: inline-block;
+    margin-top: 18px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-bright);
+    padding: 4px 10px;
+    border: 1px solid var(--gold-deep);
+    border-radius: 2px;
+  }
+
+  /* SKILLS */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--navy-line);
+    border: 1px solid var(--navy-line);
+  }
+  .skill-col {
+    background: var(--navy-900);
+    padding: 32px 26px;
+    transition: background .3s;
+  }
+  .skill-col:hover { background: var(--navy-800); }
+  .skill-head {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 22px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--gold-deep);
+    letter-spacing: -0.005em;
+    color: var(--text-on-navy);
+  }
+  .skill-list {
+    list-style: none;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .skill-list li {
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--text-on-navy-soft);
+    display: flex; align-items: baseline; gap: 8px;
+  }
+  .skill-list li::before {
+    content: "·";
+    color: var(--gold-bright);
+    font-weight: 700;
+  }
+  .certs {
+    margin-top: 60px;
+    border: 1px solid var(--navy-line);
+    background: rgba(26, 48, 85, 0.3);
+    padding: 36px;
+  }
+  .certs-head {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold-bright);
+    margin-bottom: 24px;
+  }
+  .certs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 50px;
+  }
+  .cert-row {
+    display: flex; flex-direction: column; gap: 4px;
+    padding-bottom: 20px;
+    border-bottom: 1px dotted var(--navy-line);
+  }
+  .cert-row:nth-last-child(-n+2) { border-bottom: none; padding-bottom: 0; }
+  .cert-title {
+    font-family: var(--serif);
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-on-navy);
+  }
+  .cert-detail {
+    font-family: var(--sans);
+    font-size: 12px;
+    color: var(--text-on-navy-muted);
+    line-height: 1.5;
+  }
+
+  /* PROJECTS */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--navy-line);
+    border: 1px solid var(--navy-line);
+  }
+  .project {
+    background: var(--navy-900);
+    padding: 44px 36px;
+    transition: background .35s, transform .35s;
+    display: flex; flex-direction: column;
+    min-height: 320px;
+    position: relative;
+  }
+  .project:hover { background: var(--navy-800); }
+  .project-tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-on-navy-muted);
+    margin-bottom: 18px;
+    display: flex; gap: 8px; align-items: center;
+  }
+  .project-tag::before {
+    content: "";
+    display: inline-block;
+    width: 24px; height: 1px;
+    background: var(--gold-bright);
+  }
+  .project-ticker {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--gold-bright);
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+  }
+  .project-title {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    margin-bottom: 16px;
+    color: var(--text-on-navy);
+  }
+  .project-desc {
+    font-family: var(--sans);
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-on-navy-soft);
+    margin-bottom: 28px;
+    flex: 1;
+  }
+  .project-foot {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 22px;
+    border-top: 1px solid var(--navy-line);
+  }
+  .project-chips {
+    display: flex; gap: 6px; flex-wrap: wrap;
+  }
+  .chip {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    color: var(--gold-bright);
+    padding: 4px 9px;
+    background: rgba(212, 178, 122, 0.08);
+    border: 1px solid rgba(212, 178, 122, 0.2);
+    border-radius: 2px;
+  }
+  .project-link {
+    font-family: var(--sans);
+    font-size: 12px;
+    color: var(--text-on-navy);
+    font-weight: 500;
+    display: inline-flex; align-items: center; gap: 6px;
+    letter-spacing: 0.02em;
+    transition: color .25s;
+  }
+  .project-link:hover { color: var(--gold-bright); }
+  .project-link svg { transition: transform .3s; }
+  .project-link:hover svg { transform: translate(2px, -2px); }
+
+  /* REPORTS */
+  .reports-table {
+    border-top: 1px solid var(--gold-deep);
+    margin-top: 0;
+  }
+  .report-row {
+    display: grid;
+    grid-template-columns: 200px 1fr 140px 140px;
+    gap: 30px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--navy-line-soft);
+    align-items: center;
+    transition: background .25s, padding .25s;
+  }
+  .report-row:hover {
+    background: linear-gradient(90deg, rgba(26, 48, 85, 0.5), transparent);
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .report-cat {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold-bright);
+  }
+  .report-title {
+    font-family: var(--serif);
+    font-size: 19px;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    color: var(--text-on-navy);
+  }
+  .report-title em {
+    font-style: italic;
+    color: var(--gold-bright);
+    font-weight: 400;
+  }
+  .report-type {
+    font-family: var(--sans);
+    font-size: 12px;
+    color: var(--text-on-navy-muted);
+  }
+  .report-action {
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 500;
+    text-align: right;
+    display: inline-flex; align-items: center; justify-content: flex-end; gap: 6px;
+    letter-spacing: 0.02em;
+    color: var(--text-on-navy);
+    justify-self: end;
+  }
+  .report-action:hover { color: var(--gold-bright); }
+  .reports-foot {
+    margin-top: 32px;
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 24px;
+    border-top: 1px solid var(--navy-line);
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .reports-foot .note {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--text-on-navy-muted);
+  }
+
+  /* CONTACT (cement closer) */
+  .contact {
+    background: var(--cement);
+    color: var(--navy-900);
+    margin: 0 calc(50% - 50vw);
+    padding: 140px calc(50vw - 50%);
+    position: relative;
+    overflow: hidden;
+  }
+  .contact::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(900px 500px at 90% 20%, rgba(193, 152, 88, 0.18), transparent 60%),
+      radial-gradient(700px 400px at 10% 80%, rgba(36, 61, 106, 0.10), transparent 60%);
+    pointer-events: none;
+  }
+  .contact-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 2;
+  }
+  .contact-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-bottom: 32px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .contact-eyebrow::before {
+    content: ""; width: 36px; height: 1px; background: var(--gold-deep);
+  }
+  .contact h2 {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(48px, 7vw, 96px);
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+    max-width: 980px;
+    margin-bottom: 28px;
+    color: var(--navy-900);
+  }
+  .contact h2 em {
+    font-style: italic;
+    color: var(--gold-deep);
+    font-weight: 300;
+  }
+  .contact-lede {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 20px;
+    color: var(--cement-text);
+    max-width: 640px;
+    margin-bottom: 80px;
+    line-height: 1.55;
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    border-top: 1px solid var(--cement-3);
+    padding-top: 50px;
+  }
+  .contact-card {
+    display: flex; flex-direction: column; gap: 10px;
+    padding: 24px 0;
+    transition: transform .3s;
+  }
+  .contact-card:hover { transform: translateY(-3px); }
+  .contact-card:hover .contact-val { color: var(--gold-deep); }
+  .contact-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+  }
+  .contact-val {
+    font-family: var(--serif);
+    font-size: 18px;
+    color: var(--navy-900);
+    font-weight: 400;
+    transition: color .3s;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .contact-val .ext {
+    font-size: 12px;
+    color: var(--cement-text);
+    opacity: 0.6;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 36px 0;
+    border-top: 1px solid var(--navy-line);
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-on-navy-muted);
+    letter-spacing: 0.08em;
+    background: var(--navy-900);
+    position: relative;
+    z-index: 2;
+  }
+  .footer-inner {
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 16px;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 980px) {
+    .container { padding: 0 24px; }
+    .nav-links { display: none; }
+    .hero { padding: 60px 0 40px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hero-side { border-left: none; border-top: 1px solid var(--gold-deep); padding-left: 0; padding-top: 28px; }
+    .section-header { grid-template-columns: 1fr; gap: 16px; margin-bottom: 50px; }
+    section { padding: 80px 0; }
+    .about-section { padding: 80px 24px; }
+    .about-grid, .edu-grid, .skills-grid, .projects-grid { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: 1fr 1fr; }
+    .exp-item { grid-template-columns: 1fr; gap: 16px; }
+    .report-row { grid-template-columns: 1fr; gap: 8px; padding: 22px 0; }
+    .report-action { justify-self: start; text-align: left; }
+    .certs-grid { grid-template-columns: 1fr; }
+    .contact h2 { font-size: 44px; }
+    .contact-grid { grid-template-columns: 1fr 1fr; }
+    .contact { padding: 90px 24px; }
+    .subgroup-header { flex-wrap: wrap; }
+    .subgroup-flag { margin-left: 0; }
+  }
+
+  /* REVEAL */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .9s ease, transform .9s ease;
+  }
+  .reveal.in {
+    opacity: 1;
+    transform: none;
+  }
 </style>
 </head>
 <body>
 
-<nav>
-  <a class="nav-name" href="#hero">Aditya Nair</a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#reports">Reports</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="#hero" class="brand"><span class="dot"></span>Aditya Nair</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#reports">Reports</a>
+    </div>
+    <a href="#contact" class="nav-cta">Get in touch →</a>
+  </div>
 </nav>
 
-<div id="hero">
-  <div class="hero-inner">
-    <p class="hero-eyebrow fade-in">Master of Science in Finance &middot; Simon Business School</p>
-    <h1 class="fade-in" style="transition-delay:0.1s">Aditya<br><em>Nair</em></h1>
-    <p class="hero-sub fade-in" style="transition-delay:0.2s">Investment professional with a track record spanning equity research, portfolio management, and valuation. CFA Level II candidate. Available June 2026.</p>
-    <div class="hero-cta fade-in" style="transition-delay:0.3s">
-      <a href="#contact" class="btn btn-primary">Get in touch</a>
-      <a href="#experience" class="btn btn-ghost">View experience</a>
-      <a href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener" class="btn btn-ghost">Resume</a>
-    </div>
-  </div>
-</div>
-
-<section id="about">
-  <p class="section-label fade-in">About</p>
-  <div class="about-grid">
-    <div class="about-text fade-in" style="transition-delay:0.05s">
-      <p>I'm a finance professional trained at the University of Rochester's Simon Business School, where I'm pursuing an MS in Finance with a focus on Investment Management and Financial Analysis, graduating December 2026.</p>
-      <p>Prior to graduate school, I spent two years at Lifelong Wealth in Mumbai as an investment analyst, managing a $5M+ multi-asset book, producing equity research across 200+ securities, and building the analytical frameworks the team still relies on today.</p>
-      <p>I care deeply about rigorous fundamental analysis, capital markets, and building things that last. Outside of finance, I'm drawn to Formula One, strength training, poker strategy, and the occasional marathon.</p>
-    </div>
-    <div class="about-stats fade-in" style="transition-delay:0.15s">
-      <div class="stat-item">
-        <div class="stat-num">$5M+</div>
-        <div class="stat-label">Multi-asset book managed at Lifelong Wealth</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">200+</div>
-        <div class="stat-label">Equity securities analyzed through fundamental research</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">3.92</div>
-        <div class="stat-label">GPA at Simon Business School, Dean's List</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">CFA</div>
-        <div class="stat-label">Level I passed Aug 2024, Level II candidate</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="experience">
-  <p class="section-label fade-in">Experience</p>
-
-  <div class="exp-item fade-in">
-    <div>
-      <div class="exp-dates">Aug 2025 - Present</div>
-      <div class="exp-company">Simon School Venture Fund</div>
-      <div class="exp-location">Rochester, NY</div>
-    </div>
-    <div>
-      <div class="exp-role">Associate, Portfolio Management</div>
-      <ul class="exp-bullets">
-        <li>Lead a team of 3 analysts in deal-level due diligence on portfolio companies, conducting management discussions, evaluating operating performance, unit economics, capital requirements, and valuation assumptions across 5+ holdings.</li>
-        <li>Led an internal initiative to streamline knowledge transfer, develop SOPs, and optimize workflows; presented outcomes to Fund Board Members, improving future team efficiency.</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="exp-item fade-in">
-    <div>
-      <div class="exp-dates">Jan 2024 - Apr 2025</div>
-      <div class="exp-company">Lifelong Wealth</div>
-      <div class="exp-location">Mumbai, India</div>
-    </div>
-    <div>
-      <div class="exp-role">Senior Analyst, Investments</div>
-      <ul class="exp-bullets">
-        <li>Generated consistent benchmark outperformance on a $5M+ multi-asset book through conviction-driven security selection, sector rotation, and dynamic rebalancing across public equities and structured products.</li>
-        <li>Applied DCF, EV/EBITDA, and NAV-based frameworks to evaluate new opportunities; produced buy/sell recommendations with risk-adjusted return targets and downside scenario analysis.</li>
-        <li>Conducted quarterly portfolio reviews for 50+ HNI portfolios, reassessing allocations based on macro conditions and forward-looking return expectations.</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="exp-item fade-in">
-    <div>
-      <div class="exp-dates">Jan 2023 - Dec 2023</div>
-      <div class="exp-company">Lifelong Wealth</div>
-      <div class="exp-location">Mumbai, India</div>
-    </div>
-    <div>
-      <div class="exp-role">Analyst, Investments</div>
-      <ul class="exp-bullets">
-        <li>Conducted fundamental analysis on 200+ equity securities; managed strategies using Sharpe, Alpha, Beta, IRR, and sector-level valuation screens.</li>
-        <li>Produced 100+ macroeconomic, industry, and company-specific research reports to support tactical allocation decisions.</li>
-        <li>Built standardized due-diligence frameworks including financial modeling templates, investment checklists, and risk models, improving research accuracy by 15% and turnaround time by 20%.</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="exp-item fade-in">
-    <div>
-      <div class="exp-dates">Dec 2022 - Jan 2023</div>
-      <div class="exp-company">Lifelong Wealth</div>
-      <div class="exp-location">Mumbai, India</div>
-    </div>
-    <div>
-      <div class="exp-role">Intern, Investments</div>
-      <ul class="exp-bullets">
-        <li>Improved portfolio monitoring efficiency by 25% by building automated performance dashboards integrating portfolio analytics, risk metrics, and cash-flow projections.</li>
-        <li>Developed standardized portfolio construction frameworks to streamline onboarding and scale long-term investment strategies across multiple portfolios.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section id="education">
-  <p class="section-label fade-in">Education</p>
-
-  <div class="edu-item fade-in">
-    <div class="edu-year">Dec 2026</div>
-    <div>
-      <div class="edu-school">Simon Business School, University of Rochester</div>
-      <div class="edu-degree">Master of Science in Finance (STEM) - Investment Management and Financial Analysis</div>
-      <div class="edu-detail">GPA 3.92 / 4.0 - Dean's List - Dean's Scholarship Recipient<br>Portfolio Management Associate, Simon School Venture Fund - VP Finance and Operations, Master's Advisory Council<br>Coursework: Asset Management, Quantitative Investing, Debt Markets, Financial Markets and Investments, Options Strategy</div>
-      <span class="tag">CPT Eligible - Available June 2026</span>
-    </div>
-  </div>
-
-  <div class="edu-item fade-in">
-    <div class="edu-year">May 2022</div>
-    <div>
-      <div class="edu-school">S.K. Somaiya Degree College, University of Mumbai</div>
-      <div class="edu-degree">Bachelor of Management Studies - Major in Finance and Investments</div>
-      <div class="edu-detail">GPA 9.78 / 10 - Top 1% of graduating class - Class Representative for three years</div>
-    </div>
-  </div>
-</section>
-
-<section id="skills">
-  <p class="section-label fade-in">Skills</p>
-  <div class="skills-grid fade-in">
-    <div class="skill-group">
-      <div class="skill-group-title">Financial Modeling</div>
-      <ul>
-        <li>DCF Valuation</li>
-        <li>LBO Modeling</li>
-        <li>3-Statement Model</li>
-        <li>Merger / Accretion-Dilution</li>
-        <li>Comparable Company Analysis</li>
-      </ul>
-    </div>
-    <div class="skill-group">
-      <div class="skill-group-title">Research and Analytics</div>
-      <ul>
-        <li>Financial Statement Analysis</li>
-        <li>Credit Analysis</li>
-        <li>Portfolio Risk Management</li>
-        <li>Performance Attribution</li>
-        <li>Factor Analysis</li>
-      </ul>
-    </div>
-    <div class="skill-group">
-      <div class="skill-group-title">Tools and Platforms</div>
-      <ul>
-        <li>Bloomberg Terminal</li>
-        <li>S&amp;P Capital IQ</li>
-        <li>Advanced Excel (VBA)</li>
-        <li>Python for Finance</li>
-        <li>PowerPoint / Pitch Books</li>
-      </ul>
-    </div>
-  </div>
-
-  <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--rule);">
-    <p class="section-label fade-in">Certifications</p>
-    <div class="cert-list fade-in">
-      <div class="cert-item">
-        <div class="cert-dot"></div>
-        <div class="cert-text"><strong>CFA Level I Passed</strong> - August 2024, Level II candidate</div>
-      </div>
-      <div class="cert-item">
-        <div class="cert-dot"></div>
-        <div class="cert-text"><strong>Wall Street Prep</strong> - Financial Statement Analysis, DCF, LBO, Buy-Side Investment, Sell-Side Equity Research, M&amp;A Modeling</div>
-      </div>
-      <div class="cert-item">
-        <div class="cert-dot"></div>
-        <div class="cert-text"><strong>Bloomberg Market Concepts (BMC)</strong> - 2026</div>
-      </div>
-      <div class="cert-item">
-        <div class="cert-dot"></div>
-        <div class="cert-text"><strong>Financial Edge Training</strong> - 2025, Python for Finance, Capital IQ Training</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="projects">
-  <p class="section-label fade-in">Transaction and Valuation Work</p>
-  <div class="projects-grid">
-    <div class="project-card fade-in">
-      <div class="project-ticker">Equity Valuation - LLY</div>
-      <div class="project-title">Eli Lilly - Full Equity Valuation</div>
-      <div class="project-desc">Built a fully integrated 3-statement model and DCF valuation incorporating revenue drivers, pipeline risk, and margin assumptions. Produced a 12-month price target with upside/downside scenarios and a final buy/sell recommendation.</div>
-      <div class="project-tags">
-        <span class="tag">DCF</span>
-        <span class="tag">3-Statement</span>
-        <span class="tag">Pharma</span>
-      </div>
-      <a href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener" class="project-btn">View on Drive</a>
+<header id="hero" class="hero">
+  <div class="container">
+    <div class="hero-meta">
+      <span class="pill"><span class="pulse"></span>Available June 2026</span>
+      <span>· Investment Management &amp; Equity Research</span>
     </div>
 
-    <div class="project-card fade-in" style="transition-delay:0.05s">
-      <div class="project-ticker">Equity Valuation - MSFT</div>
-      <div class="project-title">Microsoft - Equity Research</div>
-      <div class="project-desc">Full integrated model with revenue driver analysis, margin assumptions, and DCF valuation. Delivered a 12-month price target with scenario analysis and an investment recommendation.</div>
-      <div class="project-tags">
-        <span class="tag">DCF</span>
-        <span class="tag">3-Statement</span>
-        <span class="tag">Tech</span>
-      </div>
-      <a href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener" class="project-btn">View on Drive</a>
-    </div>
-
-    <div class="project-card fade-in" style="transition-delay:0.1s">
-      <div class="project-ticker">Equity Valuation - ASIANPAINT</div>
-      <div class="project-title">Asian Paints - Equity Research</div>
-      <div class="project-desc">Covered one of India's leading consumer companies with a full 3-statement model and DCF, benchmarked against sector peers, with final recommendation including downside scenario analysis.</div>
-      <div class="project-tags">
-        <span class="tag">DCF</span>
-        <span class="tag">Consumer</span>
-        <span class="tag">India</span>
-      </div>
-      <a href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener" class="project-btn">View on Drive</a>
-    </div>
-
-    <div class="project-card fade-in" style="transition-delay:0.15s">
-      <div class="project-ticker">LBO Model - DELL</div>
-      <div class="project-title">Dell Technologies - LBO Analysis</div>
-      <div class="project-desc">Constructed a full leveraged buyout model including sources and uses, debt schedule, operating projections, and returns analysis (IRR, MOIC). Stress-tested across entry multiples and exit scenarios.</div>
-      <div class="project-tags">
-        <span class="tag">LBO</span>
-        <span class="tag">IRR / MOIC</span>
-        <span class="tag">Tech</span>
-      </div>
-      <a href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener" class="project-btn">View on Drive</a>
-    </div>
-  </div>
-</section>
-
-<section id="reports">
-  <p class="section-label fade-in">Investment Reports</p>
-  <h2 class="fade-in">Research and Analysis</h2>
-  <p class="report-note fade-in">A selection of equity research reports, macro analyses, and investment memos. Update each button below with the direct link to each report once available.</p>
-
-  <div class="fade-in">
-    <div class="report-item">
+    <div class="hero-grid">
       <div>
-        <div class="report-type">Equity Research - Buy-Side</div>
-        <div class="report-title">Eli Lilly (LLY) - Full Equity Valuation Report</div>
+        <h1>Aditya<br><span class="italic">Nair.</span></h1>
+        <p class="hero-sub">Investment professional with experience spanning equity research, multi-asset portfolio management, and valuation across US and Indian markets — currently pursuing an MS in Finance at Simon Business School.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Get in touch <span class="arrow">→</span></a>
+          <a href="#experience" class="btn btn-ghost">View experience <span class="arrow">→</span></a>
+          <a href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener" class="btn btn-ghost">Resume <span class="arrow">↗</span></a>
+        </div>
       </div>
-      <a href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener" class="report-btn report-btn-navy">Open Report</a>
+
+      <aside class="hero-side">
+        <div class="label">— Currently</div>
+        <p class="quote">"Compounding rewards patience, conviction, and rigor — in markets and in life."</p>
+        <div class="school">
+          MS Finance · Simon Business School<br>
+          <span>University of Rochester · Class of 2026</span>
+        </div>
+      </aside>
     </div>
 
-    <div class="report-item">
-      <div>
-        <div class="report-type">Equity Research - Buy-Side</div>
-        <div class="report-title">Microsoft (MSFT) - Equity Research Report</div>
+    <div class="ticker">
+      <div class="ticker-track">
+        <span class="ticker-item"><span class="tk-tag">LLY</span> Equity Research <span class="tk-up">▼ SELL</span></span>
+        <span class="sep">/</span>
+        <span class="ticker-item"><span class="tk-tag">NKE</span> Equity Research <span class="tk-up">▼ SELL</span></span>
+        <span class="sep">/</span>
+        <span class="ticker-item"><span class="tk-tag">MSFT</span> Equity Research <span class="tk-up">▲ BUY</span></span>
+        <span class="sep">/</span>
+        <span class="ticker-item"><span class="tk-tag">DELL</span> LBO Analysis</span>
+        <span class="sep">/</span>
+        <span class="ticker-item"><span class="tk-tag">ASIANPAINT</span> Consumer · India</span>
+        <span class="sep">/</span>
+        <span class="ticker-item"><span class="tk-tag">SSVF</span> Portfolio Management Associate</span>
+        <span class="sep">/</span>
+        <span class="ticker-item"><span class="tk-tag">CFA</span> Level II Candidate</span>
+        <span class="sep">/</span>
+        <span class="ticker-item"><span class="tk-tag">$84T</span> Great Wealth Transfer Research</span>
+        <span class="sep">/</span>
+        <!-- duplicate for seamless loop -->
+        <span class="ticker-item"><span class="tk-tag">LLY</span> Equity Research <span class="tk-up">▼ SELL</span></span>
+        <span class="sep">/</span>
+        <span class="ticker-item"><span class="tk-tag">NKE</span> Equity Research <span class="tk-up">▼ SELL</span></span>
+        <span class="sep">/</span>
+        <span class="ticker-item"><span class="tk-tag">MSFT</span> Equity Research <span class="tk-up">▲ BUY</span></span>
+        <span class="sep">/</span>
+        <span class="ticker-item"><span class="tk-tag">DELL</span> LBO Analysis</span>
+        <span class="sep">/</span>
+        <span class="ticker-item"><span class="tk-tag">ASIANPAINT</span> Consumer · India</span>
+        <span class="sep">/</span>
+        <span class="ticker-item"><span class="tk-tag">SSVF</span> Portfolio Management Associate</span>
+        <span class="sep">/</span>
+        <span class="ticker-item"><span class="tk-tag">CFA</span> Level II Candidate</span>
+        <span class="sep">/</span>
+        <span class="ticker-item"><span class="tk-tag">$84T</span> Great Wealth Transfer Research</span>
       </div>
-      <a href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener" class="report-btn report-btn-navy">Open Report</a>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about" class="about-section reveal">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-num">§ 01 — Profile</div>
+      <h2 class="section-title">About <em>me.</em></h2>
     </div>
 
-    <div class="report-item">
-      <div>
-        <div class="report-type">Equity Research - Buy-Side</div>
-        <div class="report-title">Asian Paints (ASIANPAINT) - Equity Research Report</div>
+    <div class="about-grid">
+      <div class="about-prose">
+        <p>I'm a finance professional trained at the <strong>University of Rochester's Simon Business School</strong>, where I'm pursuing an MS in Finance with a focus on Investment Management and Financial Analysis, graduating December 2026.</p>
+        <p>Prior to graduate school, I spent two years at <strong>Lifelong Wealth in Mumbai</strong>, a boutique mutual fund distribution and wealth advisory firm, where I worked across discretionary multi-asset portfolio management, equity and fund research, and HNI client advisory — covering both Indian and global markets.</p>
+        <p>I care deeply about rigorous fundamental analysis, capital markets, and building things that last. Outside of finance, I'm drawn to Formula One, strength training, poker strategy, culinary experimentation, and the occasional marathon.</p>
       </div>
-      <a href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener" class="report-btn report-btn-navy">Open Report</a>
-    </div>
 
-    <div class="report-item">
-      <div>
-        <div class="report-type">LBO Analysis</div>
-        <div class="report-title">Dell Technologies (DELL) - Leveraged Buyout Model and Memo</div>
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-num">2<em>yr</em></div>
+          <div class="stat-label">Buy-side experience across Indian and global markets</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">3.92</div>
+          <div class="stat-label">GPA at Simon Business School · Dean's List · Dean's Scholar</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num"><em>CFA</em></div>
+          <div class="stat-label">Level I passed Aug 2024 · Level II candidate Nov 2026</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">9.78<em>/10</em></div>
+          <div class="stat-label">Undergraduate GPA · Top 1% of graduating class, University of Mumbai</div>
+        </div>
       </div>
-      <a href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener" class="report-btn report-btn-navy">Open Report</a>
-    </div>
-
-    <div class="report-item">
-      <div>
-        <div class="report-type">All Work</div>
-        <div class="report-title">Full Portfolio - Google Drive Folder</div>
-      </div>
-      <a href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener" class="report-btn">Browse Drive</a>
     </div>
   </div>
 </section>
 
-<section id="contact" style="padding-bottom:7rem;">
-  <p class="section-label fade-in">Contact</p>
+<!-- EXPERIENCE -->
+<section id="experience" class="reveal">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-num">§ 02 — Experience</div>
+      <h2 class="section-title">Track <em>record.</em></h2>
+    </div>
+
+    <div class="exp-list">
+      <article class="exp-item">
+        <div class="exp-date">Aug 2025 — Present</div>
+        <div class="exp-meta">
+          <div class="exp-co">Simon School Venture Fund</div>
+          <div class="exp-tagline">Student-Managed Venture Fund</div>
+          <div class="exp-role">Associate, Portfolio Management</div>
+          <div class="exp-loc">Rochester, NY</div>
+        </div>
+        <div class="exp-desc">
+          <ul>
+            <li>Lead a team of analysts in deal-level due diligence on portfolio companies, conducting management discussions and evaluating operating performance, unit economics, capital requirements, and valuation assumptions across portfolio holdings.</li>
+            <li>Spearheaded an internal initiative to standardize knowledge transfer and portfolio monitoring workflows; developed SOPs and presented outcomes to the Fund Board, improving handoff efficiency for the incoming analyst cohort.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="exp-item">
+        <div class="exp-date">Jan 2024 — Apr 2025</div>
+        <div class="exp-meta">
+          <div class="exp-co">Lifelong Wealth</div>
+          <div class="exp-tagline">Boutique Mutual Fund Distribution</div>
+          <div class="exp-role">Senior Analyst, Investments</div>
+          <div class="exp-loc">Mumbai, India</div>
+        </div>
+        <div class="exp-desc">
+          <ul>
+            <li>Managed a discretionary multi-asset sub-portfolio, delivering benchmark outperformance through security selection, sector rotation, and tactical rebalancing across equities, debt, and structured products.</li>
+            <li>Led quarterly portfolio reviews with HNI clients, reassessing allocations based on macro conditions, forward-looking return expectations, and changing risk factors to support long-term capital growth and downside protection.</li>
+            <li>Evaluated alternatives allocations for qualified clients including AIFs, PMS mandates, and Market-Linked Debentures; conducted manager due diligence, fee analysis, and fit assessment against client objectives.</li>
+            <li>Applied DCF, EV/EBITDA, and NAV-based valuation frameworks to evaluate new investment opportunities; produced buy/sell recommendations on equities, mutual funds, and fixed income with risk-adjusted return targets and downside scenario analysis.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="exp-item">
+        <div class="exp-date">Jan 2023 — Dec 2023</div>
+        <div class="exp-meta">
+          <div class="exp-co">Lifelong Wealth</div>
+          <div class="exp-tagline">Boutique Mutual Fund Distribution</div>
+          <div class="exp-role">Analyst, Investments</div>
+          <div class="exp-loc">Mumbai, India</div>
+        </div>
+        <div class="exp-desc">
+          <ul>
+            <li>Performed fundamental analysis on equities, mutual funds, and fixed income instruments using risk-adjusted return metrics (Sharpe, Alpha, Beta, Information Ratio) and sector valuation screens to support tactical allocation.</li>
+            <li>Authored macroeconomic, industry, and company-specific research notes; findings were synthesized into trade recommendations adopted by senior Portfolio Managers across client books.</li>
+            <li>Produced client-ready deliverables — Investment Policy Statement drafts, portfolio review decks, and tactical allocation proposals translating house views into actionable portfolio changes.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="exp-item">
+        <div class="exp-date">Dec 2022 — Jan 2023</div>
+        <div class="exp-meta">
+          <div class="exp-co">Lifelong Wealth</div>
+          <div class="exp-tagline">Boutique Mutual Fund Distribution</div>
+          <div class="exp-role">Intern, Investments</div>
+          <div class="exp-loc">Mumbai, India</div>
+        </div>
+        <div class="exp-desc">
+          <ul>
+            <li>Built automated portfolio monitoring dashboards and standardized diligence frameworks — modeling templates, manager selection checklists, and client-level risk models — as the intern project; firmwide adoption led to conversion to a full-time analyst role.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="reveal">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-num">§ 03 — Education</div>
+      <h2 class="section-title">Academic <em>foundation.</em></h2>
+    </div>
+
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-date">Dec 2026</div>
+        <div class="edu-school">Simon Business School, University of Rochester</div>
+        <div class="edu-degree">Master of Science in Finance (STEM) · Investment Management &amp; Financial Analysis</div>
+        <div class="edu-details">
+          <div><strong>GPA 3.92 / 4.0</strong> · Dean's List Award · Dean's Scholarship Recipient</div>
+          <div>Portfolio Management Associate, Simon School Venture Fund</div>
+          <div>VP of Finance &amp; Operations, Master's Advisory Council</div>
+          <div style="margin-top:6px"><em>Coursework:</em> Asset Management · Quantitative Investing · Debt Markets · Financial Markets &amp; Investments · Options Strategy</div>
+        </div>
+        <span class="edu-tag">Available Full-Time June 2026</span>
+      </div>
+
+      <div class="edu-card">
+        <div class="edu-date">May 2022</div>
+        <div class="edu-school">S.K. Somaiya Degree College, University of Mumbai</div>
+        <div class="edu-degree">Bachelor of Management Studies · Specialization in Finance &amp; Investments</div>
+        <div class="edu-details">
+          <div><strong>GPA 9.78 / 10</strong> · Top 1% of graduating class</div>
+          <div>Class Representative for three years</div>
+          <div>Rotaract Club of S.K. Somaiya — social-impact initiatives in education, environment, and healthcare</div>
+        </div>
+        <span class="edu-tag">First Class with Distinction</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="reveal">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-num">§ 04 — Capabilities</div>
+      <h2 class="section-title">Skills &amp; <em>certifications.</em></h2>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-col">
+        <div class="skill-head">Financial Modeling</div>
+        <ul class="skill-list">
+          <li>DCF Valuation</li>
+          <li>3-Statement Modeling</li>
+          <li>Comparable Company Analysis</li>
+          <li>Portfolio Construction</li>
+          <li>LBO Analysis</li>
+        </ul>
+      </div>
+      <div class="skill-col">
+        <div class="skill-head">Analytical</div>
+        <ul class="skill-list">
+          <li>Financial Statement Analysis</li>
+          <li>Credit Analysis</li>
+          <li>Portfolio Risk Management</li>
+          <li>Performance Attribution</li>
+          <li>Factor Analysis</li>
+        </ul>
+      </div>
+      <div class="skill-col">
+        <div class="skill-head">Tools &amp; Platforms</div>
+        <ul class="skill-list">
+          <li>Bloomberg Terminal</li>
+          <li>S&amp;P Capital IQ</li>
+          <li>Advanced Excel</li>
+          <li>Python for Finance</li>
+          <li>PowerPoint / Pitch Books</li>
+        </ul>
+      </div>
+      <div class="skill-col">
+        <div class="skill-head">Domains</div>
+        <ul class="skill-list">
+          <li>Equity Research</li>
+          <li>Asset &amp; Wealth Management</li>
+          <li>Investment Banking</li>
+          <li>Alternatives (AIF / PMS / MLD)</li>
+          <li>Macro &amp; Sector Strategy</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="certs">
+      <div class="certs-head">— Certifications &amp; Training</div>
+      <div class="certs-grid">
+        <div class="cert-row">
+          <div class="cert-title">CFA Level I — Passed</div>
+          <div class="cert-detail">August 2024 · Level II Candidate, November 2026</div>
+        </div>
+        <div class="cert-row">
+          <div class="cert-title">Wall Street Prep</div>
+          <div class="cert-detail">Financial Statement Analysis · DCF · Buy-Side Investment Analysis</div>
+        </div>
+        <div class="cert-row">
+          <div class="cert-title">Bloomberg Market Concepts (BMC)</div>
+          <div class="cert-detail">2026</div>
+        </div>
+        <div class="cert-row">
+          <div class="cert-title">Financial Edge Training · Capital IQ Training</div>
+          <div class="cert-detail">2025</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS — split into US Equity / Indian Equity -->
+<section id="projects" class="reveal">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-num">§ 05 — Selected Work</div>
+      <h2 class="section-title">Transaction &amp; valuation <em>work.</em></h2>
+    </div>
+
+    <!-- US EQUITY -->
+    <div class="subgroup-header">
+      <span class="subgroup-marker">— I</span>
+      <h3 class="subgroup-title">US Equity</h3>
+      <span class="subgroup-flag">NYSE · NASDAQ</span>
+    </div>
+
+    <div class="projects-grid">
+      <article class="project">
+        <div class="project-tag">Equity Research</div>
+        <div class="project-ticker">NYSE: LLY</div>
+        <div class="project-title">Eli Lilly — Sell Recommendation</div>
+        <p class="project-desc">Initiated coverage with a Sell call at ~$1,030 against a $750 price target. Thesis grounded in stretched 52x P/E, the Trulicity 2027 patent cliff (~$7B revenue at risk), and emerging GLP-1 competition from Novo Nordisk and Amgen's MariTide. Position was ~14% in the money at $903 (Apr 2026).</p>
+        <div class="project-foot">
+          <div class="project-chips">
+            <span class="chip">DCF</span>
+            <span class="chip">3-Statement</span>
+            <span class="chip">Pharma</span>
+          </div>
+          <a class="project-link" href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener">View on Drive
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 9L9 2M9 2H3M9 2V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-tag">Equity Research</div>
+        <div class="project-ticker">NYSE: NKE</div>
+        <div class="project-title">Nike — Sell Recommendation</div>
+        <p class="project-desc">Sell thesis built on four structural pillars: FY25 revenue down ~10%, ~7pp share loss at Dick's to On and Hoka, a failed DTC strategy (digital -26%), and a ~50% P/E premium to peers. Three-stage DCF with probability-weighted target ~$36.</p>
+        <div class="project-foot">
+          <div class="project-chips">
+            <span class="chip">DCF</span>
+            <span class="chip">Consumer</span>
+            <span class="chip">Apparel</span>
+          </div>
+          <a class="project-link" href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener">View on Drive
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 9L9 2M9 2H3M9 2V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-tag">Equity Research</div>
+        <div class="project-ticker">NASDAQ: MSFT</div>
+        <div class="project-title">Microsoft — Equity Research</div>
+        <p class="project-desc">Full integrated 3-statement model with revenue driver analysis, segment margin assumptions, and DCF valuation. Delivered a 12-month price target with scenario analysis and an investment recommendation framed against cloud, AI capex, and enterprise software peer multiples.</p>
+        <div class="project-foot">
+          <div class="project-chips">
+            <span class="chip">DCF</span>
+            <span class="chip">3-Statement</span>
+            <span class="chip">Tech</span>
+          </div>
+          <a class="project-link" href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener">View on Drive
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 9L9 2M9 2H3M9 2V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-tag">LBO Model</div>
+        <div class="project-ticker">NYSE: DELL</div>
+        <div class="project-title">Dell Technologies — LBO Analysis</div>
+        <p class="project-desc">Constructed a full leveraged buyout model — sources and uses, debt schedule, operating projections, and returns analysis (IRR, MOIC). Stress-tested across entry multiples and exit scenarios to frame a sponsor's view on the transaction.</p>
+        <div class="project-foot">
+          <div class="project-chips">
+            <span class="chip">LBO</span>
+            <span class="chip">IRR / MOIC</span>
+            <span class="chip">Tech</span>
+          </div>
+          <a class="project-link" href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener">View on Drive
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 9L9 2M9 2H3M9 2V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+      </article>
+    </div>
+
+    <!-- INDIAN EQUITY -->
+    <div class="subgroup-header">
+      <span class="subgroup-marker">— II</span>
+      <h3 class="subgroup-title">Indian Equity</h3>
+      <span class="subgroup-flag">NSE · BSE</span>
+    </div>
+
+    <div class="projects-grid">
+      <article class="project">
+        <div class="project-tag">Equity Research</div>
+        <div class="project-ticker">NSE: ASIANPAINT</div>
+        <div class="project-title">Asian Paints — Equity Research</div>
+        <p class="project-desc">Coverage of one of India's leading consumer companies with a full 3-statement model and DCF, benchmarked against domestic and regional peers. Final recommendation included downside scenario analysis reflecting raw material cycles and competitive entry from Birla Opus.</p>
+        <div class="project-foot">
+          <div class="project-chips">
+            <span class="chip">DCF</span>
+            <span class="chip">Consumer</span>
+            <span class="chip">India</span>
+          </div>
+          <a class="project-link" href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener">View on Drive
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 9L9 2M9 2H3M9 2V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-tag">Buy-Side Research</div>
+        <div class="project-ticker">Multi-Asset · India</div>
+        <div class="project-title">Discretionary Multi-Asset Strategy</div>
+        <p class="project-desc">Buy-side research and security selection across Indian equities, mutual funds, and fixed income for a discretionary HNI book at Lifelong Wealth. Coverage included sector rotation calls, fund manager due diligence, and tactical allocation aligned to macro and Nifty-relative views.</p>
+        <div class="project-foot">
+          <div class="project-chips">
+            <span class="chip">Multi-Asset</span>
+            <span class="chip">HNI</span>
+            <span class="chip">India</span>
+          </div>
+          <a class="project-link" href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener">View on Drive
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 9L9 2M9 2H3M9 2V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- REPORTS — split US / India + research -->
+<section id="reports" class="reveal">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-num">§ 06 — Research</div>
+      <h2 class="section-title">Investment <em>reports.</em></h2>
+    </div>
+
+    <!-- US Equity Reports -->
+    <div class="subgroup-header">
+      <span class="subgroup-marker">— I</span>
+      <h3 class="subgroup-title">US Equity</h3>
+      <span class="subgroup-flag">NYSE · NASDAQ</span>
+    </div>
+    <div class="reports-table">
+      <div class="report-row">
+        <div class="report-cat">Equity Research · Sell</div>
+        <div class="report-title">Eli Lilly <em>(LLY)</em> — Sell, Dec 2025 · PT $750</div>
+        <div class="report-type">Full Report · PDF</div>
+        <a class="report-action" href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener">Open Report ↗</a>
+      </div>
+      <div class="report-row">
+        <div class="report-cat">Equity Research · Sell</div>
+        <div class="report-title">Nike <em>(NKE)</em> — Sell, Apr 2026 · PT ~$36</div>
+        <div class="report-type">Full Report · PDF</div>
+        <a class="report-action" href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener">Open Report ↗</a>
+      </div>
+      <div class="report-row">
+        <div class="report-cat">Equity Research · Buy-Side</div>
+        <div class="report-title">Microsoft <em>(MSFT)</em> — Equity Research Report</div>
+        <div class="report-type">Full Report · PDF</div>
+        <a class="report-action" href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener">Open Report ↗</a>
+      </div>
+      <div class="report-row">
+        <div class="report-cat">LBO Analysis</div>
+        <div class="report-title">Dell Technologies <em>(DELL)</em> — Leveraged Buyout Model &amp; Memo</div>
+        <div class="report-type">Model + Memo</div>
+        <a class="report-action" href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener">Open Report ↗</a>
+      </div>
+    </div>
+
+    <!-- Indian Equity Reports -->
+    <div class="subgroup-header">
+      <span class="subgroup-marker">— II</span>
+      <h3 class="subgroup-title">Indian Equity</h3>
+      <span class="subgroup-flag">NSE · BSE</span>
+    </div>
+    <div class="reports-table">
+      <div class="report-row">
+        <div class="report-cat">Equity Research · Buy-Side</div>
+        <div class="report-title">Asian Paints <em>(ASIANPAINT)</em> — Equity Research Report</div>
+        <div class="report-type">Full Report · PDF</div>
+        <a class="report-action" href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener">Open Report ↗</a>
+      </div>
+      <div class="report-row">
+        <div class="report-cat">Buy-Side Research</div>
+        <div class="report-title">Lifelong Wealth — <em>Indian Equity &amp; Multi-Asset Coverage</em></div>
+        <div class="report-type">Internal Notes</div>
+        <a class="report-action" href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener">Open Report ↗</a>
+      </div>
+    </div>
+
+    <!-- Thematic / Strategy -->
+    <div class="subgroup-header">
+      <span class="subgroup-marker">— III</span>
+      <h3 class="subgroup-title">Research &amp; Strategy</h3>
+      <span class="subgroup-flag">Thematic · Wealth Management</span>
+    </div>
+    <div class="reports-table">
+      <div class="report-row">
+        <div class="report-cat">Wealth Management</div>
+        <div class="report-title">The Great Wealth Transfer — <em>Positioning HNW Advisors for the $84T Generational Shift</em></div>
+        <div class="report-type">Research Paper</div>
+        <a class="report-action" href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener">Open Report ↗</a>
+      </div>
+      <div class="report-row">
+        <div class="report-cat">Case Competition</div>
+        <div class="report-title">Simon Consulting Club — <em>Financial Services Case</em> · 5-Year Wealth Management Growth Strategy</div>
+        <div class="report-type">Strategy + Model</div>
+        <a class="report-action" href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener">Open Report ↗</a>
+      </div>
+    </div>
+
+    <div class="reports-foot">
+      <div class="note">A selection of equity research, valuation work, and thematic notes spanning US and Indian markets.</div>
+      <a class="btn btn-ghost" href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener">Browse full portfolio <span class="arrow">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact reveal">
   <div class="contact-inner">
-    <h2 class="fade-in">Let's connect.</h2>
-    <p class="contact-desc fade-in">I'm currently exploring full-time opportunities in investment banking, asset management, and equity research - available from June 2026. Always open to a conversation.</p>
-    <div class="fade-in">
-      <a href="mailto:adityanair.cv@gmail.com" class="contact-link">
-        <span class="contact-link-label">Email</span>
-        <span class="contact-link-value">adityanair.cv@gmail.com</span>
-        <span class="contact-link-arrow">&#8599;</span>
+    <div class="contact-eyebrow">§ 07 — Get in touch</div>
+    <h2>Let's <em>connect.</em></h2>
+    <p class="contact-lede">Currently exploring full-time opportunities in investment banking, asset management, and equity research — available from June 2026. Always open to a conversation.</p>
+
+    <div class="contact-grid">
+      <a class="contact-card" href="mailto:adityanair.cv@gmail.com">
+        <div class="contact-label">— Email</div>
+        <div class="contact-val">adityanair.cv@gmail.com <span class="ext">↗</span></div>
       </a>
-      <a href="https://linkedin.com/in/adityanair" target="_blank" rel="noopener" class="contact-link">
-        <span class="contact-link-label">LinkedIn</span>
-        <span class="contact-link-value">linkedin.com/in/adityanair</span>
-        <span class="contact-link-arrow">&#8599;</span>
+      <a class="contact-card" href="https://linkedin.com/in/adityanair19" target="_blank" rel="noopener">
+        <div class="contact-label">— LinkedIn</div>
+        <div class="contact-val">/in/adityanair19 <span class="ext">↗</span></div>
       </a>
-      <a href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener" class="contact-link">
-        <span class="contact-link-label">Resume</span>
-        <span class="contact-link-value">View on Google Drive</span>
-        <span class="contact-link-arrow">&#8599;</span>
+      <a class="contact-card" href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener">
+        <div class="contact-label">— Resume</div>
+        <div class="contact-val">View on Drive <span class="ext">↗</span></div>
       </a>
-      <a href="tel:+15852021576" class="contact-link">
-        <span class="contact-link-label">Phone</span>
-        <span class="contact-link-value">+1 (585) 202-1576</span>
-        <span class="contact-link-arrow">&#8599;</span>
+      <a class="contact-card" href="tel:+15852021576">
+        <div class="contact-label">— Phone</div>
+        <div class="contact-val">+1 (585) 202-1576 <span class="ext">↗</span></div>
       </a>
     </div>
   </div>
 </section>
 
 <footer>
-  <span class="footer-name">Aditya Nair</span>
-  <span class="footer-copy">2026</span>
+  <div class="container footer-inner">
+    <div>© 2026 ADITYA NAIR · ALL RIGHTS RESERVED</div>
+    <div>ROCHESTER, NY → MUMBAI, IN</div>
+    <div>DESIGNED &amp; BUILT WITH CARE</div>
+  </div>
 </footer>
 
 <script>
-var observer = new IntersectionObserver(function(entries){
-  entries.forEach(function(e){
-    if(e.isIntersecting){ e.target.classList.add('visible'); }
-  });
-},{threshold:0.08,rootMargin:'0px 0px -30px 0px'});
-document.querySelectorAll('.fade-in').forEach(function(el){ observer.observe(el); });
-document.querySelectorAll('a[href^="#"]').forEach(function(a){
-  a.addEventListener('click',function(e){
-    var t = document.querySelector(a.getAttribute('href'));
-    if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth',block:'start'}); }
-  });
-});
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => io.observe(el));
 </script>
 </body>
 </html>
