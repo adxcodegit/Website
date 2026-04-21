@@ -4,1178 +4,1103 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Aditya Nair — Investment Professional</title>
-<meta name="description" content="Aditya Nair — MS in Finance candidate at Simon Business School. Investment professional with experience in equity research, portfolio management, and valuation. Available June 2026." />
-
+<meta name="description" content="Aditya Nair — MSc Finance candidate at Simon Business School. Equity research, multi-asset portfolio management, and valuation across Indian and US markets." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy-900: #0a1628;
-    --navy-800: #11243f;
-    --navy-700: #1a3055;
-    --navy-600: #243d6a;
-    --navy-line: rgba(235, 228, 211, 0.12);
-    --navy-line-soft: rgba(235, 228, 211, 0.06);
+    --navy: #0A1628;
+    --navy-deep: #050D1A;
+    --navy-soft: #152338;
+    --champagne: #C9A96E;
+    --champagne-bright: #D9B97E;
+    --champagne-dim: #8B7849;
+    --ivory: #F5F1E8;
+    --cream: #EDE6D3;
+    --paper: #FAF7EF;
+    --rule: rgba(201, 169, 110, 0.22);
+    --rule-strong: rgba(201, 169, 110, 0.45);
+    --text: #F5F1E8;
+    --text-muted: rgba(245, 241, 232, 0.62);
+    --text-dim: rgba(245, 241, 232, 0.42);
 
-    --cement: #ebe4d3;
-    --cement-2: #ddd4be;
-    --cement-3: #c9bfa5;
-    --cement-text: #4a4537;
-
-    --gold-bright: #d4b27a;
-    --gold: #c19858;
-    --gold-deep: #8a6b35;
-
-    --text-on-navy: #ebe4d3;
-    --text-on-navy-soft: rgba(235, 228, 211, 0.7);
-    --text-on-navy-muted: rgba(235, 228, 211, 0.45);
-
-    --serif: "Fraunces", "Times New Roman", serif;
-    --sans: "Inter Tight", -apple-system, sans-serif;
-    --mono: "JetBrains Mono", ui-monospace, monospace;
+    --serif: "Fraunces", "Cormorant Garamond", Georgia, serif;
+    --body: "Newsreader", "Source Serif Pro", Georgia, serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
   }
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-
   body {
-    font-family: var(--sans);
-    background: var(--navy-900);
-    color: var(--text-on-navy);
-    line-height: 1.55;
-    font-size: 16px;
+    background: var(--navy);
+    color: var(--text);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.62;
+    font-weight: 400;
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
-    background-image:
-      radial-gradient(1100px 600px at 85% -10%, rgba(212, 178, 122, 0.10), transparent 60%),
-      radial-gradient(800px 500px at -10% 30%, rgba(36, 61, 106, 0.5), transparent 60%);
   }
 
+  /* Subtle grain texture */
   body::before {
-    content: "";
-    position: fixed; inset: 0;
+    content: '';
+    position: fixed;
+    inset: 0;
     pointer-events: none;
     z-index: 1;
-    opacity: 0.5;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0.78 0 0 0 0 0.66 0 0 0 0 0.43 0 0 0 0.035 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.55;
     mix-blend-mode: overlay;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.85 0 0 0 0 0.78 0 0 0 0 0.6 0 0 0 0.05 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
   }
 
   a { color: inherit; text-decoration: none; }
-  ::selection { background: var(--gold); color: var(--navy-900); }
+  ::selection { background: var(--champagne); color: var(--navy); }
 
-  .container {
-    max-width: 1240px;
-    margin: 0 auto;
-    padding: 0 40px;
-    position: relative;
-    z-index: 2;
-  }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 48px; position: relative; z-index: 2; }
+  @media (max-width: 720px) { .wrap { padding: 0 24px; } }
 
-  /* NAV */
-  .nav {
-    position: sticky; top: 0;
-    z-index: 50;
-    background: rgba(10, 22, 40, 0.78);
-    backdrop-filter: saturate(140%) blur(14px);
-    -webkit-backdrop-filter: saturate(140%) blur(14px);
-    border-bottom: 1px solid var(--navy-line);
+  /* ——— Navigation ——— */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 22px 0;
+    background: rgba(10, 22, 40, 0.72);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border-bottom: 1px solid var(--rule);
+    transition: padding 0.3s ease;
   }
-  .nav-inner {
-    display: flex; align-items: center; justify-content: space-between;
-    height: 64px;
-  }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; }
   .brand {
     font-family: var(--serif);
+    font-size: 22px;
     font-weight: 500;
-    font-size: 18px;
     letter-spacing: 0.01em;
-    display: flex; align-items: baseline; gap: 10px;
-    color: var(--text-on-navy);
+    font-feature-settings: "ss01";
   }
-  .brand .dot {
-    width: 6px; height: 6px; border-radius: 50%;
-    background: var(--gold-bright);
-    display: inline-block;
-    transform: translateY(-2px);
-    box-shadow: 0 0 10px rgba(212, 178, 122, 0.6);
-  }
-  .nav-links {
-    display: flex; gap: 28px;
-    font-family: var(--sans);
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--text-on-navy-soft);
-  }
+  .brand .dot { color: var(--champagne); }
+  .nav-links { display: flex; gap: 36px; align-items: center; }
   .nav-links a {
+    font-family: var(--sans);
+    font-size: 12.5px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: var(--text-muted);
+    transition: color 0.25s ease;
     position: relative;
-    transition: color .25s ease;
   }
-  .nav-links a:hover { color: var(--gold-bright); }
-  .nav-links a::after {
-    content: "";
-    position: absolute; left: 0; bottom: -6px;
-    width: 0; height: 1px;
-    background: var(--gold-bright);
-    transition: width .3s ease;
+  .nav-links a:hover { color: var(--champagne); }
+  .nav-links .contact-btn {
+    color: var(--navy);
+    background: var(--champagne);
+    padding: 10px 20px;
+    border-radius: 2px;
+    font-weight: 500;
+    transition: all 0.25s ease;
   }
-  .nav-links a:hover::after { width: 100%; }
-  .nav-cta {
-    font-size: 12px;
-    font-family: var(--mono);
-    color: var(--text-on-navy);
-    border: 1px solid var(--gold-deep);
-    padding: 8px 14px;
-    border-radius: 999px;
-    transition: all .25s;
-  }
-  .nav-cta:hover {
-    background: var(--gold-bright);
-    color: var(--navy-900);
-    border-color: var(--gold-bright);
+  .nav-links .contact-btn:hover { background: var(--champagne-bright); transform: translateY(-1px); }
+  @media (max-width: 820px) {
+    .nav-links a:not(.contact-btn) { display: none; }
   }
 
-  /* HERO */
-  .hero { padding: 100px 0 80px; position: relative; }
-  .hero-meta {
-    display: flex; align-items: center; gap: 14px;
+  /* ——— Hero ——— */
+  .hero {
+    min-height: 100vh;
+    padding: 160px 0 100px;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 20%; right: -15%;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(201,169,110,0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-grid { display: grid; grid-template-columns: 1fr; gap: 0; width: 100%; }
+
+  .eyebrow {
     font-family: var(--mono);
     font-size: 11px;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--text-on-navy-muted);
-    margin-bottom: 36px;
-    flex-wrap: wrap;
+    color: var(--champagne);
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 48px;
   }
-  .hero-meta .pill {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 6px 12px;
-    border: 1px solid var(--navy-line);
-    border-radius: 999px;
-    background: rgba(26, 48, 85, 0.4);
-    color: var(--text-on-navy-soft);
+  .eyebrow::before {
+    content: '';
+    width: 36px; height: 1px;
+    background: var(--champagne);
   }
-  .hero-meta .pulse {
-    width: 6px; height: 6px; border-radius: 50%;
-    background: var(--gold-bright);
-    box-shadow: 0 0 0 0 rgba(212, 178, 122, 0.6);
-    animation: pulse 2.2s infinite;
-  }
-  @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(212, 178, 122, 0.55); }
-    70% { box-shadow: 0 0 0 8px rgba(212, 178, 122, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(212, 178, 122, 0); }
-  }
-  .hero-grid {
-    display: grid;
-    grid-template-columns: 1fr 320px;
-    gap: 80px;
-    align-items: end;
-  }
-  .hero h1 {
+  .eyebrow .sep { color: var(--text-dim); margin: 0 4px; }
+
+  h1.display {
     font-family: var(--serif);
-    font-weight: 400;
-    font-size: clamp(72px, 11vw, 168px);
+    font-size: clamp(64px, 11vw, 164px);
+    font-weight: 300;
     line-height: 0.92;
     letter-spacing: -0.035em;
-    color: var(--text-on-navy);
-    font-variation-settings: "opsz" 144;
+    margin-bottom: 44px;
+    font-feature-settings: "ss01", "ss02";
   }
-  .hero h1 .italic {
+  h1.display em {
     font-style: italic;
-    color: var(--gold-bright);
-    font-weight: 300;
+    font-weight: 400;
+    color: var(--champagne);
   }
-  .hero-sub {
+  h1.display .period { color: var(--champagne); font-style: normal; }
+
+  .lede {
     font-family: var(--serif);
-    font-style: italic;
-    font-size: 22px;
-    line-height: 1.45;
-    color: var(--text-on-navy-soft);
-    max-width: 560px;
-    margin-top: 28px;
+    font-size: clamp(19px, 2vw, 24px);
     font-weight: 300;
-  }
-  .hero-side {
-    border-left: 1px solid var(--gold-deep);
-    padding-left: 28px;
-    padding-bottom: 16px;
-  }
-  .hero-side .label {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--gold-bright);
-    margin-bottom: 10px;
-  }
-  .hero-side .quote {
-    font-family: var(--serif);
-    font-size: 16px;
-    font-style: italic;
     line-height: 1.5;
-    color: var(--text-on-navy-soft);
-    margin-bottom: 24px;
-  }
-  .hero-side .school {
-    font-family: var(--sans);
-    font-size: 13px;
-    color: var(--text-on-navy);
-    font-weight: 500;
-    line-height: 1.5;
-  }
-  .hero-side .school span {
-    color: var(--text-on-navy-muted);
-    font-weight: 400;
-  }
-  .hero-actions {
-    display: flex; gap: 14px; align-items: center;
-    margin-top: 56px;
-    flex-wrap: wrap;
-  }
-  .btn {
-    display: inline-flex; align-items: center; gap: 10px;
-    font-family: var(--sans);
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0.01em;
-    padding: 14px 22px;
-    border-radius: 4px;
-    transition: all .3s ease;
-    border: 1px solid transparent;
-    cursor: pointer;
-  }
-  .btn-primary {
-    background: var(--gold-bright);
-    color: var(--navy-900);
-  }
-  .btn-primary:hover {
-    background: var(--cement);
-    transform: translateY(-1px);
-  }
-  .btn-ghost {
-    border-color: var(--navy-line);
-    color: var(--text-on-navy);
-    background: rgba(26, 48, 85, 0.25);
-  }
-  .btn-ghost:hover {
-    border-color: var(--gold-bright);
-    color: var(--gold-bright);
-  }
-  .btn .arrow { transition: transform .3s ease; }
-  .btn:hover .arrow { transform: translateX(4px); }
-
-  /* TICKER */
-  .ticker {
-    margin-top: 90px;
-    border-top: 1px solid var(--navy-line);
-    border-bottom: 1px solid var(--navy-line);
-    padding: 18px 0;
-    overflow: hidden;
-    white-space: nowrap;
-    background: rgba(26, 48, 85, 0.25);
-  }
-  .ticker-track {
-    display: inline-flex;
-    gap: 48px;
-    animation: scroll 50s linear infinite;
-    font-family: var(--mono);
-    font-size: 12px;
-    color: var(--text-on-navy-soft);
-    letter-spacing: 0.08em;
-  }
-  .ticker-item { display: inline-flex; gap: 10px; align-items: center; }
-  .ticker-item .tk-tag { color: var(--gold-bright); font-weight: 500; }
-  .ticker-item .tk-up { color: var(--cement); }
-  .ticker-item .sep { color: var(--gold-deep); }
-  @keyframes scroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
-
-  /* SECTION */
-  section { padding: 120px 0; position: relative; }
-  .section-header {
-    display: grid;
-    grid-template-columns: 220px 1fr;
-    gap: 60px;
-    margin-bottom: 80px;
-    align-items: baseline;
-    border-top: 1px solid var(--gold-deep);
-    padding-top: 28px;
-  }
-  .section-num {
-    font-family: var(--mono);
-    font-size: 12px;
-    letter-spacing: 0.15em;
-    color: var(--gold-bright);
-    text-transform: uppercase;
-  }
-  .section-title {
-    font-family: var(--serif);
-    font-weight: 400;
-    font-size: clamp(36px, 5vw, 60px);
-    letter-spacing: -0.02em;
-    line-height: 1.05;
-    color: var(--text-on-navy);
-  }
-  .section-title em {
-    font-style: italic;
-    color: var(--gold-bright);
-    font-weight: 300;
-  }
-
-  /* sub-header for split sections */
-  .subgroup-header {
-    display: flex; align-items: baseline; gap: 16px;
-    margin: 80px 0 28px;
-    padding-bottom: 14px;
-    border-bottom: 1px solid var(--navy-line);
-  }
-  .subgroup-header:first-of-type { margin-top: 0; }
-  .subgroup-marker {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--gold-bright);
-  }
-  .subgroup-title {
-    font-family: var(--serif);
-    font-style: italic;
-    font-weight: 400;
-    font-size: 22px;
-    color: var(--text-on-navy);
+    max-width: 720px;
+    color: var(--text);
+    margin-bottom: 56px;
     letter-spacing: -0.005em;
   }
-  .subgroup-flag {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    color: var(--text-on-navy-muted);
-    margin-left: auto;
-  }
+  .lede strong { color: var(--champagne); font-weight: 500; font-style: italic; }
 
-  /* ABOUT (cement break) */
-  .about-section {
-    background: var(--cement);
-    color: var(--cement-text);
-    margin: 0 calc(50% - 50vw);
-    padding: 120px calc(50vw - 50%);
-    position: relative;
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+    margin-bottom: 80px;
   }
-  .about-section .section-header { border-top-color: var(--navy-800); }
-  .about-section .section-num { color: var(--navy-700); }
-  .about-section .section-title { color: var(--navy-900); }
-  .about-section .section-title em { color: var(--gold-deep); }
-  .about-grid {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 26px;
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    border: 1px solid var(--rule-strong);
+    border-radius: 2px;
+    transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    background: transparent;
+    color: var(--text);
+  }
+  .btn:hover {
+    border-color: var(--champagne);
+    color: var(--champagne);
+    transform: translateY(-1px);
+  }
+  .btn-primary {
+    background: var(--champagne);
+    color: var(--navy);
+    border-color: var(--champagne);
+  }
+  .btn-primary:hover {
+    background: var(--champagne-bright);
+    border-color: var(--champagne-bright);
+    color: var(--navy);
+  }
+  .btn .arrow { font-family: var(--serif); font-size: 16px; transition: transform 0.28s; }
+  .btn:hover .arrow { transform: translate(3px, -3px); }
+
+  /* Ticker */
+  .ticker-wrap {
+    position: relative;
+    margin-top: 20px;
+    padding: 28px 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    overflow: hidden;
+    mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  }
+  .ticker {
+    display: flex;
+    gap: 48px;
+    animation: ticker 45s linear infinite;
+    white-space: nowrap;
+    width: max-content;
+  }
+  .ticker-item {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .ticker-item .symbol { color: var(--champagne); font-weight: 500; }
+  .ticker-item .up { color: #7FB77E; }
+  .ticker-item .down { color: #D4826B; }
+  .ticker-item::after { content: '◆'; color: var(--champagne-dim); margin-left: 48px; font-size: 8px; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ——— Section header ——— */
+  section { padding: 130px 0; position: relative; }
+  @media (max-width: 720px) { section { padding: 90px 0; } }
+
+  .section-head {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 220px 1fr;
     gap: 80px;
+    margin-bottom: 80px;
     align-items: start;
   }
-  .about-prose p {
+  @media (max-width: 820px) { .section-head { grid-template-columns: 1fr; gap: 24px; } }
+
+  .section-marker {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--champagne);
+    padding-top: 24px;
+    position: relative;
+  }
+  .section-marker::before {
+    content: '';
+    position: absolute;
+    top: 10px; left: 0;
+    width: 36px; height: 1px;
+    background: var(--champagne);
+  }
+
+  h2.section-title {
+    font-family: var(--serif);
+    font-size: clamp(44px, 6vw, 80px);
+    font-weight: 300;
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+    font-feature-settings: "ss01";
+  }
+  h2.section-title em {
+    font-style: italic;
+    color: var(--champagne);
+    font-weight: 400;
+  }
+  h2.section-title .period { color: var(--champagne); }
+
+  /* ——— About ——— */
+  .about {
+    background: linear-gradient(180deg, var(--navy) 0%, var(--navy-soft) 100%);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 80px;
+  }
+  @media (max-width: 820px) { .about-grid { grid-template-columns: 1fr; gap: 32px; } }
+
+  .about-body {
     font-family: var(--serif);
     font-size: 19px;
+    font-weight: 300;
     line-height: 1.65;
-    color: var(--cement-text);
-    margin-bottom: 22px;
-    font-weight: 400;
+    color: var(--text);
   }
-  .about-prose p:first-child::first-letter {
-    font-family: var(--serif);
-    font-size: 78px;
-    font-weight: 400;
-    float: left;
-    line-height: 0.85;
-    margin: 8px 12px 0 -2px;
-    color: var(--gold-deep);
-    font-style: italic;
-  }
-  .about-prose p strong { color: var(--navy-900); font-weight: 500; }
+  .about-body p + p { margin-top: 22px; }
+  .about-body strong { color: var(--champagne); font-weight: 500; font-style: italic; }
+
   .stats {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    border: 1px solid var(--cement-3);
-    background: rgba(255,255,255,0.25);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    margin-top: 80px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
   }
+  @media (max-width: 820px) { .stats { grid-template-columns: repeat(2, 1fr); } }
   .stat {
+    background: var(--navy);
     padding: 36px 28px;
-    border-right: 1px solid var(--cement-3);
-    border-bottom: 1px solid var(--cement-3);
-    transition: background .3s;
+    transition: background 0.3s ease;
   }
-  .stat:nth-child(2n) { border-right: none; }
-  .stat:nth-last-child(-n+2) { border-bottom: none; }
-  .stat:hover { background: rgba(255,255,255,0.55); }
-  .stat-num {
+  .stat:hover { background: var(--navy-soft); }
+  .stat .num {
     font-family: var(--serif);
-    font-size: 52px;
-    font-weight: 400;
+    font-size: 54px;
+    font-weight: 300;
     line-height: 1;
-    letter-spacing: -0.02em;
-    color: var(--navy-900);
+    color: var(--champagne);
     margin-bottom: 14px;
+    letter-spacing: -0.03em;
   }
-  .stat-num em { color: var(--gold-deep); font-style: italic; }
-  .stat-label {
+  .stat .num .sup {
+    font-size: 20px;
+    font-style: italic;
+    color: var(--text-muted);
+    vertical-align: super;
+    margin-left: 4px;
+  }
+  .stat .label {
     font-family: var(--sans);
-    font-size: 12px;
-    letter-spacing: 0.04em;
-    color: var(--cement-text);
+    font-size: 12.5px;
+    color: var(--text-muted);
     line-height: 1.5;
+    letter-spacing: 0.01em;
   }
 
-  /* EXPERIENCE */
-  .exp-list { display: flex; flex-direction: column; }
+  /* ——— Experience ——— */
   .exp-item {
     display: grid;
-    grid-template-columns: 180px 1fr 1.1fr;
+    grid-template-columns: 180px 1fr;
     gap: 60px;
-    padding: 40px 0;
-    border-top: 1px solid var(--navy-line-soft);
-    transition: background .3s ease;
-    position: relative;
+    padding: 42px 0;
+    border-top: 1px solid var(--rule);
+    transition: background 0.3s ease;
   }
-  .exp-item:hover {
-    background: linear-gradient(90deg, rgba(26, 48, 85, 0.4), transparent);
-  }
-  .exp-item:last-child { border-bottom: 1px solid var(--navy-line-soft); }
+  .exp-item:last-child { border-bottom: 1px solid var(--rule); }
+  .exp-item:hover .exp-title { color: var(--champagne); }
+  @media (max-width: 820px) { .exp-item { grid-template-columns: 1fr; gap: 18px; } }
+
   .exp-date {
     font-family: var(--mono);
-    font-size: 12px;
-    color: var(--gold-bright);
-    letter-spacing: 0.06em;
+    font-size: 11.5px;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
     padding-top: 6px;
   }
-  .exp-meta { display: flex; flex-direction: column; gap: 6px; }
-  .exp-co {
-    font-family: var(--serif);
-    font-size: 26px;
-    font-weight: 500;
-    line-height: 1.15;
-    letter-spacing: -0.01em;
-    color: var(--text-on-navy);
-  }
-  .exp-tagline {
+  .exp-firm {
     font-family: var(--serif);
     font-style: italic;
-    font-size: 13px;
-    color: var(--gold-bright);
-    margin-top: -2px;
-  }
-  .exp-role {
-    font-family: var(--sans);
-    font-size: 13px;
-    color: var(--text-on-navy-soft);
-    font-weight: 500;
-    margin-top: 6px;
-  }
-  .exp-loc {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--text-on-navy-muted);
-    letter-spacing: 0.08em;
-    margin-top: 4px;
-  }
-  .exp-desc ul {
-    list-style: none;
-    display: flex; flex-direction: column; gap: 12px;
-  }
-  .exp-desc li {
-    font-family: var(--sans);
     font-size: 14px;
-    line-height: 1.6;
-    color: var(--text-on-navy-soft);
-    padding-left: 18px;
-    position: relative;
+    color: var(--champagne);
+    margin-bottom: 6px;
   }
-  .exp-desc li::before {
-    content: "—";
-    position: absolute; left: 0; top: 0;
-    color: var(--gold-bright);
-    font-weight: 500;
+  .exp-title {
+    font-family: var(--serif);
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+    letter-spacing: -0.01em;
+  }
+  .exp-meta {
+    font-size: 12.5px;
+    color: var(--text-dim);
+    margin-bottom: 22px;
+    letter-spacing: 0.02em;
+  }
+  .exp-bullets {
+    list-style: none;
+    display: grid;
+    gap: 12px;
+  }
+  .exp-bullets li {
+    padding-left: 24px;
+    position: relative;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-muted);
+  }
+  .exp-bullets li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--champagne);
   }
 
-  /* EDUCATION */
-  .edu-grid {
+  /* ——— Education ——— */
+  .education {
+    background: var(--navy-soft);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .edu-item {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    grid-template-columns: 180px 1fr;
+    gap: 60px;
+    padding: 42px 0;
+    border-top: 1px solid var(--rule);
   }
-  .edu-card {
-    border: 1px solid var(--navy-line);
-    padding: 40px 36px;
-    background: rgba(26, 48, 85, 0.3);
-    position: relative;
-    transition: all .3s;
-  }
-  .edu-card:hover {
-    border-color: var(--gold-bright);
-    transform: translateY(-2px);
-    background: rgba(26, 48, 85, 0.5);
-  }
-  .edu-date {
-    position: absolute;
-    top: 36px; right: 36px;
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.08em;
-    color: var(--gold-bright);
-  }
+  .edu-item:last-child { border-bottom: 1px solid var(--rule); }
+  @media (max-width: 820px) { .edu-item { grid-template-columns: 1fr; gap: 18px; } }
+  .edu-date { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.05em; color: var(--text-muted); padding-top: 6px; }
   .edu-school {
     font-family: var(--serif);
-    font-size: 24px;
-    font-weight: 500;
-    margin-bottom: 8px;
-    max-width: 80%;
+    font-size: 26px;
+    font-weight: 400;
+    margin-bottom: 6px;
     letter-spacing: -0.01em;
-    color: var(--text-on-navy);
   }
   .edu-degree {
-    font-family: var(--sans);
-    font-size: 13px;
-    color: var(--text-on-navy-soft);
-    font-weight: 500;
-    margin-bottom: 24px;
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 18px;
+    font-style: italic;
+    font-family: var(--serif);
   }
-  .edu-details {
-    display: flex; flex-direction: column; gap: 8px;
-    padding-top: 20px;
-    border-top: 1px solid var(--navy-line);
-    font-family: var(--sans);
-    font-size: 13px;
-    line-height: 1.55;
-    color: var(--text-on-navy-soft);
+  .edu-detail {
+    font-size: 16px;
+    color: var(--text-muted);
+    line-height: 1.75;
   }
-  .edu-details strong { color: var(--text-on-navy); font-weight: 500; }
-  .edu-details em { color: var(--gold-bright); font-style: italic; }
+  .edu-detail strong { color: var(--champagne); font-weight: 500; }
+  .edu-coursework {
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px dashed var(--rule);
+    font-size: 13px;
+    color: var(--text-dim);
+    font-style: italic;
+    font-family: var(--serif);
+  }
   .edu-tag {
     display: inline-block;
-    margin-top: 18px;
+    margin-top: 20px;
+    padding: 6px 12px;
+    border: 1px solid var(--rule-strong);
     font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.12em;
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--gold-bright);
-    padding: 4px 10px;
-    border: 1px solid var(--gold-deep);
-    border-radius: 2px;
+    color: var(--champagne);
   }
 
-  /* SKILLS */
+  .edu-roles {
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    display: grid;
+    gap: 22px;
+  }
+  .edu-roles-label {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--champagne);
+    margin-bottom: 2px;
+  }
+  .edu-role {
+    padding-left: 20px;
+    border-left: 1px solid var(--rule-strong);
+  }
+  .edu-role-title {
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 500;
+    font-style: italic;
+    color: var(--text);
+    margin-bottom: 8px;
+    letter-spacing: -0.005em;
+  }
+  .edu-role-title .edu-role-org {
+    font-weight: 400;
+    color: var(--champagne);
+    font-style: italic;
+  }
+  .edu-role-body {
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: var(--text-muted);
+  }
+
+  /* ——— Skills ——— */
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1px;
-    background: var(--navy-line);
-    border: 1px solid var(--navy-line);
+    gap: 0;
+    border: 1px solid var(--rule);
   }
-  .skill-col {
-    background: var(--navy-900);
-    padding: 32px 26px;
-    transition: background .3s;
+  @media (max-width: 820px) { .skills-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 520px) { .skills-grid { grid-template-columns: 1fr; } }
+  .skills-col {
+    padding: 36px 28px;
+    border-right: 1px solid var(--rule);
   }
-  .skill-col:hover { background: var(--navy-800); }
-  .skill-head {
+  .skills-col:last-child { border-right: none; }
+  @media (max-width: 820px) {
+    .skills-col { border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+    .skills-col:nth-child(2n) { border-right: none; }
+    .skills-col:nth-last-child(-n+2) { border-bottom: none; }
+  }
+  .skills-col h4 {
     font-family: var(--serif);
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--champagne);
     margin-bottom: 22px;
-    padding-bottom: 14px;
-    border-bottom: 1px solid var(--gold-deep);
-    letter-spacing: -0.005em;
-    color: var(--text-on-navy);
+    letter-spacing: -0.01em;
   }
-  .skill-list {
-    list-style: none;
-    display: flex; flex-direction: column; gap: 10px;
+  .skills-col ul { list-style: none; display: grid; gap: 10px; }
+  .skills-col li {
+    font-size: 15px;
+    color: var(--text-muted);
+    padding-bottom: 10px;
+    border-bottom: 1px dashed var(--rule);
   }
-  .skill-list li {
-    font-family: var(--sans);
-    font-size: 13px;
-    color: var(--text-on-navy-soft);
-    display: flex; align-items: baseline; gap: 8px;
-  }
-  .skill-list li::before {
-    content: "·";
-    color: var(--gold-bright);
-    font-weight: 700;
-  }
-  .certs {
+  .skills-col li:last-child { border-bottom: none; }
+
+  .certs-strip {
     margin-top: 60px;
-    border: 1px solid var(--navy-line);
-    background: rgba(26, 48, 85, 0.3);
-    padding: 36px;
+    padding-top: 40px;
+    border-top: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 80px;
   }
-  .certs-head {
+  @media (max-width: 820px) { .certs-strip { grid-template-columns: 1fr; gap: 24px; } }
+  .certs-label {
     font-family: var(--mono);
     font-size: 11px;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--gold-bright);
-    margin-bottom: 24px;
+    color: var(--champagne);
   }
   .certs-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px 50px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
   }
-  .cert-row {
-    display: flex; flex-direction: column; gap: 4px;
-    padding-bottom: 20px;
-    border-bottom: 1px dotted var(--navy-line);
-  }
-  .cert-row:nth-last-child(-n+2) { border-bottom: none; padding-bottom: 0; }
-  .cert-title {
+  @media (max-width: 820px) { .certs-grid { grid-template-columns: 1fr; gap: 20px; } }
+  .cert h5 {
     font-family: var(--serif);
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 500;
-    color: var(--text-on-navy);
+    margin-bottom: 6px;
+    letter-spacing: -0.005em;
   }
-  .cert-detail {
-    font-family: var(--sans);
-    font-size: 12px;
-    color: var(--text-on-navy-muted);
-    line-height: 1.5;
-  }
+  .cert p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
 
-  /* PROJECTS */
-  .projects-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    background: var(--navy-line);
-    border: 1px solid var(--navy-line);
+  /* ——— Reports / Pitches ——— */
+  .reports {
+    background: linear-gradient(180deg, var(--navy-soft) 0%, var(--navy) 100%);
+    border-top: 1px solid var(--rule);
   }
-  .project {
-    background: var(--navy-900);
-    padding: 44px 36px;
-    transition: background .35s, transform .35s;
-    display: flex; flex-direction: column;
-    min-height: 320px;
-    position: relative;
-  }
-  .project:hover { background: var(--navy-800); }
-  .project-tag {
+  .pitch-label {
     font-family: var(--mono);
-    font-size: 10px;
+    font-size: 11px;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--text-on-navy-muted);
-    margin-bottom: 18px;
-    display: flex; gap: 8px; align-items: center;
+    color: var(--champagne);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
   }
-  .project-tag::before {
-    content: "";
-    display: inline-block;
-    width: 24px; height: 1px;
-    background: var(--gold-bright);
+  .pitch-label::before {
+    content: '';
+    width: 14px; height: 1px;
+    background: var(--champagne);
   }
-  .project-ticker {
+  .pitch-label .muted { color: var(--text-dim); letter-spacing: 0.08em; }
+
+  .pitch-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 100px;
+  }
+  @media (max-width: 980px) { .pitch-grid { grid-template-columns: 1fr; } }
+
+  .pitch {
+    padding: 44px 36px;
+    border-right: 1px solid var(--rule);
+    position: relative;
+    transition: background 0.35s ease;
+  }
+  .pitch:last-child { border-right: none; }
+  @media (max-width: 980px) {
+    .pitch { border-right: none; border-bottom: 1px solid var(--rule); }
+    .pitch:last-child { border-bottom: none; }
+  }
+  .pitch:hover { background: var(--navy-soft); }
+
+  .pitch-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px dashed var(--rule);
+  }
+  .pitch-ticker {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+  }
+  .pitch-ticker .dot { color: var(--champagne); margin: 0 8px; }
+  .pitch-tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    padding: 4px 10px;
+    border-radius: 1px;
+  }
+  .tag-buy { background: rgba(127, 183, 126, 0.12); color: #A3D49F; border: 1px solid rgba(127, 183, 126, 0.35); }
+  .tag-sell { background: rgba(212, 130, 107, 0.12); color: #E8A690; border: 1px solid rgba(212, 130, 107, 0.35); }
+
+  .pitch h3 {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 4px;
+    letter-spacing: -0.015em;
+  }
+  .pitch h3 em { font-style: italic; color: var(--champagne); }
+  .pitch .pitch-sub {
     font-family: var(--serif);
     font-style: italic;
     font-size: 14px;
-    color: var(--gold-bright);
-    margin-bottom: 8px;
-    letter-spacing: 0.02em;
+    color: var(--text-muted);
+    margin-bottom: 24px;
   }
-  .project-title {
-    font-family: var(--serif);
-    font-size: 28px;
-    font-weight: 500;
-    line-height: 1.15;
-    letter-spacing: -0.015em;
-    margin-bottom: 16px;
-    color: var(--text-on-navy);
-  }
-  .project-desc {
-    font-family: var(--sans);
-    font-size: 14px;
-    line-height: 1.6;
-    color: var(--text-on-navy-soft);
+  .pitch-body {
+    font-size: 15.5px;
+    line-height: 1.62;
+    color: var(--text-muted);
     margin-bottom: 28px;
-    flex: 1;
   }
-  .project-foot {
-    display: flex; justify-content: space-between; align-items: center;
-    padding-top: 22px;
-    border-top: 1px solid var(--navy-line);
+
+  .pitch-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 28px;
   }
-  .project-chips {
-    display: flex; gap: 6px; flex-wrap: wrap;
+  .pitch-metric {
+    padding: 14px 0;
+    border-right: 1px dashed var(--rule);
+    padding-left: 0;
+  }
+  .pitch-metric:last-child { border-right: none; padding-left: 18px; }
+  .pitch-metric:first-child { padding-right: 18px; }
+  .pitch-metric .mk {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 6px;
+  }
+  .pitch-metric .mv {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  .pitch-metric .mv.up { color: #A3D49F; }
+  .pitch-metric .mv.down { color: #E8A690; }
+  .pitch-metric .mv.neutral { color: var(--champagne); }
+
+  .pitch-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 28px;
   }
   .chip {
     font-family: var(--mono);
     font-size: 10px;
     letter-spacing: 0.06em;
-    color: var(--gold-bright);
     padding: 4px 9px;
-    background: rgba(212, 178, 122, 0.08);
-    border: 1px solid rgba(212, 178, 122, 0.2);
-    border-radius: 2px;
-  }
-  .project-link {
-    font-family: var(--sans);
-    font-size: 12px;
-    color: var(--text-on-navy);
-    font-weight: 500;
-    display: inline-flex; align-items: center; gap: 6px;
-    letter-spacing: 0.02em;
-    transition: color .25s;
-  }
-  .project-link:hover { color: var(--gold-bright); }
-  .project-link svg { transition: transform .3s; }
-  .project-link:hover svg { transform: translate(2px, -2px); }
-
-  /* REPORTS */
-  .reports-table {
-    border-top: 1px solid var(--gold-deep);
-    margin-top: 0;
-  }
-  .report-row {
-    display: grid;
-    grid-template-columns: 200px 1fr 140px 140px;
-    gap: 30px;
-    padding: 28px 0;
-    border-bottom: 1px solid var(--navy-line-soft);
-    align-items: center;
-    transition: background .25s, padding .25s;
-  }
-  .report-row:hover {
-    background: linear-gradient(90deg, rgba(26, 48, 85, 0.5), transparent);
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-  .report-cat {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.1em;
+    border: 1px solid var(--rule);
+    color: var(--text-muted);
     text-transform: uppercase;
-    color: var(--gold-bright);
-  }
-  .report-title {
-    font-family: var(--serif);
-    font-size: 19px;
-    font-weight: 500;
-    letter-spacing: -0.005em;
-    color: var(--text-on-navy);
-  }
-  .report-title em {
-    font-style: italic;
-    color: var(--gold-bright);
-    font-weight: 400;
-  }
-  .report-type {
-    font-family: var(--sans);
-    font-size: 12px;
-    color: var(--text-on-navy-muted);
-  }
-  .report-action {
-    font-family: var(--sans);
-    font-size: 12px;
-    font-weight: 500;
-    text-align: right;
-    display: inline-flex; align-items: center; justify-content: flex-end; gap: 6px;
-    letter-spacing: 0.02em;
-    color: var(--text-on-navy);
-    justify-self: end;
-  }
-  .report-action:hover { color: var(--gold-bright); }
-  .reports-foot {
-    margin-top: 32px;
-    display: flex; justify-content: space-between; align-items: center;
-    padding-top: 24px;
-    border-top: 1px solid var(--navy-line);
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-  .reports-foot .note {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 15px;
-    color: var(--text-on-navy-muted);
   }
 
-  /* CONTACT (cement closer) */
-  .contact {
-    background: var(--cement);
-    color: var(--navy-900);
-    margin: 0 calc(50% - 50vw);
-    padding: 140px calc(50vw - 50%);
+  .report-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 14px 20px;
+    background: transparent;
+    color: var(--champagne);
+    border: 1px solid var(--champagne);
+    font-family: var(--sans);
+    font-size: 12.5px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
     position: relative;
     overflow: hidden;
   }
-  .contact::before {
-    content: "";
-    position: absolute; inset: 0;
-    background-image:
-      radial-gradient(900px 500px at 90% 20%, rgba(193, 152, 88, 0.18), transparent 60%),
-      radial-gradient(700px 400px at 10% 80%, rgba(36, 61, 106, 0.10), transparent 60%);
-    pointer-events: none;
+  .report-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--champagne);
+    transform: translateX(-101%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 0;
   }
-  .contact-inner {
-    max-width: 1240px;
-    margin: 0 auto;
-    padding: 0 40px;
-    position: relative;
-    z-index: 2;
+  .report-btn:hover::before { transform: translateX(0); }
+  .report-btn > * { position: relative; z-index: 1; }
+  .report-btn:hover { color: var(--navy); }
+  .report-btn .arrow { font-family: var(--serif); font-size: 18px; }
+
+  /* Secondary US pitches — leaner card */
+  .us-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    border: 1px solid var(--rule);
   }
-  .contact-eyebrow {
+  @media (max-width: 720px) { .us-grid { grid-template-columns: 1fr; } }
+  .us-pitch {
+    padding: 36px 32px;
+    border-right: 1px solid var(--rule);
+    transition: background 0.3s ease;
+  }
+  .us-pitch:last-child { border-right: none; }
+  @media (max-width: 720px) {
+    .us-pitch { border-right: none; border-bottom: 1px solid var(--rule); }
+    .us-pitch:last-child { border-bottom: none; }
+  }
+  .us-pitch:hover { background: var(--navy-soft); }
+  .us-pitch .pitch-ticker { margin-bottom: 10px; }
+  .us-pitch h4 {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+  }
+  .us-pitch h4 em { font-style: italic; color: var(--champagne); }
+  .us-pitch p { font-size: 15px; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px; }
+  .us-pitch .us-meta {
+    display: flex;
+    gap: 24px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--rule);
     font-family: var(--mono);
     font-size: 11px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--gold-deep);
-    margin-bottom: 32px;
-    display: flex; align-items: center; gap: 14px;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
   }
-  .contact-eyebrow::before {
-    content: ""; width: 36px; height: 1px; background: var(--gold-deep);
+  .us-pitch .us-meta strong { color: var(--champagne); font-weight: 500; }
+
+  /* ——— Contact ——— */
+  .contact {
+    padding: 140px 0 80px;
+    background: var(--navy-deep);
+    border-top: 1px solid var(--rule);
+    position: relative;
   }
-  .contact h2 {
-    font-family: var(--serif);
-    font-weight: 300;
-    font-size: clamp(48px, 7vw, 96px);
-    line-height: 0.98;
-    letter-spacing: -0.025em;
-    max-width: 980px;
-    margin-bottom: 28px;
-    color: var(--navy-900);
-  }
-  .contact h2 em {
-    font-style: italic;
-    color: var(--gold-deep);
-    font-weight: 300;
-  }
-  .contact-lede {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 20px;
-    color: var(--cement-text);
-    max-width: 640px;
-    margin-bottom: 80px;
-    line-height: 1.55;
+  .contact::before {
+    content: '';
+    position: absolute;
+    top: 10%; left: -10%;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(201,169,110,0.06) 0%, transparent 60%);
+    pointer-events: none;
   }
   .contact-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-    border-top: 1px solid var(--cement-3);
-    padding-top: 50px;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
   }
-  .contact-card {
-    display: flex; flex-direction: column; gap: 10px;
-    padding: 24px 0;
-    transition: transform .3s;
-  }
-  .contact-card:hover { transform: translateY(-3px); }
-  .contact-card:hover .contact-val { color: var(--gold-deep); }
-  .contact-label {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--gold-deep);
-  }
-  .contact-val {
+  @media (max-width: 820px) { .contact-grid { grid-template-columns: 1fr; gap: 48px; } }
+  .contact-intro p {
     font-family: var(--serif);
-    font-size: 18px;
-    color: var(--navy-900);
-    font-weight: 400;
-    transition: color .3s;
-    display: flex; align-items: center; gap: 8px;
+    font-size: 19px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--text);
+    margin-bottom: 28px;
   }
-  .contact-val .ext {
-    font-size: 12px;
-    color: var(--cement-text);
-    opacity: 0.6;
-  }
+  .contact-intro p strong { color: var(--champagne); font-style: italic; font-weight: 500; }
 
-  /* FOOTER */
-  footer {
-    padding: 36px 0;
-    border-top: 1px solid var(--navy-line);
+  .contact-links { display: grid; gap: 2px; }
+  .contact-link {
+    display: grid;
+    grid-template-columns: 110px 1fr auto;
+    gap: 24px;
+    align-items: center;
+    padding: 24px 4px;
+    border-top: 1px solid var(--rule);
+    transition: padding 0.3s ease, color 0.3s ease;
+  }
+  .contact-link:last-of-type { border-bottom: 1px solid var(--rule); }
+  .contact-link:hover { padding-left: 16px; color: var(--champagne); }
+  .contact-link .ck {
     font-family: var(--mono);
     font-size: 11px;
-    color: var(--text-on-navy-muted);
-    letter-spacing: 0.08em;
-    background: var(--navy-900);
-    position: relative;
-    z-index: 2;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
   }
-  .footer-inner {
-    display: flex; justify-content: space-between; align-items: center;
-    flex-wrap: wrap; gap: 16px;
+  .contact-link .cv {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: -0.005em;
   }
+  .contact-link .ca {
+    font-family: var(--serif);
+    font-size: 20px;
+    color: var(--champagne);
+    transition: transform 0.3s ease;
+  }
+  .contact-link:hover .ca { transform: translate(3px, -3px); }
 
-  /* RESPONSIVE */
-  @media (max-width: 980px) {
-    .container { padding: 0 24px; }
-    .nav-links { display: none; }
-    .hero { padding: 60px 0 40px; }
-    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
-    .hero-side { border-left: none; border-top: 1px solid var(--gold-deep); padding-left: 0; padding-top: 28px; }
-    .section-header { grid-template-columns: 1fr; gap: 16px; margin-bottom: 50px; }
-    section { padding: 80px 0; }
-    .about-section { padding: 80px 24px; }
-    .about-grid, .edu-grid, .skills-grid, .projects-grid { grid-template-columns: 1fr; }
-    .stats { grid-template-columns: 1fr 1fr; }
-    .exp-item { grid-template-columns: 1fr; gap: 16px; }
-    .report-row { grid-template-columns: 1fr; gap: 8px; padding: 22px 0; }
-    .report-action { justify-self: start; text-align: left; }
-    .certs-grid { grid-template-columns: 1fr; }
-    .contact h2 { font-size: 44px; }
-    .contact-grid { grid-template-columns: 1fr 1fr; }
-    .contact { padding: 90px 24px; }
-    .subgroup-header { flex-wrap: wrap; }
-    .subgroup-flag { margin-left: 0; }
+  /* ——— Footer ——— */
+  footer {
+    padding: 44px 0;
+    border-top: 1px solid var(--rule);
+    background: var(--navy-deep);
   }
+  footer .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+  @media (max-width: 620px) {
+    footer .wrap { flex-direction: column; gap: 14px; text-align: center; }
+  }
+  footer .gem { color: var(--champagne); }
 
-  /* REVEAL */
+  /* ——— Reveal animation ——— */
   .reveal {
     opacity: 0;
     transform: translateY(24px);
-    transition: opacity .9s ease, transform .9s ease;
+    transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
   }
   .reveal.in {
     opacity: 1;
-    transform: none;
+    transform: translateY(0);
   }
+
 </style>
 </head>
 <body>
 
-<nav class="nav">
-  <div class="container nav-inner">
-    <a href="#hero" class="brand"><span class="dot"></span>Aditya Nair</a>
+<nav>
+  <div class="wrap">
+    <a href="#hero" class="brand">AN<span class="dot">.</span></a>
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
       <a href="#education">Education</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
       <a href="#reports">Reports</a>
+      <a href="#contact" class="contact-btn">Get in touch →</a>
     </div>
-    <a href="#contact" class="nav-cta">Get in touch →</a>
   </div>
 </nav>
 
-<header id="hero" class="hero">
-  <div class="container">
-    <div class="hero-meta">
-      <span class="pill"><span class="pulse"></span>Available June 2026</span>
-      <span>· Investment Management &amp; Equity Research</span>
-    </div>
-
+<!-- ——— HERO ——— -->
+<header class="hero" id="hero">
+  <div class="wrap">
     <div class="hero-grid">
-      <div>
-        <h1>Aditya<br><span class="italic">Nair.</span></h1>
-        <p class="hero-sub">Investment professional with experience spanning equity research, multi-asset portfolio management, and valuation across US and Indian markets — currently pursuing an MS in Finance at Simon Business School.</p>
-        <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary">Get in touch <span class="arrow">→</span></a>
-          <a href="#experience" class="btn btn-ghost">View experience <span class="arrow">→</span></a>
-          <a href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener" class="btn btn-ghost">Resume <span class="arrow">↗</span></a>
-        </div>
+      <div class="eyebrow reveal">
+        <span>Available from July 2026</span>
+        <span class="sep">·</span>
+        <span>Investment Management &amp; Equity Research</span>
       </div>
 
-      <aside class="hero-side">
-        <div class="label">— Currently</div>
-        <p class="quote">"Compounding rewards patience, conviction, and rigor — in markets and in life."</p>
-        <div class="school">
-          MS Finance · Simon Business School<br>
-          <span>University of Rochester · Class of 2026</span>
-        </div>
-      </aside>
-    </div>
+      <h1 class="display reveal">Aditya Nair<span class="period">.</span></h1>
 
-    <div class="ticker">
-      <div class="ticker-track">
-        <span class="ticker-item"><span class="tk-tag">LLY</span> Equity Research <span class="tk-up">▼ SELL</span></span>
-        <span class="sep">/</span>
-        <span class="ticker-item"><span class="tk-tag">NKE</span> Equity Research <span class="tk-up">▼ SELL</span></span>
-        <span class="sep">/</span>
-        <span class="ticker-item"><span class="tk-tag">MSFT</span> Equity Research <span class="tk-up">▲ BUY</span></span>
-        <span class="sep">/</span>
-        <span class="ticker-item"><span class="tk-tag">DELL</span> LBO Analysis</span>
-        <span class="sep">/</span>
-        <span class="ticker-item"><span class="tk-tag">ASIANPAINT</span> Consumer · India</span>
-        <span class="sep">/</span>
-        <span class="ticker-item"><span class="tk-tag">SSVF</span> Portfolio Management Associate</span>
-        <span class="sep">/</span>
-        <span class="ticker-item"><span class="tk-tag">CFA</span> Level II Candidate</span>
-        <span class="sep">/</span>
-        <span class="ticker-item"><span class="tk-tag">$84T</span> Great Wealth Transfer Research</span>
-        <span class="sep">/</span>
-        <!-- duplicate for seamless loop -->
-        <span class="ticker-item"><span class="tk-tag">LLY</span> Equity Research <span class="tk-up">▼ SELL</span></span>
-        <span class="sep">/</span>
-        <span class="ticker-item"><span class="tk-tag">NKE</span> Equity Research <span class="tk-up">▼ SELL</span></span>
-        <span class="sep">/</span>
-        <span class="ticker-item"><span class="tk-tag">MSFT</span> Equity Research <span class="tk-up">▲ BUY</span></span>
-        <span class="sep">/</span>
-        <span class="ticker-item"><span class="tk-tag">DELL</span> LBO Analysis</span>
-        <span class="sep">/</span>
-        <span class="ticker-item"><span class="tk-tag">ASIANPAINT</span> Consumer · India</span>
-        <span class="sep">/</span>
-        <span class="ticker-item"><span class="tk-tag">SSVF</span> Portfolio Management Associate</span>
-        <span class="sep">/</span>
-        <span class="ticker-item"><span class="tk-tag">CFA</span> Level II Candidate</span>
-        <span class="sep">/</span>
-        <span class="ticker-item"><span class="tk-tag">$84T</span> Great Wealth Transfer Research</span>
+      <p class="lede reveal">
+        Investment professional with <strong>2.5 years</strong> at a Mumbai HNI wealth advisory — covering discretionary multi-asset portfolios, equity and fixed income research, and three closed buy/sell calls across Indian markets. Currently pursuing an <strong>MSc in Finance</strong> at Simon Business School, University of Rochester.
+      </p>
+
+      <div class="cta-row reveal">
+        <a href="https://docs.google.com/document/d/1uJyNXbjFfho2KsJEgBQCmXWHCroBU_j8/edit?usp=sharing&amp;ouid=105768665480726445171&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener" class="btn btn-primary">
+          Resume <span class="arrow">↗</span>
+        </a>
+        <a href="#reports" class="btn">
+          Investment Reports <span class="arrow">↓</span>
+        </a>
+        <a href="#contact" class="btn">
+          Get in touch <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <div class="ticker-wrap reveal">
+        <div class="ticker">
+          <span class="ticker-item"><span class="symbol">ASTERDM</span> Buy · Target ₹620 · <span class="up">+29% closed</span></span>
+          <span class="ticker-item"><span class="symbol">ETERNAL</span> Sell · Target ₹234 · <span class="down">−15% closed</span></span>
+          <span class="ticker-item"><span class="symbol">WAAREEENER</span> Buy · Target ₹3,872 · <span class="up">+6.2% live</span></span>
+          <span class="ticker-item"><span class="symbol">UPI</span> Monetization · India Payments Sector</span>
+          <span class="ticker-item"><span class="symbol">CFA</span> Level II Candidate · Nov 2026</span>
+          <span class="ticker-item"><span class="symbol">SSVF</span> Portfolio Management Associate</span>
+          <!-- duplicate for seamless loop -->
+          <span class="ticker-item"><span class="symbol">ASTERDM</span> Buy · Target ₹620 · <span class="up">+29% closed</span></span>
+          <span class="ticker-item"><span class="symbol">ETERNAL</span> Sell · Target ₹234 · <span class="down">−15% closed</span></span>
+          <span class="ticker-item"><span class="symbol">WAAREEENER</span> Buy · Target ₹3,872 · <span class="up">+6.2% live</span></span>
+          <span class="ticker-item"><span class="symbol">UPI</span> Monetization · India Payments Sector</span>
+          <span class="ticker-item"><span class="symbol">CFA</span> Level II Candidate · Nov 2026</span>
+          <span class="ticker-item"><span class="symbol">SSVF</span> Portfolio Management Associate</span>
+        </div>
       </div>
     </div>
   </div>
 </header>
 
-<!-- ABOUT -->
-<section id="about" class="about-section reveal">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-num">§ 01 — Profile</div>
-      <h2 class="section-title">About <em>me.</em></h2>
-    </div>
-
+<!-- ——— ABOUT ——— -->
+<section class="about" id="about">
+  <div class="wrap">
     <div class="about-grid">
-      <div class="about-prose">
-        <p>I'm a finance professional trained at the <strong>University of Rochester's Simon Business School</strong>, where I'm pursuing an MS in Finance with a focus on Investment Management and Financial Analysis, graduating December 2026.</p>
-        <p>Prior to graduate school, I spent two years at <strong>Lifelong Wealth in Mumbai</strong>, a boutique mutual fund distribution and wealth advisory firm, where I worked across discretionary multi-asset portfolio management, equity and fund research, and HNI client advisory — covering both Indian and global markets.</p>
-        <p>I care deeply about rigorous fundamental analysis, capital markets, and building things that last. Outside of finance, I'm drawn to Formula One, strength training, poker strategy, culinary experimentation, and the occasional marathon.</p>
-      </div>
+      <div class="section-marker reveal">§ 01 — Profile</div>
+      <div>
+        <h2 class="section-title reveal">About <em>me.</em></h2>
+        <div class="about-body reveal" style="margin-top: 48px;">
+          <p>
+            I'm a finance professional trained at the <strong>University of Rochester's Simon Business School</strong>, pursuing an MSc in Finance with a concentration in Investment Management &amp; Financial Analysis (GPA 3.92 / 4.0, Dean's List, Dean's Scholarship Recipient), graduating December 2026.
+          </p>
+          <p>
+            Prior to graduate school, I spent 2.5 years at <strong>Lifelong Wealth</strong>, a boutique Mumbai wealth advisory, progressing from Intern to Senior Analyst. I managed a ₹35Cr+ discretionary multi-asset sub-portfolio across 30+ HNI relationships, led fundamental research across healthcare, financials, and consumption sectors, and delivered three closed buy/sell calls — two with thesis targets achieved within 6–9 months.
+          </p>
+          <p>
+            I care deeply about rigorous fundamental analysis, compounding, and the craft of building conviction over noise. Outside markets: Formula One, strength training, poker strategy, and the occasional marathon.
+          </p>
+        </div>
 
-      <div class="stats">
-        <div class="stat">
-          <div class="stat-num">2<em>yr</em></div>
-          <div class="stat-label">Buy-side experience across Indian and global markets</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">3.92</div>
-          <div class="stat-label">GPA at Simon Business School · Dean's List · Dean's Scholar</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num"><em>CFA</em></div>
-          <div class="stat-label">Level I passed Aug 2024 · Level II candidate Nov 2026</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num">9.78<em>/10</em></div>
-          <div class="stat-label">Undergraduate GPA · Top 1% of graduating class, University of Mumbai</div>
+        <div class="stats reveal">
+          <div class="stat">
+            <div class="num">2.5<span class="sup">yr</span></div>
+            <div class="label">Buy-side experience at Mumbai HNI wealth advisory</div>
+          </div>
+          <div class="stat">
+            <div class="num">3.92</div>
+            <div class="label">GPA at Simon Business School · Dean's List · Dean's Scholar</div>
+          </div>
+          <div class="stat">
+            <div class="num">CFA</div>
+            <div class="label">Level I passed Aug 2024 · Level II candidate Nov 2026</div>
+          </div>
+          <div class="stat">
+            <div class="num">9.78<span class="sup">/10</span></div>
+            <div class="label">Undergraduate GPA · Top 1% of graduating class, University of Mumbai</div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- EXPERIENCE -->
-<section id="experience" class="reveal">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-num">§ 02 — Experience</div>
-      <h2 class="section-title">Track <em>record.</em></h2>
+<!-- ——— EXPERIENCE ——— -->
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-marker reveal">§ 02 — Experience</div>
+      <h2 class="section-title reveal">Track <em>record.</em></h2>
     </div>
 
-    <div class="exp-list">
-      <article class="exp-item">
-        <div class="exp-date">Aug 2025 — Present</div>
-        <div class="exp-meta">
-          <div class="exp-co">Simon School Venture Fund</div>
-          <div class="exp-tagline">Student-Managed Venture Fund</div>
-          <div class="exp-role">Associate, Portfolio Management</div>
-          <div class="exp-loc">Rochester, NY</div>
-        </div>
-        <div class="exp-desc">
-          <ul>
-            <li>Lead a team of analysts in deal-level due diligence on portfolio companies, conducting management discussions and evaluating operating performance, unit economics, capital requirements, and valuation assumptions across portfolio holdings.</li>
-            <li>Spearheaded an internal initiative to standardize knowledge transfer and portfolio monitoring workflows; developed SOPs and presented outcomes to the Fund Board, improving handoff efficiency for the incoming analyst cohort.</li>
-          </ul>
-        </div>
-      </article>
+    <div class="exp-item reveal">
+      <div class="exp-date">Jan 2024 — Apr 2025</div>
+      <div>
+        <div class="exp-firm">Lifelong Wealth · Boutique Wealth Advisory</div>
+        <div class="exp-title">Senior Analyst, Investments</div>
+        <div class="exp-meta">Mumbai, India</div>
+        <ul class="exp-bullets">
+          <li>Managed ₹35Cr+ discretionary multi-asset sub-portfolio across 30+ HNI relationships, delivering ~190 bps annualised outperformance vs. blended Nifty 50 benchmark through sector rotation and framework-driven tactical rebalancing.</li>
+          <li>Led quarterly portfolio reviews across equity, fixed income, and alternatives; reassessed goal-based asset allocation against evolving macro conditions, client risk profiling, and SEBI-compliant suitability.</li>
+          <li>Evaluated alternatives allocations for qualified clients including AIF and PMS mandates; conducted due diligence, fee-structure analysis, and product-fit assessment against SEBI guidelines and client IPS.</li>
+        </ul>
+      </div>
+    </div>
 
-      <article class="exp-item">
-        <div class="exp-date">Jan 2024 — Apr 2025</div>
-        <div class="exp-meta">
-          <div class="exp-co">Lifelong Wealth</div>
-          <div class="exp-tagline">Boutique Mutual Fund Distribution</div>
-          <div class="exp-role">Senior Analyst, Investments</div>
-          <div class="exp-loc">Mumbai, India</div>
-        </div>
-        <div class="exp-desc">
-          <ul>
-            <li>Managed a discretionary multi-asset sub-portfolio, delivering benchmark outperformance through security selection, sector rotation, and tactical rebalancing across equities, debt, and structured products.</li>
-            <li>Led quarterly portfolio reviews with HNI clients, reassessing allocations based on macro conditions, forward-looking return expectations, and changing risk factors to support long-term capital growth and downside protection.</li>
-            <li>Evaluated alternatives allocations for qualified clients including AIFs, PMS mandates, and Market-Linked Debentures; conducted manager due diligence, fee analysis, and fit assessment against client objectives.</li>
-            <li>Applied DCF, EV/EBITDA, and NAV-based valuation frameworks to evaluate new investment opportunities; produced buy/sell recommendations on equities, mutual funds, and fixed income with risk-adjusted return targets and downside scenario analysis.</li>
-          </ul>
-        </div>
-      </article>
+    <div class="exp-item reveal">
+      <div class="exp-date">Jan 2023 — Dec 2023</div>
+      <div>
+        <div class="exp-firm">Lifelong Wealth · Boutique Wealth Advisory</div>
+        <div class="exp-title">Analyst, Investments</div>
+        <div class="exp-meta">Mumbai, India</div>
+        <ul class="exp-bullets">
+          <li>Conducted fundamental equity research across 40+ NSE/BSE-listed securities spanning healthcare, financials, and consumption; evaluated risk-adjusted return metrics (Sharpe, Alpha, Beta) to generate investment theses.</li>
+          <li>Authored 30+ macroeconomic, industry, and company-specific research notes; recommendations adopted by Portfolio Manager across client books for alpha generation.</li>
+          <li>Delivered client-ready Investment Policy Statement drafts, portfolio review decks, and tactical allocation proposals across mid-cap and large-cap mandates.</li>
+        </ul>
+      </div>
+    </div>
 
-      <article class="exp-item">
-        <div class="exp-date">Jan 2023 — Dec 2023</div>
-        <div class="exp-meta">
-          <div class="exp-co">Lifelong Wealth</div>
-          <div class="exp-tagline">Boutique Mutual Fund Distribution</div>
-          <div class="exp-role">Analyst, Investments</div>
-          <div class="exp-loc">Mumbai, India</div>
-        </div>
-        <div class="exp-desc">
-          <ul>
-            <li>Performed fundamental analysis on equities, mutual funds, and fixed income instruments using risk-adjusted return metrics (Sharpe, Alpha, Beta, Information Ratio) and sector valuation screens to support tactical allocation.</li>
-            <li>Authored macroeconomic, industry, and company-specific research notes; findings were synthesized into trade recommendations adopted by senior Portfolio Managers across client books.</li>
-            <li>Produced client-ready deliverables — Investment Policy Statement drafts, portfolio review decks, and tactical allocation proposals translating house views into actionable portfolio changes.</li>
-          </ul>
-        </div>
-      </article>
-
-      <article class="exp-item">
-        <div class="exp-date">Dec 2022 — Jan 2023</div>
-        <div class="exp-meta">
-          <div class="exp-co">Lifelong Wealth</div>
-          <div class="exp-tagline">Boutique Mutual Fund Distribution</div>
-          <div class="exp-role">Intern, Investments</div>
-          <div class="exp-loc">Mumbai, India</div>
-        </div>
-        <div class="exp-desc">
-          <ul>
-            <li>Built automated portfolio monitoring dashboards and standardized diligence frameworks — modeling templates, manager selection checklists, and client-level risk models — as the intern project; firmwide adoption led to conversion to a full-time analyst role.</li>
-          </ul>
-        </div>
-      </article>
+    <div class="exp-item reveal">
+      <div class="exp-date">Dec 2022 — Jan 2023</div>
+      <div>
+        <div class="exp-firm">Lifelong Wealth · Boutique Wealth Advisory</div>
+        <div class="exp-title">Intern, Investments</div>
+        <div class="exp-meta">Mumbai, India</div>
+        <ul class="exp-bullets">
+          <li>Designed an automated Excel-based risk profiling and mutual fund selection tool, integrated with client suitability parameters — adopted firmwide, leading to conversion to a full-time analyst role.</li>
+          <li>Executed client investment transactions across equity and mutual fund mandates; generated holdings and transaction reports to support advisor portfolio oversight.</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- EDUCATION -->
-<section id="education" class="reveal">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-num">§ 03 — Education</div>
-      <h2 class="section-title">Academic <em>foundation.</em></h2>
+<!-- ——— EDUCATION ——— -->
+<section class="education" id="education">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-marker reveal">§ 03 — Education</div>
+      <h2 class="section-title reveal">Academic <em>foundation.</em></h2>
     </div>
 
-    <div class="edu-grid">
-      <div class="edu-card">
-        <div class="edu-date">Dec 2026</div>
+    <div class="edu-item reveal">
+      <div class="edu-date">Dec 2026</div>
+      <div>
         <div class="edu-school">Simon Business School, University of Rochester</div>
         <div class="edu-degree">Master of Science in Finance (STEM) · Investment Management &amp; Financial Analysis</div>
-        <div class="edu-details">
-          <div><strong>GPA 3.92 / 4.0</strong> · Dean's List Award · Dean's Scholarship Recipient</div>
-          <div>Portfolio Management Associate, Simon School Venture Fund</div>
-          <div>VP of Finance &amp; Operations, Master's Advisory Council</div>
-          <div style="margin-top:6px"><em>Coursework:</em> Asset Management · Quantitative Investing · Debt Markets · Financial Markets &amp; Investments · Options Strategy</div>
+        <div class="edu-detail">
+          <strong>GPA 3.92 / 4.0</strong> · Dean's List Award · Dean's Scholarship Recipient
         </div>
-        <span class="edu-tag">Available Full-Time June 2026</span>
-      </div>
+        <div class="edu-coursework">
+          Coursework: Asset Management · Quantitative Investing · Debt Markets · Financial Markets &amp; Investments · Options Strategy
+        </div>
 
-      <div class="edu-card">
-        <div class="edu-date">May 2022</div>
+        <div class="edu-roles">
+          <div class="edu-roles-label">— Leadership &amp; Activities</div>
+          <div class="edu-role">
+            <div class="edu-role-title">Portfolio Management Associate <span class="edu-role-org">· Simon School Venture Fund</span></div>
+            <div class="edu-role-body">
+              Lead a team of analysts on deal-level due diligence across portfolio companies — conducting management discussions and evaluating operating performance, unit economics, capital requirements, and valuation assumptions. Spearheaded an internal initiative to standardize knowledge transfer and portfolio monitoring workflows; developed SOPs and presented outcomes to the Fund Board.
+            </div>
+          </div>
+          <div class="edu-role">
+            <div class="edu-role-title">VP of Finance &amp; Operations <span class="edu-role-org">· Master's Advisory Council</span></div>
+            <div class="edu-role-body">
+              Steering committee role representing the MS Finance cohort on academic programming, student engagement, and fiscal oversight of council operations.
+            </div>
+          </div>
+        </div>
+
+        <span class="edu-tag">Available Full-Time July 2026</span>
+      </div>
+    </div>
+
+    <div class="edu-item reveal">
+      <div class="edu-date">May 2022</div>
+      <div>
         <div class="edu-school">S.K. Somaiya Degree College, University of Mumbai</div>
         <div class="edu-degree">Bachelor of Management Studies · Specialization in Finance &amp; Investments</div>
-        <div class="edu-details">
-          <div><strong>GPA 9.78 / 10</strong> · Top 1% of graduating class</div>
-          <div>Class Representative for three years</div>
-          <div>Rotaract Club of S.K. Somaiya — social-impact initiatives in education, environment, and healthcare</div>
+        <div class="edu-detail">
+          <strong>GPA 9.78 / 10</strong> · Top 1% of graduating class<br>
+          Class Representative for three years<br>
+          Rotaract Club of S.K. Somaiya — social-impact initiatives in education, environment, and healthcare
         </div>
         <span class="edu-tag">First Class with Distinction</span>
       </div>
@@ -1183,348 +1108,326 @@
   </div>
 </section>
 
-<!-- SKILLS -->
-<section id="skills" class="reveal">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-num">§ 04 — Capabilities</div>
-      <h2 class="section-title">Skills &amp; <em>certifications.</em></h2>
+<!-- ——— SKILLS ——— -->
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-marker reveal">§ 04 — Capabilities</div>
+      <h2 class="section-title reveal">Skills &amp; <em>certifications.</em></h2>
     </div>
 
-    <div class="skills-grid">
-      <div class="skill-col">
-        <div class="skill-head">Financial Modeling</div>
-        <ul class="skill-list">
-          <li>DCF Valuation</li>
-          <li>3-Statement Modeling</li>
+    <div class="skills-grid reveal">
+      <div class="skills-col">
+        <h4>Valuation &amp; Modelling</h4>
+        <ul>
+          <li>DCF (FCFF / FCFE)</li>
+          <li>3-Statement Modelling</li>
           <li>Comparable Company Analysis</li>
-          <li>Portfolio Construction</li>
-          <li>LBO Analysis</li>
+          <li>EV / EBITDA</li>
+          <li>Sum-of-the-Parts (SOTP)</li>
         </ul>
       </div>
-      <div class="skill-col">
-        <div class="skill-head">Analytical</div>
-        <ul class="skill-list">
-          <li>Financial Statement Analysis</li>
-          <li>Credit Analysis</li>
-          <li>Portfolio Risk Management</li>
+      <div class="skills-col">
+        <h4>Portfolio &amp; Risk</h4>
+        <ul>
+          <li>Portfolio Construction</li>
           <li>Performance Attribution</li>
           <li>Factor Analysis</li>
+          <li>Risk-Adjusted Return Metrics</li>
+          <li>Sector Rotation</li>
         </ul>
       </div>
-      <div class="skill-col">
-        <div class="skill-head">Tools &amp; Platforms</div>
-        <ul class="skill-list">
+      <div class="skills-col">
+        <h4>Tools &amp; Platforms</h4>
+        <ul>
           <li>Bloomberg Terminal</li>
           <li>S&amp;P Capital IQ</li>
           <li>Advanced Excel</li>
-          <li>Python for Finance</li>
-          <li>PowerPoint / Pitch Books</li>
+          <li>NGEN Markets</li>
+          <li>Python (pandas, numpy)</li>
         </ul>
       </div>
-      <div class="skill-col">
-        <div class="skill-head">Domains</div>
-        <ul class="skill-list">
-          <li>Equity Research</li>
-          <li>Asset &amp; Wealth Management</li>
-          <li>Investment Banking</li>
-          <li>Alternatives (AIF / PMS / MLD)</li>
-          <li>Macro &amp; Sector Strategy</li>
+      <div class="skills-col">
+        <h4>Indian Markets</h4>
+        <ul>
+          <li>NSE / BSE Equities</li>
+          <li>CDSL / NSDL</li>
+          <li>MF Central · AMFI</li>
+          <li>SEBI (AIF / PMS)</li>
+          <li>Alternatives &amp; MLDs</li>
         </ul>
       </div>
     </div>
 
-    <div class="certs">
-      <div class="certs-head">— Certifications &amp; Training</div>
+    <div class="certs-strip">
+      <div class="certs-label reveal">— Certifications &amp; Training</div>
       <div class="certs-grid">
-        <div class="cert-row">
-          <div class="cert-title">CFA Level I — Passed</div>
-          <div class="cert-detail">August 2024 · Level II Candidate, November 2026</div>
+        <div class="cert reveal">
+          <h5>CFA Level I — Passed</h5>
+          <p>August 2024 · Level II Candidate, November 2026</p>
         </div>
-        <div class="cert-row">
-          <div class="cert-title">Wall Street Prep</div>
-          <div class="cert-detail">Financial Statement Analysis · DCF · Buy-Side Investment Analysis</div>
+        <div class="cert reveal">
+          <h5>NISM Series XV &amp; V-A</h5>
+          <p>Both certificate exams scheduled August 2026</p>
         </div>
-        <div class="cert-row">
-          <div class="cert-title">Bloomberg Market Concepts (BMC)</div>
-          <div class="cert-detail">2026</div>
+        <div class="cert reveal">
+          <h5>Wall Street Prep</h5>
+          <p>Financial Statement Analysis · DCF · Buy-Side Investment Analysis</p>
         </div>
-        <div class="cert-row">
-          <div class="cert-title">Financial Edge Training · Capital IQ Training</div>
-          <div class="cert-detail">2025</div>
+        <div class="cert reveal">
+          <h5>Bloomberg Market Concepts</h5>
+          <p>2026 · Economics, Currencies, Fixed Income, Equities</p>
+        </div>
+        <div class="cert reveal">
+          <h5>Financial Edge Training</h5>
+          <p>2025 · Advanced Financial Modelling curriculum</p>
+        </div>
+        <div class="cert reveal">
+          <h5>Capital IQ Training</h5>
+          <p>Screening · Modelling · Transaction comparables</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROJECTS — split into US Equity / Indian Equity -->
-<section id="projects" class="reveal">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-num">§ 05 — Selected Work</div>
-      <h2 class="section-title">Transaction &amp; valuation <em>work.</em></h2>
+<!-- ——— REPORTS ——— -->
+<section class="reports" id="reports">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-marker reveal">§ 05 — Investment Reports</div>
+      <h2 class="section-title reveal">Research &amp; <em>pitches.</em></h2>
     </div>
 
-    <!-- US EQUITY -->
-    <div class="subgroup-header">
-      <span class="subgroup-marker">— I</span>
-      <h3 class="subgroup-title">US Equity</h3>
-      <span class="subgroup-flag">NYSE · NASDAQ</span>
+    <div class="pitch-label reveal">
+      I. <span>Indian Equity</span> <span class="muted">— NSE · BSE</span>
     </div>
 
-    <div class="projects-grid">
-      <article class="project">
-        <div class="project-tag">Equity Research</div>
-        <div class="project-ticker">NYSE: LLY</div>
-        <div class="project-title">Eli Lilly — Sell Recommendation</div>
-        <p class="project-desc">Initiated coverage with a Sell call at ~$1,030 against a $750 price target. Thesis grounded in stretched 52x P/E, the Trulicity 2027 patent cliff (~$7B revenue at risk), and emerging GLP-1 competition from Novo Nordisk and Amgen's MariTide. Position was ~14% in the money at $903 (Apr 2026).</p>
-        <div class="project-foot">
-          <div class="project-chips">
-            <span class="chip">DCF</span>
-            <span class="chip">3-Statement</span>
-            <span class="chip">Pharma</span>
-          </div>
-          <a class="project-link" href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener">View on Drive
-            <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 9L9 2M9 2H3M9 2V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-          </a>
+    <div class="pitch-grid">
+
+      <!-- ASTER DM -->
+      <article class="pitch reveal">
+        <div class="pitch-header">
+          <div class="pitch-ticker">NSE <span class="dot">◆</span> ASTERDM</div>
+          <div class="pitch-tag tag-buy">▲ BUY</div>
         </div>
+        <h3>Aster DM <em>Healthcare.</em></h3>
+        <div class="pitch-sub">Healthcare · Mid-Cap</div>
+        <div class="pitch-body">
+          Buy recommendation at ₹480 with a 12-month target of ₹620. Built EV/EBITDA model benchmarked against Apollo, Max Healthcare &amp; Fortis. Thesis anchored on GCC divestiture value unlock and India bed-expansion runway. <strong style="color:var(--champagne);">Target achieved within 9 months.</strong>
+        </div>
+        <div class="pitch-metrics">
+          <div class="pitch-metric">
+            <div class="mk">Target Price</div>
+            <div class="mv neutral">₹620</div>
+          </div>
+          <div class="pitch-metric">
+            <div class="mk">Return</div>
+            <div class="mv up">+29% closed</div>
+          </div>
+        </div>
+        <div class="pitch-chips">
+          <span class="chip">EV/EBITDA</span>
+          <span class="chip">Healthcare</span>
+          <span class="chip">India</span>
+        </div>
+        <a class="report-btn" href="https://drive.google.com/drive/folders/1ezt9esfgX11TsDTMyajBu_RA5jfsrK5S?usp=sharing" target="_blank" rel="noopener">
+          <span>Open Report</span>
+          <span class="arrow">↗</span>
+        </a>
       </article>
 
-      <article class="project">
-        <div class="project-tag">Equity Research</div>
-        <div class="project-ticker">NYSE: NKE</div>
-        <div class="project-title">Nike — Sell Recommendation</div>
-        <p class="project-desc">Sell thesis built on four structural pillars: FY25 revenue down ~10%, ~7pp share loss at Dick's to On and Hoka, a failed DTC strategy (digital -26%), and a ~50% P/E premium to peers. Three-stage DCF with probability-weighted target ~$36.</p>
-        <div class="project-foot">
-          <div class="project-chips">
-            <span class="chip">DCF</span>
-            <span class="chip">Consumer</span>
-            <span class="chip">Apparel</span>
-          </div>
-          <a class="project-link" href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener">View on Drive
-            <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 9L9 2M9 2H3M9 2V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-          </a>
+      <!-- ETERNAL -->
+      <article class="pitch reveal">
+        <div class="pitch-header">
+          <div class="pitch-ticker">NSE <span class="dot">◆</span> ETERNAL</div>
+          <div class="pitch-tag tag-sell">▼ SELL</div>
         </div>
+        <h3>Eternal <em>Limited.</em></h3>
+        <div class="pitch-sub">Consumer · Internet</div>
+        <div class="pitch-body">
+          Sell recommendation at ₹275 with target ₹234. Built SOTP model across food delivery, Blinkit &amp; Hyperpure. Thesis anchored on quick-commerce unit economics pressure and competitive intensity from peers. <strong style="color:var(--champagne);">Target achieved within 6 months.</strong>
+        </div>
+        <div class="pitch-metrics">
+          <div class="pitch-metric">
+            <div class="mk">Target Price</div>
+            <div class="mv neutral">₹234</div>
+          </div>
+          <div class="pitch-metric">
+            <div class="mk">Return</div>
+            <div class="mv down">−15% closed</div>
+          </div>
+        </div>
+        <div class="pitch-chips">
+          <span class="chip">SOTP</span>
+          <span class="chip">Consumer</span>
+          <span class="chip">Internet</span>
+        </div>
+        <a class="report-btn" href="https://drive.google.com/drive/folders/1Dp-s5baZSLju5IT5oS_0s0z9stoQ1uDv?usp=drive_link" target="_blank" rel="noopener">
+          <span>Open Report</span>
+          <span class="arrow">↗</span>
+        </a>
       </article>
 
-      <article class="project">
-        <div class="project-tag">Equity Research</div>
-        <div class="project-ticker">NASDAQ: MSFT</div>
-        <div class="project-title">Microsoft — Equity Research</div>
-        <p class="project-desc">Full integrated 3-statement model with revenue driver analysis, segment margin assumptions, and DCF valuation. Delivered a 12-month price target with scenario analysis and an investment recommendation framed against cloud, AI capex, and enterprise software peer multiples.</p>
-        <div class="project-foot">
-          <div class="project-chips">
-            <span class="chip">DCF</span>
-            <span class="chip">3-Statement</span>
-            <span class="chip">Tech</span>
-          </div>
-          <a class="project-link" href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener">View on Drive
-            <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 9L9 2M9 2H3M9 2V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-          </a>
+      <!-- WAAREE -->
+      <article class="pitch reveal">
+        <div class="pitch-header">
+          <div class="pitch-ticker">NSE <span class="dot">◆</span> WAAREEENER</div>
+          <div class="pitch-tag tag-buy">▲ BUY</div>
         </div>
+        <h3>Waaree <em>Energies.</em></h3>
+        <div class="pitch-sub">Renewables · Solar</div>
+        <div class="pitch-body">
+          Buy recommendation at ₹3,281 with a 12-month target of ₹3,872. FCFF DCF anchored on India's 500 GW solar capacity target as the primary upside driver. <strong style="color:var(--champagne);">Live call — +6.2% MTM (Apr 2026).</strong>
+        </div>
+        <div class="pitch-metrics">
+          <div class="pitch-metric">
+            <div class="mk">Target Price</div>
+            <div class="mv neutral">₹3,872</div>
+          </div>
+          <div class="pitch-metric">
+            <div class="mk">Return</div>
+            <div class="mv up">+6.2% live</div>
+          </div>
+        </div>
+        <div class="pitch-chips">
+          <span class="chip">FCFF DCF</span>
+          <span class="chip">Renewables</span>
+          <span class="chip">India</span>
+        </div>
+        <a class="report-btn" href="https://drive.google.com/drive/folders/1vjyltOG4ow4_MDzc1Kr4zBBAffzBYL7u?usp=drive_link" target="_blank" rel="noopener">
+          <span>Open Report</span>
+          <span class="arrow">↗</span>
+        </a>
       </article>
 
-      <article class="project">
-        <div class="project-tag">LBO Model</div>
-        <div class="project-ticker">NYSE: DELL</div>
-        <div class="project-title">Dell Technologies — LBO Analysis</div>
-        <p class="project-desc">Constructed a full leveraged buyout model — sources and uses, debt schedule, operating projections, and returns analysis (IRR, MOIC). Stress-tested across entry multiples and exit scenarios to frame a sponsor's view on the transaction.</p>
-        <div class="project-foot">
-          <div class="project-chips">
-            <span class="chip">LBO</span>
-            <span class="chip">IRR / MOIC</span>
-            <span class="chip">Tech</span>
-          </div>
-          <a class="project-link" href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener">View on Drive
-            <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 9L9 2M9 2H3M9 2V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-          </a>
-        </div>
-      </article>
     </div>
 
-    <!-- INDIAN EQUITY -->
-    <div class="subgroup-header">
-      <span class="subgroup-marker">— II</span>
-      <h3 class="subgroup-title">Indian Equity</h3>
-      <span class="subgroup-flag">NSE · BSE</span>
+    <div class="pitch-label reveal">
+      II. <span>US Equity</span> <span class="muted">— Academic &amp; Personal Work</span>
     </div>
 
-    <div class="projects-grid">
-      <article class="project">
-        <div class="project-tag">Equity Research</div>
-        <div class="project-ticker">NSE: ASIANPAINT</div>
-        <div class="project-title">Asian Paints — Equity Research</div>
-        <p class="project-desc">Coverage of one of India's leading consumer companies with a full 3-statement model and DCF, benchmarked against domestic and regional peers. Final recommendation included downside scenario analysis reflecting raw material cycles and competitive entry from Birla Opus.</p>
-        <div class="project-foot">
-          <div class="project-chips">
-            <span class="chip">DCF</span>
-            <span class="chip">Consumer</span>
-            <span class="chip">India</span>
-          </div>
-          <a class="project-link" href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener">View on Drive
-            <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 9L9 2M9 2H3M9 2V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-          </a>
+    <div class="us-grid reveal">
+      <div class="us-pitch">
+        <div class="pitch-ticker">NYSE <span class="dot">◆</span> LLY <span style="margin-left:12px;"><span class="pitch-tag tag-sell">▼ SELL</span></span></div>
+        <h4>Eli Lilly — <em>Sell Recommendation.</em></h4>
+        <p>
+          Initiated coverage with a Sell call at ~$1,030 against a $750 price target. Thesis grounded in stretched 52x P/E, the Trulicity 2027 patent cliff (~$7B revenue at risk), and emerging GLP-1 competition from Novo Nordisk and Amgen's MariTide. Position was ~14% in the money at $903 (Apr 2026).
+        </p>
+        <div class="us-meta">
+          <span><strong>PT</strong> · $750</span>
+          <span><strong>Method</strong> · DCF + 3-Statement</span>
+          <span><strong>Sector</strong> · Pharma</span>
         </div>
-      </article>
+      </div>
 
-      <article class="project">
-        <div class="project-tag">Buy-Side Research</div>
-        <div class="project-ticker">Multi-Asset · India</div>
-        <div class="project-title">Discretionary Multi-Asset Strategy</div>
-        <p class="project-desc">Buy-side research and security selection across Indian equities, mutual funds, and fixed income for a discretionary HNI book at Lifelong Wealth. Coverage included sector rotation calls, fund manager due diligence, and tactical allocation aligned to macro and Nifty-relative views.</p>
-        <div class="project-foot">
-          <div class="project-chips">
-            <span class="chip">Multi-Asset</span>
-            <span class="chip">HNI</span>
-            <span class="chip">India</span>
-          </div>
-          <a class="project-link" href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener">View on Drive
-            <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 9L9 2M9 2H3M9 2V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-          </a>
+      <div class="us-pitch">
+        <div class="pitch-ticker">NYSE <span class="dot">◆</span> NKE <span style="margin-left:12px;"><span class="pitch-tag tag-sell">▼ SELL</span></span></div>
+        <h4>Nike — <em>Sell Recommendation.</em></h4>
+        <p>
+          Sell thesis built on four structural pillars: FY25 revenue down ~10%, ~7pp share loss at Dick's to On and Hoka, a failed DTC strategy (digital −26%), and a ~50% P/E premium to peers. Three-stage DCF with probability-weighted target ~$36.
+        </p>
+        <div class="us-meta">
+          <span><strong>PT</strong> · ~$36</span>
+          <span><strong>Method</strong> · 3-Stage DCF</span>
+          <span><strong>Sector</strong> · Consumer / Apparel</span>
         </div>
-      </article>
+      </div>
     </div>
+
+    <div style="margin-top: 48px; text-align: center;" class="reveal">
+      <p style="font-family: var(--serif); font-style: italic; font-size: 15px; color: var(--text-dim);">
+        Additional research notes and industry analysis — including UPI Monetization &amp; India Payments Sector — available on request.
+      </p>
+    </div>
+
   </div>
 </section>
 
-<!-- REPORTS — split US / India + research -->
-<section id="reports" class="reveal">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-num">§ 06 — Research</div>
-      <h2 class="section-title">Investment <em>reports.</em></h2>
+<!-- ——— CONTACT ——— -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-marker reveal">§ 06 — Get in touch</div>
+      <h2 class="section-title reveal">Let's <em>connect.</em></h2>
     </div>
-
-    <!-- US Equity Reports -->
-    <div class="subgroup-header">
-      <span class="subgroup-marker">— I</span>
-      <h3 class="subgroup-title">US Equity</h3>
-      <span class="subgroup-flag">NYSE · NASDAQ</span>
-    </div>
-    <div class="reports-table">
-      <div class="report-row">
-        <div class="report-cat">Equity Research · Sell</div>
-        <div class="report-title">Eli Lilly <em>(LLY)</em> — Sell, Dec 2025 · PT $750</div>
-        <div class="report-type">Full Report · PDF</div>
-        <a class="report-action" href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener">Open Report ↗</a>
-      </div>
-      <div class="report-row">
-        <div class="report-cat">Equity Research · Sell</div>
-        <div class="report-title">Nike <em>(NKE)</em> — Sell, Apr 2026 · PT ~$36</div>
-        <div class="report-type">Full Report · PDF</div>
-        <a class="report-action" href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener">Open Report ↗</a>
-      </div>
-      <div class="report-row">
-        <div class="report-cat">Equity Research · Buy-Side</div>
-        <div class="report-title">Microsoft <em>(MSFT)</em> — Equity Research Report</div>
-        <div class="report-type">Full Report · PDF</div>
-        <a class="report-action" href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener">Open Report ↗</a>
-      </div>
-      <div class="report-row">
-        <div class="report-cat">LBO Analysis</div>
-        <div class="report-title">Dell Technologies <em>(DELL)</em> — Leveraged Buyout Model &amp; Memo</div>
-        <div class="report-type">Model + Memo</div>
-        <a class="report-action" href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener">Open Report ↗</a>
-      </div>
-    </div>
-
-    <!-- Indian Equity Reports -->
-    <div class="subgroup-header">
-      <span class="subgroup-marker">— II</span>
-      <h3 class="subgroup-title">Indian Equity</h3>
-      <span class="subgroup-flag">NSE · BSE</span>
-    </div>
-    <div class="reports-table">
-      <div class="report-row">
-        <div class="report-cat">Equity Research · Buy-Side</div>
-        <div class="report-title">Asian Paints <em>(ASIANPAINT)</em> — Equity Research Report</div>
-        <div class="report-type">Full Report · PDF</div>
-        <a class="report-action" href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener">Open Report ↗</a>
-      </div>
-      <div class="report-row">
-        <div class="report-cat">Buy-Side Research</div>
-        <div class="report-title">Lifelong Wealth — <em>Indian Equity &amp; Multi-Asset Coverage</em></div>
-        <div class="report-type">Internal Notes</div>
-        <a class="report-action" href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener">Open Report ↗</a>
-      </div>
-    </div>
-
-    <!-- Thematic / Strategy -->
-    <div class="subgroup-header">
-      <span class="subgroup-marker">— III</span>
-      <h3 class="subgroup-title">Research &amp; Strategy</h3>
-      <span class="subgroup-flag">Thematic · Wealth Management</span>
-    </div>
-    <div class="reports-table">
-      <div class="report-row">
-        <div class="report-cat">Wealth Management</div>
-        <div class="report-title">The Great Wealth Transfer — <em>Positioning HNW Advisors for the $84T Generational Shift</em></div>
-        <div class="report-type">Research Paper</div>
-        <a class="report-action" href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener">Open Report ↗</a>
-      </div>
-      <div class="report-row">
-        <div class="report-cat">Case Competition</div>
-        <div class="report-title">Simon Consulting Club — <em>Financial Services Case</em> · 5-Year Wealth Management Growth Strategy</div>
-        <div class="report-type">Strategy + Model</div>
-        <a class="report-action" href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener">Open Report ↗</a>
-      </div>
-    </div>
-
-    <div class="reports-foot">
-      <div class="note">A selection of equity research, valuation work, and thematic notes spanning US and Indian markets.</div>
-      <a class="btn btn-ghost" href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener">Browse full portfolio <span class="arrow">↗</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="contact reveal">
-  <div class="contact-inner">
-    <div class="contact-eyebrow">§ 07 — Get in touch</div>
-    <h2>Let's <em>connect.</em></h2>
-    <p class="contact-lede">Currently exploring full-time opportunities in investment banking, asset management, and equity research — available from June 2026. Always open to a conversation.</p>
 
     <div class="contact-grid">
-      <a class="contact-card" href="mailto:adityanair.cv@gmail.com">
-        <div class="contact-label">— Email</div>
-        <div class="contact-val">adityanair.cv@gmail.com <span class="ext">↗</span></div>
-      </a>
-      <a class="contact-card" href="https://linkedin.com/in/adityanair19" target="_blank" rel="noopener">
-        <div class="contact-label">— LinkedIn</div>
-        <div class="contact-val">/in/adityanair19 <span class="ext">↗</span></div>
-      </a>
-      <a class="contact-card" href="https://drive.google.com/drive/folders/1jOKAwOW8FYseji4IC-kYBNUgl2_HH1pW?usp=sharing" target="_blank" rel="noopener">
-        <div class="contact-label">— Resume</div>
-        <div class="contact-val">View on Drive <span class="ext">↗</span></div>
-      </a>
-      <a class="contact-card" href="tel:+15852021576">
-        <div class="contact-label">— Phone</div>
-        <div class="contact-val">+1 (585) 202-1576 <span class="ext">↗</span></div>
-      </a>
+      <div class="contact-intro reveal">
+        <p>
+          Currently exploring <strong>full-time opportunities in asset management, private wealth, and equity research</strong> across Tier-1 firms in India — <strong>available from July 2026.</strong>
+        </p>
+        <p style="font-size: 16px; color: var(--text-muted);">
+          Always open to a conversation — about markets, research, or anything in between.
+        </p>
+      </div>
+
+      <div class="contact-links reveal">
+        <a class="contact-link" href="mailto:adityanair.cv@gmail.com">
+          <span class="ck">— Email</span>
+          <span class="cv">adityanair.cv@gmail.com</span>
+          <span class="ca">↗</span>
+        </a>
+        <a class="contact-link" href="https://linkedin.com/in/adityanair19" target="_blank" rel="noopener">
+          <span class="ck">— LinkedIn</span>
+          <span class="cv">/in/adityanair19</span>
+          <span class="ca">↗</span>
+        </a>
+        <a class="contact-link" href="https://docs.google.com/document/d/1uJyNXbjFfho2KsJEgBQCmXWHCroBU_j8/edit?usp=sharing&amp;ouid=105768665480726445171&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener">
+          <span class="ck">— Resume</span>
+          <span class="cv">View Latest Resume</span>
+          <span class="ca">↗</span>
+        </a>
+        <a class="contact-link" href="tel:+917977868846">
+          <span class="ck">— Phone</span>
+          <span class="cv">+91 79778 68846</span>
+          <span class="ca">↗</span>
+        </a>
+      </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="container footer-inner">
-    <div>© 2026 ADITYA NAIR · ALL RIGHTS RESERVED</div>
-    <div>ROCHESTER, NY → MUMBAI, IN</div>
-    <div>DESIGNED &amp; BUILT WITH CARE</div>
+  <div class="wrap">
+    <div>© 2026 Aditya Nair <span class="gem">◆</span> All rights reserved</div>
+    <div>Rochester, NY <span class="gem">→</span> Mumbai, India</div>
   </div>
 </footer>
 
 <script>
-  const reveals = document.querySelectorAll('.reveal');
+  // Reveal animation on scroll
   const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('in');
-        io.unobserve(e.target);
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.08 });
-  reveals.forEach(el => io.observe(el));
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+  document.querySelectorAll('.reveal').forEach((el, i) => {
+    el.style.transitionDelay = (i % 6) * 60 + 'ms';
+    io.observe(el);
+  });
+
+  // Stagger hero reveals immediately
+  window.addEventListener('load', () => {
+    document.querySelectorAll('.hero .reveal').forEach((el, i) => {
+      setTimeout(() => el.classList.add('in'), 120 + i * 120);
+    });
+  });
+
+  // Nav shrink on scroll
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+      nav.style.padding = '14px 0';
+    } else {
+      nav.style.padding = '22px 0';
+    }
+  });
 </script>
+
 </body>
 </html>
