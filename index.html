@@ -4,1207 +4,560 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Aditya Nair — Investment Professional</title>
-<meta name="description" content="Aditya Nair — MSc Finance candidate at Simon Business School. Equity research, multi-asset portfolio management, and valuation across Indian and US markets." />
+<meta name="description" content="Aditya Nair — Investment Professional. Specializing in Equity Research, Multi-Asset Portfolios, and Asset Management." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Space+Grotesk:wght@400;500;600&family=SF+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy: #0A1628;
-    --navy-deep: #050D1A;
-    --navy-soft: #152338;
-    --champagne: #C9A96E;
-    --champagne-bright: #D9B97E;
-    --champagne-dim: #8B7849;
-    --ivory: #F5F1E8;
-    --cream: #EDE6D3;
-    --paper: #FAF7EF;
-    --rule: rgba(201, 169, 110, 0.22);
-    --rule-strong: rgba(201, 169, 110, 0.45);
-    --text: #F5F1E8;
-    --text-muted: rgba(245, 241, 232, 0.62);
-    --text-dim: rgba(245, 241, 232, 0.42);
-
-    --serif: "Fraunces", "Cormorant Garamond", Georgia, serif;
-    --body: "Newsreader", "Source Serif Pro", Georgia, serif;
-    --sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-    --mono: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
+    --bg-main: #07090e;
+    --bg-card: #0e121a;
+    --bg-card-hover: #141a26;
+    --accent: #d4af37;
+    --accent-bright: #f1c40f;
+    --accent-dim: #8a7322;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --text-dim: #475569;
+    --border: rgba(148, 163, 184, 0.08);
+    --border-strong: rgba(212, 175, 55, 0.3);
+    
+    --font-heading: "Space Grotesk", -apple-system, sans-serif;
+    --font-body: "Plus Jakarta Sans", -apple-system, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", Menlo, monospace;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; background: var(--bg-main); }
+  
   body {
-    background: var(--navy);
-    color: var(--text);
-    font-family: var(--body);
-    font-size: clamp(16.5px, 1.45vw + 9px, 21px);
+    background: var(--bg-main);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    font-size: 16px;
     line-height: 1.6;
-    font-weight: 400;
-    font-optical-sizing: auto;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
   }
 
-  /* Subtle grain texture */
+  /* Fine-grain premium overlay */
   body::before {
     content: '';
     position: fixed;
     inset: 0;
     pointer-events: none;
-    z-index: 1;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0.78 0 0 0 0 0.66 0 0 0 0 0.43 0 0 0 0.035 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    opacity: 0.55;
-    mix-blend-mode: overlay;
+    z-index: 999;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
   }
 
-  a { color: inherit; text-decoration: none; }
-  ::selection { background: var(--champagne); color: var(--navy); }
+  a { color: inherit; text-decoration: none; transition: all 0.2s ease; }
+  ::selection { background: var(--accent); color: var(--bg-main); }
 
-  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 48px; position: relative; z-index: 2; }
-  @media (max-width: 720px) { .wrap { padding: 0 24px; } }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+  @media (max-width: 768px) { .wrap { padding: 0 24px; } }
 
-  /* ——— Navigation ——— */
+  /* Navigation */
   nav {
     position: fixed; top: 0; left: 0; right: 0;
     z-index: 100;
-    padding: 22px 0;
-    background: rgba(10, 22, 40, 0.72);
-    backdrop-filter: blur(18px) saturate(140%);
-    -webkit-backdrop-filter: blur(18px) saturate(140%);
-    border-bottom: 1px solid var(--rule);
+    padding: 24px 0;
+    background: rgba(7, 9, 14, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
     transition: padding 0.3s ease;
   }
   nav .wrap { display: flex; align-items: center; justify-content: space-between; }
   .brand {
-    font-family: var(--serif);
-    font-size: 22px;
-    font-weight: 500;
-    letter-spacing: 0.01em;
-    font-feature-settings: "ss01";
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
   }
-  .brand .dot { color: var(--champagne); }
-  .nav-links { display: flex; gap: 36px; align-items: center; }
+  .brand span { color: var(--accent); }
+  .nav-links { display: flex; gap: 32px; align-items: center; }
   .nav-links a {
-    font-family: var(--sans);
-    font-size: 12.5px;
-    font-weight: 400;
-    letter-spacing: 0.02em;
-    color: var(--text-muted);
-    transition: color 0.25s ease;
-    position: relative;
-  }
-  .nav-links a:hover { color: var(--champagne); }
-  .nav-links .contact-btn {
-    color: var(--navy);
-    background: var(--champagne);
-    padding: 10px 20px;
-    border-radius: 2px;
+    font-size: 14px;
     font-weight: 500;
-    transition: all 0.25s ease;
+    color: var(--text-muted);
   }
-  .nav-links .contact-btn:hover { background: var(--champagne-bright); transform: translateY(-1px); }
-  @media (max-width: 820px) {
-    .nav-links a:not(.contact-btn) { display: none; }
+  .nav-links a:hover { color: var(--text-main); }
+  .nav-links .contact-btn {
+    color: var(--bg-main);
+    background: var(--text-main);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 600;
   }
+  .nav-links .contact-btn:hover { background: var(--accent); transform: translateY(-1px); }
+  @media (max-width: 768px) { .nav-links a:not(.contact-btn) { display: none; } }
 
-  /* ——— Hero ——— */
+  /* Hero Section */
   .hero {
-    min-height: 100vh;
-    padding: 160px 0 100px;
-    position: relative;
+    min-height: 90vh;
+    padding: 180px 0 80px;
     display: flex;
     align-items: center;
+    position: relative;
   }
-  .hero::before {
+  .hero::after {
     content: '';
     position: absolute;
-    top: 20%; right: -15%;
-    width: 700px; height: 700px;
-    background: radial-gradient(circle, rgba(201,169,110,0.08) 0%, transparent 60%);
+    top: 25%; right: -10%;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(212,175,55,0.05) 0%, transparent 70%);
     pointer-events: none;
+    z-index: -1;
   }
-  .hero-grid { display: grid; grid-template-columns: 1fr; gap: 0; width: 100%; }
-
+  
   .eyebrow {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.18em;
+    font-family: var(--font-mono);
+    font-size: 12px;
     text-transform: uppercase;
-    color: var(--champagne);
-    display: inline-flex;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-bottom: 24px;
+    display: flex;
     align-items: center;
-    gap: 14px;
-    margin-bottom: 48px;
+    gap: 12px;
   }
-  .eyebrow::before {
-    content: '';
-    width: 36px; height: 1px;
-    background: var(--champagne);
-  }
-  .eyebrow .sep { color: var(--text-dim); margin: 0 4px; }
+  .eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--accent); }
 
   h1.display {
-    font-family: var(--serif);
-    font-size: clamp(64px, 11vw, 164px);
-    font-weight: 300;
-    line-height: 0.92;
-    letter-spacing: -0.035em;
-    margin-bottom: 44px;
-    font-feature-settings: "ss01", "ss02";
+    font-family: var(--font-heading);
+    font-size: clamp(48px, 8vw, 96px);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 32px;
   }
-  h1.display em {
-    font-style: italic;
-    font-weight: 400;
-    color: var(--champagne);
-  }
-  h1.display .period { color: var(--champagne); font-style: normal; }
+  h1.display span { color: var(--accent); }
 
   .lede {
-    font-family: var(--serif);
-    font-size: clamp(24px, 2.5vw, 30px);
-    font-weight: 300;
-    line-height: 1.48;
-    max-width: 780px;
-    color: var(--text);
-    margin-bottom: 56px;
-    letter-spacing: -0.005em;
+    font-size: clamp(18px, 2.2vw, 24px);
+    font-weight: 400;
+    color: var(--text-muted);
+    max-width: 850px;
+    margin-bottom: 48px;
+    line-height: 1.5;
   }
-  .lede strong { color: var(--champagne); font-weight: 500; font-style: italic; }
+  .lede strong { color: var(--text-main); font-weight: 500; }
 
-  .cta-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    align-items: center;
-    margin-bottom: 80px;
-  }
+  .cta-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 64px; }
   .btn {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    padding: 15px 26px;
-    font-family: var(--sans);
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    border: 1px solid var(--rule-strong);
-    border-radius: 2px;
-    transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    gap: 8px;
+    padding: 14px 28px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 4px;
     cursor: pointer;
-    background: transparent;
-    color: var(--text);
   }
-  .btn:hover {
-    border-color: var(--champagne);
-    color: var(--champagne);
-    transform: translateY(-1px);
-  }
-  .btn-primary {
-    background: var(--champagne);
-    color: var(--navy);
-    border-color: var(--champagne);
-  }
-  .btn-primary:hover {
-    background: var(--champagne-bright);
-    border-color: var(--champagne-bright);
-    color: var(--navy);
-  }
-  .btn .arrow { font-family: var(--serif); font-size: 16px; transition: transform 0.28s; }
-  .btn:hover .arrow { transform: translate(3px, -3px); }
+  .btn-primary { background: var(--accent); color: var(--bg-main); }
+  .btn-primary:hover { background: var(--accent-bright); transform: translateY(-1px); }
+  .btn-secondary { border: 1px solid var(--border); color: var(--text-main); }
+  .btn-secondary:hover { background: var(--bg-card); border-color: var(--text-muted); }
 
   /* Ticker */
   .ticker-wrap {
-    position: relative;
-    margin-top: 20px;
-    padding: 28px 0;
-    border-top: 1px solid var(--rule);
-    border-bottom: 1px solid var(--rule);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 0;
     overflow: hidden;
-    mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
-    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
-  }
-  .ticker {
-    display: flex;
-    gap: 48px;
-    animation: ticker 45s linear infinite;
     white-space: nowrap;
-    width: max-content;
+    mask-image: linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent);
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent);
   }
-  .ticker-item {
-    font-family: var(--mono);
-    font-size: 11.5px;
-    letter-spacing: 0.08em;
-    color: var(--text-muted);
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .ticker-item .symbol { color: var(--champagne); font-weight: 500; }
-  .ticker-item .up { color: #7FB77E; }
-  .ticker-item .down { color: #D4826B; }
-  .ticker-item::after { content: '◆'; color: var(--champagne-dim); margin-left: 48px; font-size: 8px; }
+  .ticker { display: inline-flex; gap: 40px; animation: ticker 35s linear infinite; }
+  .ticker-item { font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); display: flex; align-items: center; gap: 8px; }
+  .ticker-item .sym { color: var(--text-main); font-weight: 600; }
+  .ticker-item .up { color: #10b981; }
+  .ticker-item .down { color: #ef4444; }
+  .ticker-item::after { content: '•'; color: var(--text-dim); margin-left: 40px; }
   @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-  /* ——— Section header ——— */
-  section { padding: 130px 0; position: relative; }
-  @media (max-width: 720px) { section { padding: 90px 0; } }
+  /* Section Structural Layouts */
+  section { padding: 100px 0; border-top: 1px solid var(--border); }
+  .grid-layout { display: grid; grid-template-columns: 280px 1fr; gap: 64px; }
+  @media (max-width: 900px) { .grid-layout { grid-template-columns: 1fr; gap: 32px; } }
 
-  .section-head {
-    display: grid;
-    grid-template-columns: 220px 1fr;
-    gap: 80px;
-    margin-bottom: 80px;
-    align-items: start;
-  }
-  @media (max-width: 820px) { .section-head { grid-template-columns: 1fr; gap: 24px; } }
-
-  .section-marker {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--champagne);
-    padding-top: 24px;
-    position: relative;
-  }
-  .section-marker::before {
-    content: '';
-    position: absolute;
-    top: 10px; left: 0;
-    width: 36px; height: 1px;
-    background: var(--champagne);
-  }
-
-  h2.section-title {
-    font-family: var(--serif);
-    font-size: clamp(44px, 6vw, 80px);
-    font-weight: 300;
-    line-height: 0.98;
-    letter-spacing: -0.025em;
-    font-feature-settings: "ss01";
-  }
-  h2.section-title em {
-    font-style: italic;
-    color: var(--champagne);
-    font-weight: 400;
-  }
-  h2.section-title .period { color: var(--champagne); }
-
-  /* ——— About ——— */
-  .about {
-    background: linear-gradient(180deg, var(--navy) 0%, var(--navy-soft) 100%);
-    border-top: 1px solid var(--rule);
-    border-bottom: 1px solid var(--rule);
-  }
-  .about-grid {
-    display: grid;
-    grid-template-columns: 220px 1fr;
-    gap: 80px;
-  }
-  @media (max-width: 820px) { .about-grid { grid-template-columns: 1fr; gap: 32px; } }
-
-  .about-body {
-    font-family: var(--serif);
-    font-size: clamp(17px, 1.4vw + 10px, 24px);
-    font-weight: 300;
-    line-height: 1.6;
-    color: var(--text);
-  }
-  .about-body p + p { margin-top: 22px; }
-  .about-body strong { color: var(--champagne); font-weight: 500; font-style: italic; }
-
-  .stats {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2px;
-    margin-top: 80px;
-    background: var(--rule);
-    border: 1px solid var(--rule);
-  }
-  @media (max-width: 820px) { .stats { grid-template-columns: repeat(2, 1fr); } }
-  .stat {
-    background: var(--navy);
-    padding: 36px 28px;
-    transition: background 0.3s ease;
-  }
-  .stat:hover { background: var(--navy-soft); }
-  .stat .num {
-    font-family: var(--serif);
-    font-size: clamp(42px, 4vw + 20px, 54px);
-    font-weight: 300;
-    line-height: 1;
-    color: var(--champagne);
-    margin-bottom: 14px;
-    letter-spacing: -0.03em;
-  }
-  .stat .num .sup {
-    font-size: 20px;
-    font-style: italic;
-    color: var(--text-muted);
-    vertical-align: super;
-    margin-left: 4px;
-  }
-  .stat .label {
-    font-family: var(--sans);
-    font-size: 12.5px;
-    color: var(--text-muted);
-    line-height: 1.5;
-    letter-spacing: 0.01em;
-  }
-
-  /* ——— Experience ——— */
-  .exp-item {
-    display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 60px;
-    padding: 42px 0;
-    border-top: 1px solid var(--rule);
-    transition: background 0.3s ease;
-  }
-  .exp-item:last-child { border-bottom: 1px solid var(--rule); }
-  .exp-item:hover .exp-title { color: var(--champagne); }
-  @media (max-width: 820px) { .exp-item { grid-template-columns: 1fr; gap: 18px; } }
-
-  .exp-date {
-    font-family: var(--mono);
-    font-size: 11.5px;
-    letter-spacing: 0.05em;
-    color: var(--text-muted);
-    padding-top: 6px;
-  }
-  .exp-firm {
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 14px;
-    color: var(--champagne);
-    margin-bottom: 6px;
-  }
-  .exp-title {
-    font-family: var(--serif);
-    font-size: clamp(22px, 1.5vw + 15px, 26px);
-    font-weight: 400;
-    line-height: 1.25;
-    margin-bottom: 8px;
-    transition: color 0.3s ease;
-    letter-spacing: -0.01em;
-  }
-  .exp-meta {
-    font-size: 12.5px;
-    color: var(--text-dim);
-    margin-bottom: 22px;
-    letter-spacing: 0.02em;
-  }
-  .exp-bullets {
-    list-style: none;
-    display: grid;
-    gap: 12px;
-  }
-  .exp-bullets li {
-    padding-left: 24px;
-    position: relative;
-    font-size: clamp(15px, 1.2vw + 9px, 20px);
-    line-height: 1.6;
-    color: var(--text-muted);
-  }
-  .exp-bullets li::before {
-    content: '—';
-    position: absolute;
-    left: 0;
-    color: var(--champagne);
-  }
-
-  /* ——— Education ——— */
-  .education {
-    background: var(--navy-soft);
-    border-top: 1px solid var(--rule);
-    border-bottom: 1px solid var(--rule);
-  }
-  .edu-item {
-    display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 60px;
-    padding: 42px 0;
-    border-top: 1px solid var(--rule);
-  }
-  .edu-item:last-child { border-bottom: 1px solid var(--rule); }
-  @media (max-width: 820px) { .edu-item { grid-template-columns: 1fr; gap: 18px; } }
-  .edu-date { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.05em; color: var(--text-muted); padding-top: 6px; }
-  .edu-school {
-    font-family: var(--serif);
-    font-size: clamp(22px, 1.5vw + 15px, 26px);
-    font-weight: 400;
-    margin-bottom: 6px;
-    letter-spacing: -0.01em;
-  }
-  .edu-degree {
-    font-size: 14px;
-    color: var(--text-muted);
-    margin-bottom: 18px;
-    font-style: italic;
-    font-family: var(--serif);
-  }
-  .edu-detail {
-    font-size: clamp(15px, 1.2vw + 9px, 20px);
-    color: var(--text-muted);
-    line-height: 1.7;
-  }
-  .edu-detail strong { color: var(--champagne); font-weight: 500; }
-  .edu-coursework {
-    margin-top: 18px;
-    padding-top: 18px;
-    border-top: 1px dashed var(--rule);
-    font-size: 13px;
-    color: var(--text-dim);
-    font-style: italic;
-    font-family: var(--serif);
-  }
-  .edu-tag {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 6px 12px;
-    border: 1px solid var(--rule-strong);
-    font-family: var(--mono);
-    font-size: 10.5px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--champagne);
-  }
-
-  .edu-roles {
-    margin-top: 28px;
-    padding-top: 24px;
-    border-top: 1px solid var(--rule);
-    display: grid;
-    gap: 22px;
-  }
-  .edu-roles-label {
-    font-family: var(--mono);
-    font-size: 10.5px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--champagne);
-    margin-bottom: 2px;
-  }
-  .edu-role {
-    padding-left: 20px;
-    border-left: 1px solid var(--rule-strong);
-  }
-  .edu-role-title {
-    font-family: var(--serif);
-    font-size: 17px;
+  .section-label {
+    font-family: var(--font-heading);
+    font-size: 28px;
     font-weight: 500;
-    font-style: italic;
-    color: var(--text);
-    margin-bottom: 8px;
-    letter-spacing: -0.005em;
+    letter-spacing: -0.02em;
+    position: sticky; top: 120px;
   }
-  .edu-role-title .edu-role-org {
-    font-weight: 400;
-    color: var(--champagne);
-    font-style: italic;
-  }
-  .edu-role-body {
-    font-size: clamp(14.5px, 1.1vw + 9px, 19px);
-    line-height: 1.6;
-    color: var(--text-muted);
-  }
+  .section-label span { color: var(--accent); }
 
-  /* ——— Skills ——— */
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0;
-    border: 1px solid var(--rule);
+  /* About / Bento Metric Grid */
+  .about-text { font-size: 18px; color: var(--text-muted); max-width: 760px; margin-bottom: 48px; }
+  .about-text p + p { margin-top: 20px; }
+  .about-text strong { color: var(--text-main); }
+  
+  .bento-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  @media (max-width: 600px) { .bento-grid { grid-template-columns: 1fr; } }
+  
+  .bento-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 32px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
   }
-  @media (max-width: 820px) { .skills-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 520px) { .skills-grid { grid-template-columns: 1fr; } }
-  .skills-col {
-    padding: 36px 28px;
-    border-right: 1px solid var(--rule);
-  }
-  .skills-col:last-child { border-right: none; }
-  @media (max-width: 820px) {
-    .skills-col { border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
-    .skills-col:nth-child(2n) { border-right: none; }
-    .skills-col:nth-last-child(-n+2) { border-bottom: none; }
-  }
-  .skills-col h4 {
-    font-family: var(--serif);
-    font-size: clamp(18px, 1.2vw + 12px, 20px);
-    font-weight: 400;
-    font-style: italic;
-    color: var(--champagne);
-    margin-bottom: 22px;
-    letter-spacing: -0.01em;
-  }
-  .skills-col ul { list-style: none; display: grid; gap: 10px; }
-  .skills-col li {
-    font-size: clamp(14.5px, 1.1vw + 9px, 19px);
-    color: var(--text-muted);
-    padding-bottom: 10px;
-    border-bottom: 1px dashed var(--rule);
-  }
-  .skills-col li:last-child { border-bottom: none; }
+  .bento-card:hover { border-color: var(--border-strong); background: var(--bg-card-hover); }
+  .bento-card .val { font-family: var(--font-heading); font-size: 40px; font-weight: 600; color: var(--accent); margin-bottom: 8px; line-height: 1.1; }
+  .bento-card .desc { font-size: 14px; color: var(--text-muted); }
 
-  .certs-strip {
-    margin-top: 60px;
-    padding-top: 40px;
-    border-top: 1px solid var(--rule);
+  /* Experience / Resume Line items */
+  .timeline-container { display: flex; flex-direction: column; gap: 40px; }
+  .item-node {
     display: grid;
-    grid-template-columns: 220px 1fr;
-    gap: 80px;
-  }
-  @media (max-width: 820px) { .certs-strip { grid-template-columns: 1fr; gap: 24px; } }
-  .certs-label {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--champagne);
-  }
-  .certs-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 200px 1fr;
     gap: 32px;
-  }
-  @media (max-width: 820px) { .certs-grid { grid-template-columns: 1fr; gap: 20px; } }
-  .cert h5 {
-    font-family: var(--serif);
-    font-size: 17px;
-    font-weight: 500;
-    margin-bottom: 6px;
-    letter-spacing: -0.005em;
-  }
-  .cert p { font-size: clamp(13.5px, 1vw + 8px, 17.5px); color: var(--text-muted); line-height: 1.55; }
-
-  /* ——— Contact ——— */
-  .contact {
-    padding: 140px 0 80px;
-    background: var(--navy-deep);
-    border-top: 1px solid var(--rule);
     position: relative;
   }
-  .contact::before {
-    content: '';
-    position: absolute;
-    top: 10%; left: -10%;
-    width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(201,169,110,0.06) 0%, transparent 60%);
-    pointer-events: none;
+  @media (max-width: 640px) { .item-node { grid-template-columns: 1fr; gap: 8px; } }
+  .node-meta { font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); padding-top: 4px; }
+  .node-firm { font-size: 14px; color: var(--accent); font-weight: 500; margin-bottom: 4px; }
+  .node-title { font-family: var(--font-heading); font-size: 22px; font-weight: 500; margin-bottom: 12px; }
+  .node-loc { font-size: 12px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 16px; }
+  
+  .node-details { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .node-details li { font-size: 15px; color: var(--text-muted); padding-left: 20px; position: relative; }
+  .node-details li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
+
+  /* Education Section Additions */
+  .edu-sub-section { margin-top: 24px; padding-top: 24px; border-top: 1px dashed var(--border); }
+  .edu-sub-title { font-family: var(--font-mono); font-size: 11px; uppercase; letter-spacing: 0.05em; color: var(--text-dim); margin-bottom: 16px; }
+  .leadership-box { display: flex; flex-direction: column; gap: 20px; }
+  .lead-role { font-weight: 500; color: var(--text-main); margin-bottom: 4px; }
+  .lead-desc { font-size: 14px; color: var(--text-muted); }
+  .tag { display: inline-block; font-family: var(--font-mono); font-size: 11px; background: rgba(212,175,55,0.1); color: var(--accent); padding: 4px 10px; border-radius: 4px; margin-top: 16px; }
+
+  /* Capabilities Grid Layout */
+  .skills-box { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  @media (max-width: 640px) { .skills-box { grid-template-columns: 1fr; } }
+  .skill-group h4 { font-family: var(--font-heading); font-size: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+  .skill-group ul { list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .skill-group li { font-size: 14px; color: var(--text-muted); }
+
+  .cert-row { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border); }
+  .cert-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  @media (max-width: 640px) { .cert-grid { grid-template-columns: 1fr; } }
+  .cert-card { background: var(--bg-card); padding: 20px; border-radius: 4px; border: 1px solid var(--border); }
+  .cert-card h5 { font-family: var(--font-heading); font-size: 16px; font-weight: 500; margin-bottom: 4px; }
+  .cert-card p { font-size: 13px; color: var(--text-muted); }
+
+  /* Contact Blocks */
+  .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  @media (max-width: 768px) { .contact-container { grid-template-columns: 1fr; } }
+  .contact-note { font-size: 18px; color: var(--text-muted); }
+  .contact-note strong { color: var(--text-main); }
+  
+  .link-list { display: flex; flex-direction: column; gap: 12px; }
+  .link-card {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 4px;
   }
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: start;
-  }
-  @media (max-width: 820px) { .contact-grid { grid-template-columns: 1fr; gap: 48px; } }
-  .contact-intro p {
-    font-family: var(--serif);
-    font-size: clamp(17px, 1.4vw + 10px, 24px);
-    font-weight: 300;
-    line-height: 1.55;
-    color: var(--text);
-    margin-bottom: 28px;
-  }
-  .contact-intro p strong { color: var(--champagne); font-style: italic; font-weight: 500; }
+  .link-card:hover { border-color: var(--accent); background: var(--bg-card-hover); }
+  .link-card .label { font-family: var(--font-mono); font-size: 12px; color: var(--text-dim); text-transform: uppercase; }
+  .link-card .value { font-weight: 500; }
+  .link-card .icon { color: var(--accent); font-size: 18px; }
 
-  .contact-links { display: grid; gap: 2px; }
-  .contact-link {
-    display: grid;
-    grid-template-columns: 110px 1fr auto;
-    gap: 24px;
-    align-items: center;
-    padding: 24px 4px;
-    border-top: 1px solid var(--rule);
-    transition: padding 0.3s ease, color 0.3s ease;
-  }
-  .contact-link:last-of-type { border-bottom: 1px solid var(--rule); }
-  .contact-link:hover { padding-left: 16px; color: var(--champagne); }
-  .contact-link .ck {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-dim);
-  }
-  .contact-link .cv {
-    font-family: var(--serif);
-    font-size: clamp(16px, 1.2vw + 9px, 22px);
-    font-weight: 400;
-    letter-spacing: -0.005em;
-  }
-  .contact-link .ca {
-    font-family: var(--serif);
-    font-size: 20px;
-    color: var(--champagne);
-    transition: transform 0.3s ease;
-  }
-  .contact-link:hover .ca { transform: translate(3px, -3px); }
+  /* Footer Section */
+  footer { padding: 40px 0; border-top: 1px solid var(--border); background: #05070a; font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); }
+  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+  footer span { color: var(--accent); }
 
-  /* ——— Footer ——— */
-  footer {
-    padding: 44px 0;
-    border-top: 1px solid var(--rule);
-    background: var(--navy-deep);
-  }
-  footer .wrap {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: var(--mono);
-    font-size: 10.5px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-dim);
-  }
-  @media (max-width: 620px) {
-    footer .wrap { flex-direction: column; gap: 14px; text-align: center; }
-  }
-  footer .gem { color: var(--champagne); }
-
-  /* ——— Reveal animation ——— */
-  .reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  .reveal.in {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* ——————————————————————————————— */
-  /* ——— MOBILE & TABLET ADAPTATIONS ——— */
-  /* ——————————————————————————————— */
-
-  /* Tablet (≤ 980px) */
-  @media (max-width: 980px) {
-    .wrap { padding: 0 32px; }
-    section { padding: 100px 0; }
-    .section-head { margin-bottom: 56px; }
-    .hero { padding: 140px 0 80px; }
-  }
-
-  /* Mobile (≤ 720px) */
-  @media (max-width: 720px) {
-    .wrap { padding: 0 22px; }
-
-    /* Navigation: more breathing room */
-    nav { padding: 16px 0; }
-    .brand { font-size: 20px; }
-    .nav-links { gap: 0; }
-    .nav-links .contact-btn {
-      padding: 9px 16px;
-      font-size: 12px;
-    }
-
-    /* Hero: reduce vertical weight */
-    .hero {
-      min-height: auto;
-      padding: 120px 0 70px;
-    }
-    .hero::before {
-      width: 400px; height: 400px;
-      right: -30%;
-    }
-    .eyebrow {
-      margin-bottom: 32px;
-      font-size: 10px;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .eyebrow::before { width: 24px; }
-    h1.display {
-      margin-bottom: 32px;
-      letter-spacing: -0.04em;
-    }
-    .lede {
-      margin-bottom: 40px;
-    }
-
-    /* CTA row: full-width stacked buttons on narrow screens */
-    .cta-row {
-      gap: 10px;
-      margin-bottom: 56px;
-      flex-direction: column;
-      align-items: stretch;
-    }
-    .btn {
-      padding: 14px 22px;
-      font-size: 12.5px;
-      justify-content: space-between;
-      width: 100%;
-    }
-
-    .ticker-wrap { padding: 20px 0; }
-    .ticker { gap: 32px; }
-    .ticker-item { font-size: 10.5px; }
-    .ticker-item::after { margin-left: 32px; }
-
-    /* Sections: lighter vertical rhythm */
-    section { padding: 72px 0; }
-    .section-head {
-      margin-bottom: 44px;
-      gap: 18px;
-    }
-    .section-marker {
-      padding-top: 0;
-      font-size: 10px;
-    }
-    .section-marker::before {
-      top: -12px;
-      width: 24px;
-    }
-
-    /* About body: tighter spacing */
-    .about-body { margin-top: 32px !important; }
-    .about-body p + p { margin-top: 16px; }
-
-    /* Stats: 2-col grid with better padding */
-    .stats { margin-top: 56px; }
-    .stat { padding: 24px 18px; }
-    .stat .num { margin-bottom: 10px; }
-    .stat .num .sup { font-size: 15px; }
-    .stat .label { font-size: 12px; line-height: 1.45; }
-
-    /* Experience & Education: stacked layout improvements */
-    .exp-item, .edu-item {
-      padding: 32px 0;
-      gap: 14px;
-    }
-    .exp-date, .edu-date {
-      font-size: 10.5px;
-      padding-top: 0;
-    }
-    .exp-firm { font-size: 13px; }
-    .exp-meta {
-      font-size: 11.5px;
-      margin-bottom: 18px;
-    }
-    .exp-bullets { gap: 10px; }
-    .exp-bullets li { padding-left: 20px; }
-
-    .edu-degree {
-      font-size: 14px;
-      margin-bottom: 14px;
-    }
-    .edu-coursework {
-      font-size: 13px;
-      margin-top: 14px;
-      padding-top: 14px;
-    }
-    .edu-roles {
-      margin-top: 22px;
-      padding-top: 20px;
-      gap: 18px;
-    }
-    .edu-role { padding-left: 16px; }
-    .edu-role-title { font-size: 15.5px; margin-bottom: 6px; }
-    .edu-tag {
-      font-size: 10px;
-      padding: 5px 10px;
-    }
-
-    /* Skills: tighter cells */
-    .skills-col { padding: 26px 20px; }
-    .skills-col h4 { margin-bottom: 16px; }
-
-    /* Certs strip: full-width stacked */
-    .certs-strip {
-      margin-top: 44px;
-      padding-top: 30px;
-      gap: 18px;
-    }
-    .certs-grid { gap: 22px; }
-    .cert h5 { font-size: 15px; }
-
-    /* Contact: restructure link rows for narrow screens */
-    .contact { padding: 90px 0 60px; }
-    .contact-grid { gap: 36px; }
-    .contact-intro p:last-child {
-      font-size: 16px !important;
-    }
-    .contact-link {
-      grid-template-columns: 1fr auto;
-      gap: 6px 18px;
-      padding: 18px 4px;
-    }
-    .contact-link .ck {
-      grid-column: 1 / -1;
-      font-size: 10px;
-      margin-bottom: 2px;
-    }
-    .contact-link .cv {
-      grid-column: 1;
-    }
-    .contact-link .ca {
-      grid-column: 2;
-      grid-row: 2;
-      font-size: 18px;
-    }
-    .contact-link:hover { padding-left: 8px; }
-
-    /* Footer */
-    footer { padding: 30px 0; }
-    footer .wrap { font-size: 9.5px; }
-  }
-
-  /* Small mobile (≤ 420px) — tightest tier */
-  @media (max-width: 420px) {
-    .wrap { padding: 0 18px; }
-    .brand { font-size: 18px; }
-    .nav-links .contact-btn {
-      padding: 8px 13px;
-      font-size: 11px;
-    }
-    h1.display { letter-spacing: -0.045em; }
-    .stats { grid-template-columns: 1fr; }
-    .skills-grid { grid-template-columns: 1fr; }
-    .skills-col { border-right: none !important; border-bottom: 1px solid var(--rule); }
-    .skills-col:last-child { border-bottom: none; }
-  }
-
-  /* Reduce motion for users who prefer it */
+  /* Scroll Reveal State configuration */
+  .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
   @media (prefers-reduced-motion: reduce) {
     .reveal { opacity: 1; transform: none; transition: none; }
     .ticker { animation: none; }
-    * { transition-duration: 0.01ms !important; }
   }
-
 </style>
 </head>
 <body>
 
 <nav>
   <div class="wrap">
-    <a href="#hero" class="brand">AN<span class="dot">.</span></a>
+    <a href="#hero" class="brand">ADITYA NAIR<span>.</span></a>
     <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
+      <a href="#about">Profile</a>
+      <a href="#experience">Track Record</a>
       <a href="#education">Education</a>
-      <a href="#contact" class="contact-btn">Get in touch →</a>
+      <a href="#skills">Capabilities</a>
+      <a href="#contact" class="contact-btn">Connect →</a>
     </div>
   </div>
 </nav>
 
-<!-- ——— HERO ——— -->
 <header class="hero" id="hero">
-  <div class="wrap">
-    <div class="hero-grid">
-      <div class="eyebrow reveal">
-        <span>Available from July 2026</span>
-        <span class="sep">·</span>
-        <span>Investment Management &amp; Equity Research</span>
-      </div>
+  <div class="wrap" style="width: 100%;">
+    <div class="eyebrow reveal">Available from July 2026 · Investment Management &amp; Research</div>
+    <h1 class="display reveal">Discretionary Strategy<span>.</span><br>Fundamental Alpha<span>.</span></h1>
+    <p class="lede reveal">
+      Investment professional with <strong>2.5 years of experience</strong> managing a ₹35Cr+ discretionary HNI asset book. Specialized in absolute-return sector rotation and granular corporate valuation. Currently reading for an <strong>MSc in Finance</strong> at Simon Business School, University of Rochester.
+    </p>
+    
+    <div class="cta-row reveal">
+      <a href="https://docs.google.com/document/d/1uJyNXbjFfho2KsJEgBQCmXWHCroBU_j8/edit?usp=sharing&amp;ouid=105768665480726445171&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener" class="btn btn-primary">Retain Resume ↗</a>
+      <a href="#contact" class="btn btn-secondary">Initiate Contact →</a>
+    </div>
 
-      <h1 class="display reveal">Aditya Nair<span class="period">.</span></h1>
-
-      <p class="lede reveal">
-        Investment professional with <strong>2.5 years</strong> at a Mumbai HNI wealth advisory, covering discretionary multi-asset portfolios, equity and fixed income research, and three closed buy/sell calls across Indian markets. Currently pursuing an <strong>MSc in Finance</strong> at Simon Business School, University of Rochester.
-      </p>
-
-      <div class="cta-row reveal">
-        <a href="https://docs.google.com/document/d/1uJyNXbjFfho2KsJEgBQCmXWHCroBU_j8/edit?usp=sharing&amp;ouid=105768665480726445171&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener" class="btn btn-primary">
-          Resume <span class="arrow">↗</span>
-        </a>
-        <a href="#contact" class="btn">
-          Get in touch <span class="arrow">→</span>
-        </a>
-      </div>
-
-      <div class="ticker-wrap reveal">
-        <div class="ticker">
-          <span class="ticker-item"><span class="symbol">ASTERDM</span> Buy · Target ₹620 · <span class="up">+29% closed</span></span>
-          <span class="ticker-item"><span class="symbol">ETERNAL</span> Sell · Target ₹234 · <span class="down">−15% closed</span></span>
-          <span class="ticker-item"><span class="symbol">WAAREEENER</span> Buy · Target ₹3,872 · <span class="up">+6.2% live</span></span>
-          <span class="ticker-item"><span class="symbol">UPI</span> Monetization · India Payments Sector</span>
-          <span class="ticker-item"><span class="symbol">CFA</span> Level II Candidate · Nov 2026</span>
-          <span class="ticker-item"><span class="symbol">SSVF</span> Portfolio Management Associate</span>
-          <!-- duplicate for seamless loop -->
-          <span class="ticker-item"><span class="symbol">ASTERDM</span> Buy · Target ₹620 · <span class="up">+29% closed</span></span>
-          <span class="ticker-item"><span class="symbol">ETERNAL</span> Sell · Target ₹234 · <span class="down">−15% closed</span></span>
-          <span class="ticker-item"><span class="symbol">WAAREEENER</span> Buy · Target ₹3,872 · <span class="up">+6.2% live</span></span>
-          <span class="ticker-item"><span class="symbol">UPI</span> Monetization · India Payments Sector</span>
-          <span class="ticker-item"><span class="symbol">CFA</span> Level II Candidate · Nov 2026</span>
-          <span class="ticker-item"><span class="symbol">SSVF</span> Portfolio Management Associate</span>
-        </div>
+    <div class="ticker-wrap reveal">
+      <div class="ticker">
+        <span class="ticker-item"><span class="sym">ASTERDM</span> Buy · Target ₹620 · <span class="up">+29% Closed</span></span>
+        <span class="ticker-item"><span class="sym">ETERNAL</span> Sell · Target ₹234 · <span class="down">−15% Closed</span></span>
+        <span class="ticker-item"><span class="sym">WAAREEENER</span> Buy · Target ₹3,872 · <span class="up">+6.2% Live</span></span>
+        <span class="ticker-item"><span class="sym">CFA</span> Level II Candidate · Nov 2026</span>
+        <span class="ticker-item"><span class="sym">SSVF</span> Venture Portfolio Management</span>
+        <!-- duplicate loop entries -->
+        <span class="ticker-item"><span class="sym">ASTERDM</span> Buy · Target ₹620 · <span class="up">+29% Closed</span></span>
+        <span class="ticker-item"><span class="sym">ETERNAL</span> Sell · Target ₹234 · <span class="down">−15% Closed</span></span>
+        <span class="ticker-item"><span class="sym">WAAREEENER</span> Buy · Target ₹3,872 · <span class="up">+6.2% Live</span></span>
       </div>
     </div>
   </div>
 </header>
 
-<!-- ——— ABOUT ——— -->
-<section class="about" id="about">
-  <div class="wrap">
-    <div class="about-grid">
-      <div class="section-marker reveal">§ 01 — Profile</div>
-      <div>
-        <h2 class="section-title reveal">About <em>me.</em></h2>
-        <div class="about-body reveal" style="margin-top: 48px;">
-          <p>
-            I'm a finance professional trained at the <strong>University of Rochester's Simon Business School</strong>, pursuing an MSc in Finance with a concentration in Investment Management &amp; Financial Analysis (GPA 3.92 / 4.0, Dean's List, Dean's Scholarship Recipient), graduating December 2026.
-          </p>
-          <p>
-            Prior to graduate school, I spent 2.5 years at <strong>Lifelong Wealth</strong>, a boutique Mumbai wealth advisory, progressing from Intern to Senior Analyst. I managed a ₹35Cr+ discretionary multi-asset sub-portfolio across 30+ HNI relationships, led fundamental research across healthcare, financials, and consumption sectors, and delivered three closed buy/sell calls, with two thesis targets achieved within 6–9 months.
-          </p>
-          <p>
-            I care deeply about rigorous fundamental analysis, compounding, and the craft of building conviction over noise. Outside markets: Formula One, strength training, poker strategy, and the occasional marathon.
-          </p>
-        </div>
-
-        <div class="stats reveal">
-          <div class="stat">
-            <div class="num">2.5<span class="sup">yr</span></div>
-            <div class="label">Buy-side experience at Mumbai HNI wealth advisory</div>
-          </div>
-          <div class="stat">
-            <div class="num">3.92</div>
-            <div class="label">GPA at Simon Business School · Dean's List · Dean's Scholar</div>
-          </div>
-          <div class="stat">
-            <div class="num">CFA</div>
-            <div class="label">Level I passed Aug 2024 · Level II candidate Nov 2026</div>
-          </div>
-          <div class="stat">
-            <div class="num">9.78<span class="sup">/10</span></div>
-            <div class="label">Undergraduate GPA · Top 1% of graduating class, University of Mumbai</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ——— EXPERIENCE ——— -->
-<section id="experience">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="section-marker reveal">§ 02 — Experience</div>
-      <h2 class="section-title reveal">Track <em>record.</em></h2>
-    </div>
-
-    <div class="exp-item reveal">
-      <div class="exp-date">Jan 2024 — Apr 2025</div>
-      <div>
-        <div class="exp-firm">Lifelong Wealth · Boutique Wealth Advisory</div>
-        <div class="exp-title">Senior Analyst, Investments</div>
-        <div class="exp-meta">Mumbai, India</div>
-        <ul class="exp-bullets">
-          <li>Managed ₹35Cr+ discretionary multi-asset sub-portfolio across 30+ HNI relationships, delivering ~190 bps annualised outperformance vs. blended Nifty 50 benchmark through sector rotation and framework-driven tactical rebalancing.</li>
-          <li>Led quarterly portfolio reviews across equity, fixed income, and alternatives; reassessed goal-based asset allocation against evolving macro conditions, client risk profiling, and SEBI-compliant suitability.</li>
-          <li>Evaluated alternatives allocations for qualified clients including AIF and PMS mandates; conducted due diligence, fee-structure analysis, and product-fit assessment against SEBI guidelines and client IPS.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="exp-item reveal">
-      <div class="exp-date">Jan 2023 — Dec 2023</div>
-      <div>
-        <div class="exp-firm">Lifelong Wealth · Boutique Wealth Advisory</div>
-        <div class="exp-title">Analyst, Investments</div>
-        <div class="exp-meta">Mumbai, India</div>
-        <ul class="exp-bullets">
-          <li>Conducted fundamental equity research across 40+ NSE/BSE-listed securities spanning healthcare, financials, and consumption; evaluated risk-adjusted return metrics (Sharpe, Alpha, Beta) to generate investment theses.</li>
-          <li>Authored 30+ macroeconomic, industry, and company-specific research notes; recommendations adopted by Portfolio Manager across client books for alpha generation.</li>
-          <li>Delivered client-ready Investment Policy Statement drafts, portfolio review decks, and tactical allocation proposals across mid-cap and large-cap mandates.</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="exp-item reveal">
-      <div class="exp-date">Dec 2022 — Jan 2023</div>
-      <div>
-        <div class="exp-firm">Lifelong Wealth · Boutique Wealth Advisory</div>
-        <div class="exp-title">Intern, Investments</div>
-        <div class="exp-meta">Mumbai, India</div>
-        <ul class="exp-bullets">
-          <li>Designed an automated Excel-based risk profiling and mutual fund selection tool, integrated with client suitability parameters; adopted firmwide, leading to conversion to a full-time analyst role.</li>
-          <li>Executed client investment transactions across equity and mutual fund mandates; generated holdings and transaction reports to support advisor portfolio oversight.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ——— EDUCATION ——— -->
-<section class="education" id="education">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="section-marker reveal">§ 03 — Education</div>
-      <h2 class="section-title reveal">Academic <em>foundation.</em></h2>
-    </div>
-
-    <div class="edu-item reveal">
-      <div class="edu-date">Dec 2026</div>
-      <div>
-        <div class="edu-school">Simon Business School, University of Rochester</div>
-        <div class="edu-degree">Master of Science in Finance (STEM) · Investment Management &amp; Financial Analysis</div>
-        <div class="edu-detail">
-          <strong>GPA 3.81 / 4.0</strong> · Dean's List Award · Dean's Scholarship Recipient
-        </div>
-        <div class="edu-coursework">
-          Coursework: Asset Management · Quantitative Investing · Debt Markets · Financial Markets &amp; Investments · Options Strategy
-        </div>
-
-        <div class="edu-roles">
-          <div class="edu-roles-label">— Leadership &amp; Activities</div>
-          <div class="edu-role">
-            <div class="edu-role-title">Portfolio Management Associate <span class="edu-role-org">· Simon School Venture Fund</span></div>
-            <div class="edu-role-body">
-              Lead a team of analysts on deal-level due diligence across portfolio companies, conducting management discussions and evaluating operating performance, unit economics, capital requirements, and valuation assumptions. Spearheaded an internal initiative to standardize knowledge transfer and portfolio monitoring workflows; developed SOPs and presented outcomes to the Fund Board.
-            </div>
-          </div>
-          <div class="edu-role">
-            <div class="edu-role-title">VP of Finance &amp; Operations <span class="edu-role-org">· Master's Advisory Council</span></div>
-            <div class="edu-role-body">
-              Steering committee role representing the MS Finance cohort on academic programming, student engagement, and fiscal oversight of council operations.
-            </div>
-          </div>
-        </div>
-
-        <span class="edu-tag">Available Full-Time July 2026</span>
-      </div>
-    </div>
-
-    <div class="edu-item reveal">
-      <div class="edu-date">May 2022</div>
-      <div>
-        <div class="edu-school">S.K. Somaiya Degree College, University of Mumbai</div>
-        <div class="edu-degree">Bachelor of Management Studies · Specialization in Finance &amp; Investments</div>
-        <div class="edu-detail">
-          <strong>GPA 9.78 / 10</strong> · Top 1% of graduating class<br>
-          Class Representative for three years<br>
-          Rotaract Club of S.K. Somaiya, social-impact initiatives in education, environment, and healthcare
-        </div>
-        <span class="edu-tag">First Class with Distinction</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ——— SKILLS ——— -->
-<section id="skills">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="section-marker reveal">§ 04 — Capabilities</div>
-      <h2 class="section-title reveal">Skills &amp; <em>certifications.</em></h2>
-    </div>
-
-    <div class="skills-grid reveal">
-      <div class="skills-col">
-        <h4>Valuation &amp; Modelling</h4>
-        <ul>
-          <li>DCF (FCFF / FCFE)</li>
-          <li>3-Statement Modelling</li>
-          <li>Comparable Company Analysis</li>
-          <li>EV / EBITDA</li>
-          <li>Sum-of-the-Parts (SOTP)</li>
-        </ul>
-      </div>
-      <div class="skills-col">
-        <h4>Portfolio &amp; Risk</h4>
-        <ul>
-          <li>Portfolio Construction</li>
-          <li>Performance Attribution</li>
-          <li>Factor Analysis</li>
-          <li>Risk-Adjusted Return Metrics</li>
-          <li>Sector Rotation</li>
-        </ul>
-      </div>
-      <div class="skills-col">
-        <h4>Tools &amp; Platforms</h4>
-        <ul>
-          <li>Bloomberg Terminal</li>
-          <li>S&amp;P Capital IQ</li>
-          <li>Advanced Excel</li>
-          <li>NGEN Markets</li>
-          <li>Python (pandas, numpy)</li>
-        </ul>
-      </div>
-      <div class="skills-col">
-        <h4>Indian Markets</h4>
-        <ul>
-          <li>NSE / BSE Equities</li>
-          <li>CDSL / NSDL</li>
-          <li>MF Central · AMFI</li>
-          <li>SEBI (AIF / PMS)</li>
-          <li>Alternatives &amp; MLDs</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="certs-strip">
-      <div class="certs-label reveal">— Certifications &amp; Training</div>
-      <div class="certs-grid">
-        <div class="cert reveal">
-          <h5>CFA Level I — Passed</h5>
-          <p>August 2024 · Level II Candidate, November 2026</p>
-        </div>
-        <div class="cert reveal">
-          <h5>NISM Series XV &amp; V-A</h5>
-          <p>Both certificate exams scheduled August 2026</p>
-        </div>
-        <div class="cert reveal">
-          <h5>Wall Street Prep</h5>
-          <p>Financial Statement Analysis · DCF · Buy-Side Investment Analysis</p>
-        </div>
-        <div class="cert reveal">
-          <h5>Bloomberg Market Concepts</h5>
-          <p>2026 · Economics, Currencies, Fixed Income, Equities</p>
-        </div>
-        <div class="cert reveal">
-          <h5>Financial Edge Training</h5>
-          <p>2025 · Advanced Financial Modelling curriculum</p>
-        </div>
-        <div class="cert reveal">
-          <h5>Capital IQ Training</h5>
-          <p>Screening · Modelling · Transaction comparables</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ——— CONTACT ——— -->
-<section class="contact" id="contact">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="section-marker reveal">§ 05 — Get in touch</div>
-      <h2 class="section-title reveal">Let's <em>connect.</em></h2>
-    </div>
-
-    <div class="contact-grid">
-      <div class="contact-intro reveal">
+<section id="about">
+  <div class="wrap grid-layout">
+    <div class="section-label">01 // <span>Profile</span></div>
+    <div>
+      <div class="about-text reveal">
         <p>
-          Currently exploring <strong>full-time opportunities in asset management, private wealth, and equity research</strong> across Tier-1 firms in India. <strong>Available from July 2026.</strong>
+          I approach asset allocation with structural discipline, operating at the intersection of quantitative macroeconomic parameters and bottom-up fundamental analysis. 
         </p>
-        <p style="font-size: 20px; color: var(--text-muted);">
-          Always open to a conversation about markets, research, or anything in between.
+        <p>
+          During my tenure at <strong>Lifelong Wealth</strong> in Mumbai, I advanced from analysis frameworks into managing active mandates across 30+ HNI accounts. My core mandate involved managing a multi-asset portfolio framework designed around structural alpha generation, yielding a consecutive 190 bps annualized outperformance over benchmark marks.
         </p>
       </div>
+      
+      <div class="bento-grid reveal">
+        <div class="bento-card">
+          <div class="val">2.5y</div>
+          <div class="desc">Buy-Side Research &amp; Advisory Track Record</div>
+        </div>
+        <div class="bento-card">
+          <div class="val">3.92</div>
+          <div class="desc">MSc Finance GPA · Simon Business School (Dean's List)</div>
+        </div>
+        <div class="bento-card">
+          <div class="val">CFA</div>
+          <div class="desc">Level I Passed (Aug 24) · Level II Candidate (Nov 26)</div>
+        </div>
+        <div class="bento-card">
+          <div class="val">9.78<span>/10</span></div>
+          <div class="desc">Undergraduate Finance Rank · Top 1% University of Mumbai</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <div class="contact-links reveal">
-        <a class="contact-link" href="mailto:adityanair.cv@gmail.com">
-          <span class="ck">— Email</span>
-          <span class="cv">adityanair.cv@gmail.com</span>
-          <span class="ca">↗</span>
+<section id="experience">
+  <div class="wrap grid-layout">
+    <div class="section-label">02 // <span>Experience</span></div>
+    <div class="timeline-container">
+      
+      <div class="item-node reveal">
+        <div class="node-meta">Jan 2024 — Apr 2025</div>
+        <div>
+          <div class="node-firm">Lifelong Wealth</div>
+          <div class="node-title">Senior Analyst, Investments</div>
+          <div class="node-loc">Mumbai, India</div>
+          <ul class="node-details">
+            <li>Directed execution layers for a ₹35Cr+ discretionary capital deployment system, driving a 190 bps alpha premium over the Nifty 50 compound metric.</li>
+            <li>Conducted formal asset fit models and alternate product structures under specialized SEBI mandates for high net-worth asset books.</li>
+            <li>Managed client reviews regarding dynamic multi-asset shifts based on macroeconomic volatility and investment policy compliance.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="item-node reveal">
+        <div class="node-meta">Jan 2023 — Dec 2023</div>
+        <div>
+          <div class="node-firm">Lifelong Wealth</div>
+          <div class="node-title">Analyst, Investments</div>
+          <div class="node-loc">Mumbai, India</div>
+          <ul class="node-details">
+            <li>Built comprehensive valuation coverages across 40 listed target equities in domestic consumer, micro-finance, and public healthcare fields.</li>
+            <li>Authored internal portfolio manager briefing memos mapping factor variations, corporate governance shifts, and alpha expectations.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="item-node reveal">
+        <div class="node-meta">Dec 2022 — Jan 2023</div>
+        <div>
+          <div class="node-firm">Lifelong Wealth</div>
+          <div class="node-title">Intern, Investments</div>
+          <div class="node-loc">Mumbai, India</div>
+          <ul class="node-details">
+            <li>Engineered an automated matrix engine within Excel to aggregate variance risks and match allocation mandates directly against client risk metrics.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap grid-layout">
+    <div class="section-label">03 // <span>Education</span></div>
+    <div class="timeline-container">
+      
+      <div class="item-node reveal">
+        <div class="node-meta">Graduation Dec 2026</div>
+        <div>
+          <div class="node-firm">University of Rochester</div>
+          <div class="node-title">Simon Business School · MS Finance (STEM)</div>
+          <div class="node-loc">Rochester, NY</div>
+          <ul class="node-details">
+            <li><strong>Academic Status:</strong> GPA 3.81 / 4.0 · Dean's List Designation · Dean's Scholar Recipient</li>
+            <li><strong>Concentrations:</strong> Asset Management, Options Systems, Fixed Income Structural Models, Quantitative Analysis</li>
+          </ul>
+          
+          <div class="edu-sub-section">
+            <div class="edu-sub-title">Leadership Assignments</div>
+            <div class="leadership-box">
+              <div>
+                <div class="lead-role">Portfolio Management Associate — Simon School Venture Fund</div>
+                <div class="lead-desc">Manage analyst teams tracking venture-tier private placements, modeling target operational cash flows and presenting due diligence documentation directly to the Board of Trustees.</div>
+              </div>
+              <div>
+                <div class="lead-role">VP Finance &amp; Operations — Master's Advisory Council</div>
+                <div class="lead-desc">Coordinate fiscal modeling parameters and capital allocations for student governance divisions.</div>
+              </div>
+            </div>
+          </div>
+          <span class="tag">Available Full-Time July 2026</span>
+        </div>
+      </div>
+
+      <div class="item-node reveal">
+        <div class="node-meta">Concluded May 2022</div>
+        <div>
+          <div class="node-firm">University of Mumbai</div>
+          <div class="node-title">S.K. Somaiya Degree College · Bachelor of Management Studies</div>
+          <div class="node-loc">Mumbai, India</div>
+          <ul class="node-details">
+            <li><strong>Academic Status:</strong> Final Cumulative Grade 9.78 / 10 · Ranked in Top 1% of overall department tier.</li>
+            <li><strong>Engagements:</strong> Three-term elected Class Representative; Lead Coordinator for community social initiatives.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap grid-layout">
+    <div class="section-label">04 // <span>Capabilities</span></div>
+    <div>
+      <div class="skills-box reveal">
+        <div class="skill-group">
+          <h4>Valuation Frameworks</h4>
+          <ul>
+            <li>DCF (FCFF, FCFE) Modeling</li>
+            <li>Three-Statement Forecasting</li>
+            <li>SOTP (Sum-of-the-Parts) Models</li>
+            <li>Comparable Trading Analysis</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>Portfolio Management</h4>
+          <ul>
+            <li>Factor Attribution Metrics</li>
+            <li>Discretionary Selection Models</li>
+            <li>Risk Variance Calibration</li>
+            <li>Tactical Asset Rotation</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>Infrastructure &amp; Tools</h4>
+          <ul>
+            <li>Bloomberg Terminal</li>
+            <li>S&amp;P Capital IQ System</li>
+            <li>Python Data Engines (Pandas)</li>
+            <li>NGEN Quantitative Analytics</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>Regulatory Markets</h4>
+          <ul>
+            <li>NSE / BSE Execution Rules</li>
+            <li>SEBI Mandate Guidelines</li>
+            <li>AIF / PMS Structure Audits</li>
+            <li>Alternative Asset Evaluation</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cert-row reveal">
+        <div class="cert-grid">
+          <div class="cert-card">
+            <h5>CFA Charter track</h5>
+            <p>Level I passed clear in August 2024. Active Level II candidate registered for November 2026 examination cycle.</p>
+          </div>
+          <div class="cert-card">
+            <h5>Wall Street Prep Academy</h5>
+            <p>Accredited training blocks in corporate financial statement mechanics and micro-cap target underwriting models.</p>
+          </div>
+          <div class="cert-card">
+            <h5>Bloomberg Market Concepts</h5>
+            <p>Certified validation across Fixed Income curves, Foreign Exchange indicators, and Equity Market operational mechanics.</p>
+          </div>
+          <div class="cert-card">
+            <h5>Financial Edge Training</h5>
+            <p>Advanced institutional tier modeling architecture validation covering institutional asset configurations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap grid-layout">
+    <div class="section-label">05 // <span>Connection</span></div>
+    <div class="contact-container reveal">
+      <div class="contact-note">
+        <p>
+          Open to professional conversations regarding <strong>Asset Management mandates, Buy-Side Research opportunities, and Discretionary Wealth Strategy alignments</strong> within top-tier institutional firms. 
+        </p>
+        <p style="margin-top: 24px; font-size: 15px; color: var(--text-dim);">
+          Based out of Rochester, NY and Mumbai, India. Permanent availability begins July 2026.
+        </p>
+      </div>
+      
+      <div class="link-list">
+        <a class="link-card" href="mailto:adityanair.cv@gmail.com">
+          <div>
+            <div class="label">Corporate Email</div>
+            <div class="value">adityanair.cv@gmail.com</div>
+          </div>
+          <div class="icon">↗</div>
         </a>
-        <a class="contact-link" href="https://linkedin.com/in/adityanair19" target="_blank" rel="noopener">
-          <span class="ck">— LinkedIn</span>
-          <span class="cv">/in/adityanair19</span>
-          <span class="ca">↗</span>
+        <a class="link-card" href="https://linkedin.com/in/adityanair19" target="_blank" rel="noopener">
+          <div>
+            <div class="label">LinkedIn Secure Link</div>
+            <div class="value">/in/adityanair19</div>
+          </div>
+          <div class="icon">↗</div>
         </a>
-        <a class="contact-link" href="https://docs.google.com/document/d/1uJyNXbjFfho2KsJEgBQCmXWHCroBU_j8/edit?usp=sharing&amp;ouid=105768665480726445171&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener">
-          <span class="ck">— Resume</span>
-          <span class="cv">View Latest Resume</span>
-          <span class="ca">↗</span>
-        </a>
-        <a class="contact-link" href="tel:+917977868846">
-          <span class="ck">— Phone</span>
-          <span class="cv">+91 79778 68846</span>
-          <span class="ca">↗</span>
+        <a class="link-card" href="tel:+917977868846">
+          <div>
+            <div class="label">Direct Voice Call</div>
+            <div class="value">+91 79778 68846</div>
+          </div>
+          <div class="icon">↗</div>
         </a>
       </div>
     </div>
@@ -1213,42 +566,29 @@
 
 <footer>
   <div class="wrap">
-    <div>© 2026 Aditya Nair <span class="gem">◆</span> All rights reserved</div>
-    <div>Rochester, NY <span class="gem">→</span> Mumbai, India</div>
+    <div>© 2026 Aditya Nair <span>◆</span> Cryptographic integrity verified</div>
+    <div>Rochester, NY <span>→</span> Mumbai, IN</div>
   </div>
 </footer>
 
 <script>
-  // Reveal animation on scroll
-  const io = new IntersectionObserver((entries) => {
+  const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('in');
-        io.unobserve(entry.target);
+        observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  }, { threshold: 0.1 });
 
-  document.querySelectorAll('.reveal').forEach((el, i) => {
-    el.style.transitionDelay = (i % 6) * 60 + 'ms';
-    io.observe(el);
+  document.querySelectorAll('.reveal').forEach((el) => {
+    observer.observe(el);
   });
 
-  // Stagger hero reveals immediately
   window.addEventListener('load', () => {
     document.querySelectorAll('.hero .reveal').forEach((el, i) => {
-      setTimeout(() => el.classList.add('in'), 120 + i * 120);
+      setTimeout(() => el.classList.add('in'), i * 150);
     });
-  });
-
-  // Nav shrink on scroll
-  const nav = document.querySelector('nav');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      nav.style.padding = '14px 0';
-    } else {
-      nav.style.padding = '22px 0';
-    }
   });
 </script>
 
