@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Aditya Nair — Investment Professional</title>
-<meta name="description" content="Aditya Nair — Investment Professional. Specializing in Equity Research, Multi-Asset Portfolios, and Asset Management." />
+<title>Aditya Nair  Investment Professional</title>
+<meta name="description" content="Aditya Nair Investment Professional. Specializing in Wealth Management, Equity Research, and Strategy." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Space+Grotesk:wght@400;500;600&family=SF+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -40,7 +40,6 @@
     overflow-x: hidden;
   }
 
-  /* Fine-grain premium overlay */
   body::before {
     content: '';
     position: fixed;
@@ -125,9 +124,9 @@
 
   h1.display {
     font-family: var(--font-heading);
-    font-size: clamp(48px, 8vw, 96px);
+    font-size: clamp(38px, 6vw, 76px);
     font-weight: 500;
-    line-height: 1.05;
+    line-height: 1.1;
     letter-spacing: -0.03em;
     margin-bottom: 32px;
   }
@@ -172,8 +171,6 @@
   .ticker { display: inline-flex; gap: 40px; animation: ticker 35s linear infinite; }
   .ticker-item { font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); display: flex; align-items: center; gap: 8px; }
   .ticker-item .sym { color: var(--text-main); font-weight: 600; }
-  .ticker-item .up { color: #10b981; }
-  .ticker-item .down { color: #ef4444; }
   .ticker-item::after { content: '•'; color: var(--text-dim); margin-left: 40px; }
   @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
@@ -184,14 +181,14 @@
 
   .section-label {
     font-family: var(--font-heading);
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 500;
     letter-spacing: -0.02em;
     position: sticky; top: 120px;
   }
   .section-label span { color: var(--accent); }
 
-  /* About / Bento Metric Grid */
+  /* Profile & Bento */
   .about-text { font-size: 18px; color: var(--text-muted); max-width: 760px; margin-bottom: 48px; }
   .about-text p + p { margin-top: 20px; }
   .about-text strong { color: var(--text-main); }
@@ -210,14 +207,31 @@
   .bento-card .val { font-family: var(--font-heading); font-size: 40px; font-weight: 600; color: var(--accent); margin-bottom: 8px; line-height: 1.1; }
   .bento-card .desc { font-size: 14px; color: var(--text-muted); }
 
-  /* Experience / Resume Line items */
-  .timeline-container { display: flex; flex-direction: column; gap: 40px; }
-  .item-node {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 32px;
-    position: relative;
+  /* Project Grid Layout */
+  .project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  @media (max-width: 768px) { .project-grid { grid-template-columns: 1fr; } }
+  .project-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 32px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
   }
+  .project-card:hover { border-color: var(--border-strong); background: var(--bg-card-hover); transform: translateY(-2px); }
+  .project-card.clickable-card { cursor: pointer; }
+  .project-card.clickable-card:hover .project-title { color: var(--accent); }
+  .project-type { font-family: var(--font-mono); font-size: 11px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; }
+  .project-title { font-family: var(--font-heading); font-size: 20px; font-weight: 600; margin-bottom: 12px; color: var(--text-main); transition: color 0.2s ease; }
+  .project-desc { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; line-height: 1.5; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .project-tag { font-family: var(--font-mono); font-size: 11px; background: rgba(255,255,255,0.03); color: var(--text-muted); padding: 2px 8px; border-radius: 4px; border: 1px solid var(--border); }
+
+  /* Timeline */
+  .timeline-container { display: flex; flex-direction: column; gap: 40px; }
+  .item-node { display: grid; grid-template-columns: 200px 1fr; gap: 32px; position: relative; }
   @media (max-width: 640px) { .item-node { grid-template-columns: 1fr; gap: 8px; } }
   .node-meta { font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); padding-top: 4px; }
   .node-firm { font-size: 14px; color: var(--accent); font-weight: 500; margin-bottom: 4px; }
@@ -228,15 +242,15 @@
   .node-details li { font-size: 15px; color: var(--text-muted); padding-left: 20px; position: relative; }
   .node-details li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
 
-  /* Education Section Additions */
+  /* Education */
   .edu-sub-section { margin-top: 24px; padding-top: 24px; border-top: 1px dashed var(--border); }
-  .edu-sub-title { font-family: var(--font-mono); font-size: 11px; uppercase; letter-spacing: 0.05em; color: var(--text-dim); margin-bottom: 16px; }
+  .edu-sub-title { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-dim); margin-bottom: 16px; }
   .leadership-box { display: flex; flex-direction: column; gap: 20px; }
   .lead-role { font-weight: 500; color: var(--text-main); margin-bottom: 4px; }
   .lead-desc { font-size: 14px; color: var(--text-muted); }
   .tag { display: inline-block; font-family: var(--font-mono); font-size: 11px; background: rgba(212,175,55,0.1); color: var(--accent); padding: 4px 10px; border-radius: 4px; margin-top: 16px; }
 
-  /* Capabilities Grid Layout */
+  /* Capabilities */
   .skills-box { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
   @media (max-width: 640px) { .skills-box { grid-template-columns: 1fr; } }
   .skill-group h4 { font-family: var(--font-heading); font-size: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
@@ -250,7 +264,7 @@
   .cert-card h5 { font-family: var(--font-heading); font-size: 16px; font-weight: 500; margin-bottom: 4px; }
   .cert-card p { font-size: 13px; color: var(--text-muted); }
 
-  /* Contact Blocks */
+  /* Contact */
   .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
   @media (max-width: 768px) { .contact-container { grid-template-columns: 1fr; } }
   .contact-note { font-size: 18px; color: var(--text-muted); }
@@ -266,12 +280,12 @@
   .link-card .value { font-weight: 500; }
   .link-card .icon { color: var(--accent); font-size: 18px; }
 
-  /* Footer Section */
+  /* Footer */
   footer { padding: 40px 0; border-top: 1px solid var(--border); background: #05070a; font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); }
   footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
   footer span { color: var(--accent); }
 
-  /* Scroll Reveal State configuration */
+  /* Animations */
   .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
   .reveal.in { opacity: 1; transform: translateY(0); }
   @media (prefers-reduced-motion: reduce) {
@@ -287,9 +301,9 @@
     <a href="#hero" class="brand">ADITYA NAIR<span>.</span></a>
     <div class="nav-links">
       <a href="#about">Profile</a>
+      <a href="#research">Research &amp; Tools</a>
       <a href="#experience">Track Record</a>
       <a href="#education">Education</a>
-      <a href="#skills">Capabilities</a>
       <a href="#contact" class="contact-btn">Connect →</a>
     </div>
   </div>
@@ -297,10 +311,10 @@
 
 <header class="hero" id="hero">
   <div class="wrap" style="width: 100%;">
-    <div class="eyebrow reveal">Available from July 2026 · Investment Management &amp; Research</div>
-    <h1 class="display reveal">Discretionary Strategy<span>.</span><br>Fundamental Alpha<span>.</span></h1>
+    <div class="eyebrow reveal">Available from 1st August 2026 · Investment Management &amp; Research </div>
+    <h1 class="display reveal">Aditya Nair <br>Active Portfolio Management // Equity Research<span>.</span></h1>
     <p class="lede reveal">
-      Investment professional with <strong>2.5 years of experience</strong> managing a ₹35Cr+ discretionary HNI asset book. Specialized in absolute-return sector rotation and granular corporate valuation. Currently reading for an <strong>MSc in Finance</strong> at Simon Business School, University of Rochester.
+      Investment professional with <strong>2.5 years of experience</strong> managing a ₹35 Cr discretionary HNI asset book . Specialized in absolute-return sector rotation and granular corporate valuation . Currently reading for an <strong>MSc in Finance</strong> at Simon Business School, University of Rochester .
     </p>
     
     <div class="cta-row reveal">
@@ -310,20 +324,21 @@
 
     <div class="ticker-wrap reveal">
       <div class="ticker">
-        <span class="ticker-item"><span class="sym">ASTERDM</span> Buy · Target ₹620 · <span class="up">+29% Closed</span></span>
-        <span class="ticker-item"><span class="sym">ETERNAL</span> Sell · Target ₹234 · <span class="down">−15% Closed</span></span>
-        <span class="ticker-item"><span class="sym">WAAREEENER</span> Buy · Target ₹3,872 · <span class="up">+6.2% Live</span></span>
-        <span class="ticker-item"><span class="sym">CFA</span> Level II Candidate · Nov 2026</span>
-        <span class="ticker-item"><span class="sym">SSVF</span> Venture Portfolio Management</span>
+        <span class="ticker-item"><span class="sym">CFA</span> Level II Candidate </span>
+        <span class="ticker-item"><span class="sym">SSVF</span> Venture Portfolio Management Associate</span>
+        <span class="ticker-item"><span class="sym">MSc Finance</span> Simon Business School </span>
+        <span class="ticker-item"><span class="sym">NISM</span> Series XV &amp; V-A Underway </span>
         <!-- duplicate loop entries -->
-        <span class="ticker-item"><span class="sym">ASTERDM</span> Buy · Target ₹620 · <span class="up">+29% Closed</span></span>
-        <span class="ticker-item"><span class="sym">ETERNAL</span> Sell · Target ₹234 · <span class="down">−15% Closed</span></span>
-        <span class="ticker-item"><span class="sym">WAAREEENER</span> Buy · Target ₹3,872 · <span class="up">+6.2% Live</span></span>
+        <span class="ticker-item"><span class="sym">CFA</span> Level II Candidate </span>
+        <span class="ticker-item"><span class="sym">SSVF</span> Venture Portfolio Management Associate</span>
+        <span class="ticker-item"><span class="sym">MSc Finance</span> Simon Business School </span>
+        <span class="ticker-item"><span class="sym">NISM</span> Series XV &amp; V-A Underway </span>
       </div>
     </div>
   </div>
 </header>
 
+<!-- PROFILE SECTION -->
 <section id="about">
   <div class="wrap grid-layout">
     <div class="section-label">01 // <span>Profile</span></div>
@@ -333,72 +348,138 @@
           I approach asset allocation with structural discipline, operating at the intersection of quantitative macroeconomic parameters and bottom-up fundamental analysis. 
         </p>
         <p>
-          During my tenure at <strong>Lifelong Wealth</strong> in Mumbai, I advanced from analysis frameworks into managing active mandates across 30+ HNI accounts. My core mandate involved managing a multi-asset portfolio framework designed around structural alpha generation, yielding a consecutive 190 bps annualized outperformance over benchmark marks.
+          During my tenure at <strong>Lifelong Wealth</strong> in Mumbai, I advanced from analysis frameworks into managing active mandates across 30+ HNI accounts . My core mandate involved managing a multi-asset portfolio framework designed around structural alpha generation, yielding a consecutive 190 bps annualized outperformance over benchmark marks .
         </p>
       </div>
       
       <div class="bento-grid reveal">
         <div class="bento-card">
           <div class="val">2.5y</div>
-          <div class="desc">Buy-Side Research &amp; Advisory Track Record</div>
+          <div class="desc">Buy-Side Research &amp; Advisory Track Record </div>
         </div>
         <div class="bento-card">
-          <div class="val">3.92</div>
-          <div class="desc">MSc Finance GPA · Simon Business School (Dean's List)</div>
+          <div class="val">3.81</div>
+          <div class="desc">MSc Finance GPA · Simon Business School (Dean's List) </div>
         </div>
         <div class="bento-card">
           <div class="val">CFA</div>
-          <div class="desc">Level I Passed (Aug 24) · Level II Candidate (Nov 26)</div>
+          <div class="desc">Level I Passed · Level II Candidate </div>
         </div>
         <div class="bento-card">
           <div class="val">9.78<span>/10</span></div>
-          <div class="desc">Undergraduate Finance Rank · Top 1% University of Mumbai</div>
+          <div class="desc">Undergraduate Finance Rank · Top 1% University of Mumbai </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- INVESTMENT TOOLS & RESEARCH SECTION -->
+<section id="research">
+  <div class="wrap grid-layout">
+    <div class="section-label">02 // <span>Research &amp; Tools</span></div>
+    <div class="project-grid reveal">
+      
+      <div class="project-card">
+        <div>
+          <div class="project-type">Allocation Systems</div>
+          <div class="project-title">Goal-Based Allocation Tool </div>
+          <p class="project-desc">Investor goal and risk-profile-driven multi-asset allocation framework deployed across equity, debt, and mutual funds . Built to align directly with institutional IPS frameworks utilized for active HNI client mandates .</p>
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">Multi-Asset Allocation</span>
+          <span class="project-tag">Risk Profiling</span>
+          <span class="project-tag">IPS Engine</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div>
+          <div class="project-type">Quantitative Tools</div>
+          <div class="project-title">Portfolio Tracker </div>
+          <p class="project-desc">Real-time domestic equity execution system optimized for active tracking across NSE/BSE components . Custom engineering layer details continuous Nifty 50 benchmarking, Sharpe calibration, max drawdown evaluation, and systematic factor attribution metrics .</p>
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">Python (Pandas)</span>
+          <span class="project-tag">Attribution Analytics</span>
+          <span class="project-tag">NSE/BSE Pipeline</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div>
+          <div class="project-type">Equity Publications</div>
+          <div class="project-title">Published Equity Research </div>
+          <p class="project-desc">Active coverage architecture across consumer-tech, healthcare, defense, and electronics manufacturing infrastructure . Formulates full bottom-up models utilizing multi-scenario DCF mechanics, SOTP segment valuations, and transaction comparables, supplemented by 3 distinct structural sector primers .</p>
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">Integrated DCF</span>
+          <span class="project-tag">SOTP Modeling</span>
+          <span class="project-tag">Sector Primers</span>
+        </div>
+      </div>
+
+      <!-- NEW FOURTH CLICKABLE BLOCK -->
+      <a href="https://drive.google.com/drive/folders/16HsgrTbmLzPscxk5ezN7cSdD9RCcnVQt?usp=sharing" target="_blank" rel="noopener" class="project-card clickable-card">
+        <div>
+          <div class="project-type">Data Repository <span>↗</span></div>
+          <div class="project-title">Access to Google Drive</div>
+          <p class="project-desc">Direct institutional gateway to live research models, integrated valuation spreadsheets, company coverage notes, and macroeconomic sector tracking primers.</p>
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">Live Models</span>
+          <span class="project-tag">Data Room</span>
+          <span class="project-tag">Financial Artifacts</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- TRACK RECORD SECTION -->
 <section id="experience">
   <div class="wrap grid-layout">
-    <div class="section-label">02 // <span>Experience</span></div>
+    <div class="section-label">03 // <span>Track Record</span></div>
     <div class="timeline-container">
+
+      <div class="item-node reveal">
+        <div class="node-meta">Jun 2026  Present </div>
+        <div>
+          <div class="node-firm">Leaf Group of NY LLC </div>
+          <div class="node-title">Equity Research Intern (Remote) </div>
+          <div class="node-loc">New York, USA </div>
+          <ul class="node-details">
+            <li>Conduct rigorous fundamental equity research targeting domestic defense and industrial corporate entities .</li>
+            <li>Execute deep financial statement analysis, dynamic macro valuation, and comparable-company benchmarking systems .</li>
+            <li>Sharpen absolute bottom-up security selection principles to support active direct-equity advisory layers .</li>
+          </ul>
+        </div>
+      </div>
       
       <div class="item-node reveal">
-        <div class="node-meta">Jan 2024 — Apr 2025</div>
+        <div class="node-meta">Jan 2024  Apr 2025 </div>
         <div>
-          <div class="node-firm">Lifelong Wealth</div>
-          <div class="node-title">Senior Analyst, Investments</div>
-          <div class="node-loc">Mumbai, India</div>
+          <div class="node-firm">Lifelong Wealth </div>
+          <div class="node-title">Senior Analyst, Investments </div>
+          <div class="node-loc">Mumbai, India </div>
           <ul class="node-details">
-            <li>Directed execution layers for a ₹35Cr+ discretionary capital deployment system, driving a 190 bps alpha premium over the Nifty 50 compound metric.</li>
-            <li>Conducted formal asset fit models and alternate product structures under specialized SEBI mandates for high net-worth asset books.</li>
-            <li>Managed client reviews regarding dynamic multi-asset shifts based on macroeconomic volatility and investment policy compliance.</li>
+            <li>Directed execution layers for a ₹35 Cr discretionary capital deployment system, driving a ~190 bps annualized alpha premium over a blended Nifty 50 benchmark structure .</li>
+            <li>Conducted formal asset fit models and Alternate Investment Fund (AIF) / Portfolio Management Services (PMS) manager due diligence under specialized SEBI mandates .</li>
+            <li>Evaluated dynamic multi-asset allocations alongside client policy constraints, fee structures, and regulatory compliance standards .</li>
           </ul>
         </div>
       </div>
 
       <div class="item-node reveal">
-        <div class="node-meta">Jan 2023 — Dec 2023</div>
+        <div class="node-meta">Dec 2022  Dec 2023 </div>
         <div>
-          <div class="node-firm">Lifelong Wealth</div>
-          <div class="node-title">Analyst, Investments</div>
-          <div class="node-loc">Mumbai, India</div>
+          <div class="node-firm">Lifelong Wealth </div>
+          <div class="node-title">Analyst, Investments </div>
+          <div class="node-loc">Mumbai, India </div>
           <ul class="node-details">
-            <li>Built comprehensive valuation coverages across 40 listed target equities in domestic consumer, micro-finance, and public healthcare fields.</li>
-            <li>Authored internal portfolio manager briefing memos mapping factor variations, corporate governance shifts, and alpha expectations.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="item-node reveal">
-        <div class="node-meta">Dec 2022 — Jan 2023</div>
-        <div>
-          <div class="node-firm">Lifelong Wealth</div>
-          <div class="node-title">Intern, Investments</div>
-          <div class="node-loc">Mumbai, India</div>
-          <ul class="node-details">
-            <li>Engineered an automated matrix engine within Excel to aggregate variance risks and match allocation mandates directly against client risk metrics.</li>
+            <li>Built fundamental research configurations across 40+ NSE/BSE equities and 60+ distinct mutual fund profiles in consumer, financial, and healthcare spaces .</li>
+            <li>Authored 30+ comprehensive macroeconomic, industry, and company research notes integrating corporate earnings estimates and management commentary pipelines .</li>
           </ul>
         </div>
       </div>
@@ -407,48 +488,48 @@
   </div>
 </section>
 
+<!-- EDUCATION SECTION -->
 <section id="education">
   <div class="wrap grid-layout">
-    <div class="section-label">03 // <span>Education</span></div>
+    <div class="section-label">04 // <span>Education</span></div>
     <div class="timeline-container">
       
       <div class="item-node reveal">
-        <div class="node-meta">Graduation Dec 2026</div>
+        <div class="node-meta">Aug 2025  Dec 2026 </div>
         <div>
-          <div class="node-firm">University of Rochester</div>
-          <div class="node-title">Simon Business School · MS Finance (STEM)</div>
-          <div class="node-loc">Rochester, NY</div>
+          <div class="node-firm">University of Rochester </div>
+          <div class="node-title">Simon Business School · MS Finance (STEM) </div>
+          <div class="node-loc">Rochester, NY </div>
           <ul class="node-details">
-            <li><strong>Academic Status:</strong> GPA 3.81 / 4.0 · Dean's List Designation · Dean's Scholar Recipient</li>
-            <li><strong>Concentrations:</strong> Asset Management, Options Systems, Fixed Income Structural Models, Quantitative Analysis</li>
+            <li><strong>Academic Status:</strong> Cumulative GPA 3.81 / 4.0 · Dean's List Designation (Fall &amp; Spring) · Dean's Scholar Recipient </li>
+            <li><strong>Concentrations:</strong> Asset Management, Quantitative Investing, Debt Markets, Financial Markets &amp; Investments, Options Strategy </li>
           </ul>
           
           <div class="edu-sub-section">
-            <div class="edu-sub-title">Leadership Assignments</div>
+            <div class="edu-sub-title">Leadership Assignments </div>
             <div class="leadership-box">
               <div>
-                <div class="lead-role">Portfolio Management Associate — Simon School Venture Fund</div>
-                <div class="lead-desc">Manage analyst teams tracking venture-tier private placements, modeling target operational cash flows and presenting due diligence documentation directly to the Board of Trustees.</div>
+                <div class="lead-role">Associate - Simon School Venture Fund </div>
+                <div class="lead-desc">Track early-tier venture placements, executing portfolio analytics and targeted private market risk assessment .</div>
               </div>
               <div>
-                <div class="lead-role">VP Finance &amp; Operations — Master's Advisory Council</div>
-                <div class="lead-desc">Coordinate fiscal modeling parameters and capital allocations for student governance divisions.</div>
+                <div class="lead-role">VP of Finance &amp; Operations - Master's Advisory Council </div>
+                <div class="lead-desc">Coordinate fiscal modeling parameters and capital allocations for student governance divisions .</div>
               </div>
             </div>
           </div>
-          <span class="tag">Available Full-Time July 2026</span>
+          <span class="tag">Available Full-Time August 1, 2026 </span>
         </div>
       </div>
 
       <div class="item-node reveal">
-        <div class="node-meta">Concluded May 2022</div>
+        <div class="node-meta">Jun 2019  May 2022 </div>
         <div>
-          <div class="node-firm">University of Mumbai</div>
-          <div class="node-title">S.K. Somaiya Degree College · Bachelor of Management Studies</div>
-          <div class="node-loc">Mumbai, India</div>
+          <div class="node-firm">University of Mumbai </div>
+          <div class="node-title">S.K. Somaiya Degree College · Bachelor of Management Studies </div>
+          <div class="node-loc">Mumbai, India </div>
           <ul class="node-details">
-            <li><strong>Academic Status:</strong> Final Cumulative Grade 9.78 / 10 · Ranked in Top 1% of overall department tier.</li>
-            <li><strong>Engagements:</strong> Three-term elected Class Representative; Lead Coordinator for community social initiatives.</li>
+            <li><strong>Academic Status:</strong> Major in Finance · Final Cumulative Grade 9.78 / 10 · Ranked in Top 1% of overall graduating class department .</li>
           </ul>
         </div>
       </div>
@@ -457,45 +538,50 @@
   </div>
 </section>
 
+<!-- CAPABILITIES SECTION -->
 <section id="skills">
   <div class="wrap grid-layout">
-    <div class="section-label">04 // <span>Capabilities</span></div>
+    <div class="section-label">05 // <span>Capabilities</span></div>
     <div>
       <div class="skills-box reveal">
         <div class="skill-group">
           <h4>Valuation Frameworks</h4>
           <ul>
-            <li>DCF (FCFF, FCFE) Modeling</li>
-            <li>Three-Statement Forecasting</li>
-            <li>SOTP (Sum-of-the-Parts) Models</li>
-            <li>Comparable Trading Analysis</li>
+            <li>DCF (FCFF, FCFE) Modeling </li>
+            <li>Three-Statement Forecasting </li>
+            <li>SOTP (Sum-of-the-Parts) Models </li>
+            <li>Comparable Trading Analysis </li>
+            <li>Reverse DCF Mechanics </li>
           </ul>
         </div>
         <div class="skill-group">
           <h4>Portfolio Management</h4>
           <ul>
-            <li>Factor Attribution Metrics</li>
-            <li>Discretionary Selection Models</li>
-            <li>Risk Variance Calibration</li>
-            <li>Tactical Asset Rotation</li>
+            <li>Factor Attribution Metrics </li>
+            <li>Goal-Based Selection Models </li>
+            <li>Risk Variance Calibration </li>
+            <li>Suitability Management </li>
+            <li>Max Drawdown Diagnostics </li>
           </ul>
         </div>
         <div class="skill-group">
           <h4>Infrastructure &amp; Tools</h4>
           <ul>
-            <li>Bloomberg Terminal</li>
-            <li>S&amp;P Capital IQ System</li>
-            <li>Python Data Engines (Pandas)</li>
-            <li>NGEN Quantitative Analytics</li>
+            <li>Bloomberg Terminal </li>
+            <li>S&amp;P Capital IQ System </li>
+            <li>Python Data Engines (Pandas, NumPy) </li>
+            <li>NGEN Quantitative Analytics </li>
+            <li>Advanced Excel Frameworks </li>
           </ul>
         </div>
         <div class="skill-group">
-          <h4>Regulatory Markets</h4>
+          <h4>India Market Expertise</h4>
           <ul>
-            <li>NSE / BSE Execution Rules</li>
-            <li>SEBI Mandate Guidelines</li>
-            <li>AIF / PMS Structure Audits</li>
-            <li>Alternative Asset Evaluation</li>
+            <li>NSE / BSE Execution Rules </li>
+            <li>SEBI Regulatory Guidelines </li>
+            <li>AIF / PMS Mandate Audits </li>
+            <li>Direct &amp; Regular Plan Structures </li>
+            <li>AMFI Policy Compliance </li>
           </ul>
         </div>
       </div>
@@ -503,20 +589,20 @@
       <div class="cert-row reveal">
         <div class="cert-grid">
           <div class="cert-card">
-            <h5>CFA Charter track</h5>
-            <p>Level I passed clear in August 2024. Active Level II candidate registered for November 2026 examination cycle.</p>
+            <h5>CFA Institute Track</h5>
+            <p>Level I passed clean. Active Level II candidate registered for upcoming institutional examination loops .</p>
           </div>
           <div class="cert-card">
             <h5>Wall Street Prep Academy</h5>
-            <p>Accredited training blocks in corporate financial statement mechanics and micro-cap target underwriting models.</p>
+            <p>Accredited training blocks in Equities Markets, DCF, LBO metrics, Corporate Financial Statement Modeling, and Transaction Comparables .</p>
           </div>
           <div class="cert-card">
-            <h5>Bloomberg Market Concepts</h5>
-            <p>Certified validation across Fixed Income curves, Foreign Exchange indicators, and Equity Market operational mechanics.</p>
+            <h5>Regulatory Credentials</h5>
+            <p>NISM Series XV (Research Analyst) &amp; Series V-A (Mutual Fund Distributors) technical modules currently in progress (Aug 2026) .</p>
           </div>
           <div class="cert-card">
-            <h5>Financial Edge Training</h5>
-            <p>Advanced institutional tier modeling architecture validation covering institutional asset configurations.</p>
+            <h5>Market Architecture Validation</h5>
+            <p>Bloomberg Market Concepts (2026 Curriculum) and Financial Edge institutional modeling coursework (2025 completion) .</p>
           </div>
         </div>
       </div>
@@ -524,38 +610,39 @@
   </div>
 </section>
 
+<!-- CONTACT SECTION -->
 <section id="contact">
   <div class="wrap grid-layout">
-    <div class="section-label">05 // <span>Connection</span></div>
+    <div class="section-label">06 // <span>Connection</span></div>
     <div class="contact-container reveal">
       <div class="contact-note">
         <p>
-          Open to professional conversations regarding <strong>Asset Management mandates, Buy-Side Research opportunities, and Discretionary Wealth Strategy alignments</strong> within top-tier institutional firms. 
+          Open to professional conversations regarding <strong>Asset Management mandates, Buy-Side Research opportunities, and Corporate Valuation strategy</strong> within institutional structures. 
         </p>
         <p style="margin-top: 24px; font-size: 15px; color: var(--text-dim);">
-          Based out of Rochester, NY and Mumbai, India. Permanent availability begins July 2026.
+          Based out of Rochester, NY and Mumbai, India . Full degree conferral in December 2026 with no regulatory employment constraints . Permanent availability begins August 1, 2026 .
         </p>
       </div>
       
       <div class="link-list">
         <a class="link-card" href="mailto:adityanair.cv@gmail.com">
           <div>
-            <div class="label">Corporate Email</div>
-            <div class="value">adityanair.cv@gmail.com</div>
+            <div class="label">Corporate Email </div>
+            <div class="value">adityanair.cv@gmail.com </div>
           </div>
           <div class="icon">↗</div>
         </a>
         <a class="link-card" href="https://linkedin.com/in/adityanair19" target="_blank" rel="noopener">
           <div>
-            <div class="label">LinkedIn Secure Link</div>
-            <div class="value">/in/adityanair19</div>
+            <div class="label">LinkedIn Secure Link </div>
+            <div class="value">/in/adityanair19 </div>
           </div>
           <div class="icon">↗</div>
         </a>
         <a class="link-card" href="tel:+917977868846">
           <div>
-            <div class="label">Direct Voice Call</div>
-            <div class="value">+91 79778 68846</div>
+            <div class="label">Direct Voice Call </div>
+            <div class="value">+91 79778 68846 </div>
           </div>
           <div class="icon">↗</div>
         </a>
@@ -566,8 +653,8 @@
 
 <footer>
   <div class="wrap">
-    <div>© 2026 Aditya Nair <span>◆</span> Cryptographic integrity verified</div>
-    <div>Rochester, NY <span>→</span> Mumbai, IN</div>
+    <div>© 2026 Aditya Nair <span>◆</span> Secure Portfolio Node </div>
+    <div>Rochester, NY <span>→</span> Mumbai, IN </div>
   </div>
 </footer>
 
