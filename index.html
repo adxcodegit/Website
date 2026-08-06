@@ -3,777 +3,685 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Aditya Nair | Investment Professional</title>
-<meta name="description" content="Aditya Nair Investment Professional. Specializing in Wealth Management, Equity Research, and Strategy." />
+<title>Aditya Nair — Equity Research</title>
+<meta name="description" content="Aditya Nair. Fundamental equity research on Indian listed companies — initiation notes, three-statement models, DCF and SOTP valuation." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Space+Grotesk:wght@400;500;700&family=SF+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    /* Dark Theme (Default) */
-    --bg-main: #07090e;
-    --bg-card: #0e121a;
-    --bg-card-hover: #141a26;
-    --nav-bg: rgba(7, 9, 14, 0.85);
-    --accent: #d4af37;
-    --accent-bright: #f1c40f;
-    --accent-dim: #8a7322;
-    --text-main: #f8fafc;
-    --text-muted: #94a3b8;
-    --text-dim: #475569;
-    --border: rgba(148, 163, 184, 0.08);
-    --border-strong: rgba(212, 175, 55, 0.3);
-    --glow: rgba(212, 175, 55, 0.08);
-    --invert-icon: 0;
-    
-    --font-heading: "Space Grotesk", -apple-system, sans-serif;
-    --font-body: "Plus Jakarta Sans", -apple-system, sans-serif;
-    --font-mono: ui-monospace, "SF Mono", Menlo, monospace;
+    --bg:        #0A0D12;
+    --bg-2:      #0E1219;
+    --panel:     #111722;
+    --panel-2:   #161D2B;
+    --line:      #1E2634;
+    --line-hi:   #2A3446;
+    --text:      #E9ECF1;
+    --text-2:    #8B94A5;
+    --text-3:    #566074;
+    --amber:     #F0B429;
+    --amber-dim: #8A6A1C;
+    --amber-soft: rgba(240,180,41,.06);
+    --green:     #2EBD85;
+    --key-face:  #111722;
+    --scan:      rgba(255,255,255,.012);
+
+    --serif: "Fraunces", Georgia, serif;
+    --mono:  "IBM Plex Mono", ui-monospace, Menlo, monospace;
   }
 
   [data-theme="light"] {
-    /* Light Theme */
-    --bg-main: #f8fafc;
-    --bg-card: #ffffff;
-    --bg-card-hover: #f1f5f9;
-    --nav-bg: rgba(248, 250, 252, 0.9);
-    --text-main: #0f172a;
-    --text-muted: #334155;
-    --text-dim: #64748b;
-    --border: rgba(15, 23, 42, 0.1);
-    --border-strong: rgba(212, 175, 55, 0.5);
-    --glow: rgba(212, 175, 55, 0.12);
-    --invert-icon: 1;
+    --bg:        #EFEDE6;
+    --bg-2:      #E7E4DB;
+    --panel:     #F7F5EF;
+    --panel-2:   #EDEAE1;
+    --line:      #D6D2C6;
+    --line-hi:   #C2BDAE;
+    --text:      #1B1E24;
+    --text-2:    #565E6E;
+    --text-3:    #8A9099;
+    --amber:     #A97B0E;
+    --amber-dim: #C9A85C;
+    --amber-soft: rgba(169,123,14,.07);
+    --green:     #1E8F63;
+    --key-face:  #F7F5EF;
+    --scan:      rgba(0,0,0,.015);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; background: var(--bg-main); }
-  
+  html { scroll-behavior: smooth; background: var(--bg); }
+
   body {
-    background: var(--bg-main);
-    color: var(--text-main);
-    font-family: var(--font-body);
-    font-size: 16px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 15px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color .35s ease, color .35s ease;
   }
 
-  /* Grain overlay */
+  /* Faint scanline + vignette — terminal glass */
   body::before {
     content: '';
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 999;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-    opacity: 0.8;
+    position: fixed; inset: 0; pointer-events: none; z-index: 900;
+    background:
+      repeating-linear-gradient(0deg, var(--scan) 0 1px, transparent 1px 3px),
+      radial-gradient(ellipse at 50% 40%, transparent 55%, rgba(0,0,0,.28) 100%);
   }
-  [data-theme="light"] body::before { opacity: 0.4; }
-
-  a { color: inherit; text-decoration: none; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
-  ::selection { background: var(--accent); color: var(--bg-main); }
-
-  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
-  @media (max-width: 768px) { .wrap { padding: 0 24px; } }
-
-  /* SVG Icon Styles */
-  svg.icon { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-  .section-label svg.icon { stroke: var(--accent); margin-right: 12px; vertical-align: text-bottom; width: 28px; height: 28px; }
-
-  /* Top Navigation */
-  nav.scrolled-nav {
-    position: fixed; top: 0; left: 0; right: 0;
-    z-index: 100;
-    padding: 20px 0;
-    background: var(--nav-bg);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border);
-    transform: translateY(-100%);
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
+  [data-theme="light"] body::before {
+    background:
+      repeating-linear-gradient(0deg, var(--scan) 0 1px, transparent 1px 3px);
   }
-  nav.scrolled-nav.visible { transform: translateY(0); }
-  nav.scrolled-nav .wrap { display: flex; align-items: center; justify-content: space-between; }
-  .brand { font-family: var(--font-heading); font-size: 18px; font-weight: 600; letter-spacing: -0.02em; display: flex; align-items: center; gap: 8px; }
-  .brand span { color: var(--accent); }
-  
-  .nav-right { display: flex; align-items: center; gap: 32px; }
-  .mini-nav-links { display: flex; gap: 24px; align-items: center; }
-  .mini-nav-links a { font-size: 13px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 6px; }
-  .mini-nav-links a svg { width: 14px; height: 14px; }
-  .mini-nav-links a:hover { color: var(--accent); }
-  @media (max-width: 768px) { .mini-nav-links { display: none; } }
 
-  /* Theme Toggle Button */
-  .theme-toggle {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    color: var(--text-main);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px;
-    border-radius: 50%;
-    transition: background 0.2s ease, transform 0.2s ease;
+  a { color: inherit; text-decoration: none; }
+  ::selection { background: var(--amber); color: var(--bg); }
+  :focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
+
+  .wrap { max-width: 1160px; margin: 0 auto; padding: 0 32px; }
+  @media (max-width: 640px) { .wrap { padding: 0 18px; } }
+
+  .num { font-variant-numeric: tabular-nums; font-feature-settings: "tnum"; }
+
+  /* ══ Status bar ═══════════════════════════════ */
+  .status {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+    background: color-mix(in srgb, var(--bg) 92%, transparent);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+    font-size: 11px; letter-spacing: .08em;
+    transition: background-color .35s ease, border-color .35s ease;
   }
-  .theme-toggle:hover { background: var(--border); transform: rotate(15deg); }
-  .theme-toggle svg { width: 20px; height: 20px; fill: currentColor; stroke: none; }
-  .icon-moon { display: none; }
-  [data-theme="light"] .icon-sun { display: none; }
-  [data-theme="light"] .icon-moon { display: block; }
+  .status .wrap { display: flex; align-items: center; height: 44px; }
+  .st-cell { display: flex; align-items: center; gap: 8px; padding: 0 18px; height: 100%; border-right: 1px solid var(--line); white-space: nowrap; }
+  .st-cell:first-child { padding-left: 0; }
+  .st-cell.grow { flex: 1; border-right: none; justify-content: flex-end; padding-right: 0; gap: 18px; }
+  .st-brand { font-weight: 700; letter-spacing: .14em; }
+  .st-brand b { color: var(--amber); font-weight: 700; }
+  .st-dim { color: var(--text-3); text-transform: uppercase; }
+  .st-live { display: inline-flex; align-items: center; gap: 7px; color: var(--green); text-transform: uppercase; }
+  .st-live i { width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .25; } }
+  .st-clock { color: var(--text-2); }
+  .st-toggle {
+    background: none; border: 1px solid var(--line-hi); cursor: pointer;
+    color: var(--text-2); font-family: var(--mono); font-size: 10px; font-weight: 700;
+    letter-spacing: .14em; text-transform: uppercase; padding: 5px 12px;
+    transition: color .2s, border-color .2s, background .2s;
+  }
+  .st-toggle:hover { color: var(--amber); border-color: var(--amber); background: var(--amber-soft); }
+  @media (max-width: 720px) { .st-hide { display: none; } }
 
-  /* Centered Hero Section */
-  .hero-centered {
+  /* ══ Hero ═════════════════════════════════════ */
+  .hero {
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    text-align: center;
-    overflow: hidden;
-    padding: 80px 20px;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    text-align: center; position: relative;
+    padding: 110px 20px 130px;
+    background:
+      radial-gradient(ellipse 900px 520px at 50% 36%, var(--amber-soft), transparent 70%);
+  }
+  .hero::after {
+    content: ''; position: absolute; inset: auto 0 0 0; height: 42%;
+    background:
+      linear-gradient(to top, transparent, var(--bg) 92%),
+      repeating-linear-gradient(0deg, var(--line) 0 1px, transparent 1px 56px),
+      repeating-linear-gradient(90deg, var(--line) 0 1px, transparent 1px 56px);
+    opacity: .5; pointer-events: none;
+    mask-image: linear-gradient(to top, rgba(0,0,0,.8), transparent);
+    -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,.8), transparent);
   }
 
-  .hero-centered::after {
-    content: '';
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    width: 800px; height: 800px;
-    background: radial-gradient(circle, var(--glow) 0%, transparent 60%);
-    pointer-events: none;
-    z-index: -1;
-    transition: background 0.3s ease;
+  .hero-tag {
+    font-size: 11px; letter-spacing: .3em; text-transform: uppercase; color: var(--amber);
+    margin-bottom: 34px; display: flex; align-items: center; gap: 16px;
+    opacity: 0; animation: up .9s cubic-bezier(.2,.7,.2,1) .05s forwards;
   }
+  .hero-tag::before, .hero-tag::after { content: ''; width: 42px; height: 1px; background: var(--amber-dim); }
+  @media (max-width: 520px) { .hero-tag::before, .hero-tag::after { width: 20px; } }
 
+  /* Stacked name — the upgrade */
   .hero-name {
-    font-family: var(--font-heading);
-    font-size: clamp(48px, 10vw, 120px);
-    font-weight: 700;
-    line-height: 1;
-    letter-spacing: -0.04em;
-    color: var(--text-main);
-    margin-bottom: 40px;
-    opacity: 0;
-    transform: translateY(40px) scale(0.95);
-    animation: popUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.2s;
+    font-family: var(--serif); font-weight: 300;
+    line-height: .88; letter-spacing: -0.035em;
+    margin-bottom: 30px;
+    position: relative; z-index: 1;
   }
-  .hero-name span { color: var(--accent); }
-
-  .hero-nav {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    justify-content: center;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.4s;
-    width: 100%;
-    max-width: 850px;
+  .hero-name .l1, .hero-name .l2 { display: block; }
+  .hero-name .l1 {
+    font-size: clamp(64px, 13vw, 160px);
+    font-weight: 300;
+    opacity: 0; animation: up 1s cubic-bezier(.2,.7,.2,1) .15s forwards;
   }
-
-  .hero-nav a {
-    font-family: var(--font-mono);
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    padding: 14px 28px;
-    border: 1px solid var(--border-strong);
-    border-radius: 40px;
-    color: var(--text-main);
-    background: var(--bg-card);
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  .hero-name .l2 {
+    font-size: clamp(64px, 13vw, 160px);
+    font-style: italic; font-weight: 500;
+    margin-top: .02em;
+    opacity: 0; animation: up 1s cubic-bezier(.2,.7,.2,1) .27s forwards;
   }
-  
-  [data-theme="light"] .hero-nav a { box-shadow: 0 4px 12px rgba(0,0,0,0.02); }
-
-  .hero-nav a::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: var(--text-main);
-    transform: translateY(100%);
-    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-    z-index: 1;
+  .hero-name .l2 .dot { color: var(--amber); font-style: normal; }
+  /* fine amber rule that draws itself under the name */
+  .hero-name::after {
+    content: ''; display: block; margin: 34px auto 0; height: 1px; width: 120px;
+    background: linear-gradient(90deg, transparent, var(--amber), transparent);
+    transform: scaleX(0);
+    animation: draw .9s cubic-bezier(.2,.7,.2,1) .55s forwards;
   }
-  .hero-nav a span, .hero-nav a svg { position: relative; z-index: 2; transition: color 0.3s ease, stroke 0.3s ease; }
-
-  .hero-nav a:hover { border-color: var(--text-main); transform: translateY(-2px); box-shadow: 0 8px 16px rgba(0,0,0,0.1); }
-  .hero-nav a:hover::before { transform: translateY(0); }
-  .hero-nav a:hover span { color: var(--bg-main); }
-  .hero-nav a:hover svg { stroke: var(--bg-main); }
-
-  @media (max-width: 600px) {
-    .hero-nav { gap: 12px; }
-    .hero-nav a { width: calc(50% - 6px); padding: 12px 16px; font-size: 12px; justify-content: center; }
-  }
-  @media (max-width: 380px) {
-    .hero-nav a { width: 100%; }
+  @keyframes draw { to { transform: scaleX(1); } }
+  /* ghost monogram behind the name */
+  .hero-ghost {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -58%);
+    font-family: var(--serif); font-style: italic; font-weight: 300;
+    font-size: clamp(300px, 46vw, 560px); line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--line);
+    opacity: .55; pointer-events: none; user-select: none; z-index: 0;
   }
 
-  .scroll-indicator {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: var(--font-mono);
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: var(--text-dim);
-    opacity: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    animation: fadeUp 1s forwards 0.8s, bounce 2s infinite 2s;
+  .hero-lede {
+    font-family: var(--serif); font-weight: 300; font-style: italic;
+    font-size: clamp(18px, 2.4vw, 24px); line-height: 1.5;
+    color: var(--text-2); max-width: 44ch; margin: 0 auto 54px;
+    position: relative; z-index: 1;
+    opacity: 0; animation: up 1s cubic-bezier(.2,.7,.2,1) .38s forwards;
+  }
+  .hero-lede b { color: var(--text); font-weight: 400; }
+
+  /* Mnemonic key nav */
+  .keys {
+    display: flex; flex-wrap: wrap; gap: 14px; justify-content: center;
+    position: relative; z-index: 1;
+    opacity: 0; animation: up 1s cubic-bezier(.2,.7,.2,1) .48s forwards;
+  }
+  .key {
+    display: flex; flex-direction: column; align-items: flex-start; gap: 3px;
+    min-width: 132px; padding: 14px 18px 12px;
+    background: var(--key-face); border: 1px solid var(--line);
+    border-bottom: 3px solid var(--line-hi);
+    transition: transform .18s ease, border-color .25s ease, background .25s ease;
+  }
+  .key .mn { font-size: 15px; font-weight: 700; letter-spacing: .18em; color: var(--amber); transition: color .25s; }
+  .key .fn { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--text-3); transition: color .25s; }
+  .key:hover {
+    background: var(--amber); border-color: var(--amber); border-bottom-color: var(--amber-dim);
+    transform: translateY(-3px);
+  }
+  .key:hover .mn { color: var(--bg); }
+  .key:hover .fn { color: color-mix(in srgb, var(--bg) 70%, var(--amber)); }
+  .key:active { transform: translateY(0); border-bottom-width: 1px; }
+  /* Resume key — inverted, always amber */
+  .key.cv { background: var(--amber); border-color: var(--amber); border-bottom-color: var(--amber-dim); }
+  .key.cv .mn { color: var(--bg); }
+  .key.cv .fn { color: color-mix(in srgb, var(--bg) 70%, var(--amber)); }
+  .key.cv:hover { background: var(--text); border-color: var(--text); border-bottom-color: var(--text-2); }
+  .key.cv:hover .mn { color: var(--bg); }
+  .key.cv:hover .fn { color: var(--text-3); }
+  @media (max-width: 680px) {
+    .keys { gap: 10px; }
+    .key { min-width: calc(50% - 5px); flex: 1 1 calc(50% - 5px); }
   }
 
-  @keyframes popUp { to { opacity: 1; transform: translateY(0) scale(1); } }
-  @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
-  @keyframes bounce {
-    0%, 100% { transform: translate(-50%, 0); }
-    50% { transform: translate(-50%, 6px); }
+  .hero-hint {
+    position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
+    font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: var(--text-3);
+    opacity: 0; animation: upx .9s ease .7s forwards;
+  }
+  @keyframes up  { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+  @keyframes upx { from { opacity: 0; transform: translate(-50%, 14px); } to { opacity: 1; transform: translate(-50%, 0); } }
+
+  /* ══ Coverage strip ═══════════════════════════ */
+  .strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--bg-2); overflow: hidden; }
+  .strip-inner { display: flex; width: max-content; animation: marquee 36s linear infinite; }
+  .strip:hover .strip-inner { animation-play-state: paused; }
+  .strip-set { display: flex; }
+  .strip-item { display: flex; align-items: baseline; gap: 10px; padding: 13px 30px; border-right: 1px solid var(--line); white-space: nowrap; font-size: 12px; letter-spacing: .06em; }
+  .strip-item .tk { color: var(--amber); font-weight: 600; }
+  .strip-item .st { color: var(--text-3); text-transform: uppercase; font-size: 10.5px; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ══ Sections ═════════════════════════════════ */
+  .sec { padding: 92px 0; }
+  @media (max-width: 720px) { .sec { padding: 60px 0; } }
+  .sec + .sec { border-top: 1px solid var(--line); }
+
+  .sec-head { display: flex; align-items: baseline; gap: 18px; margin-bottom: 44px; }
+  .sec-mn { font-size: 13px; font-weight: 700; letter-spacing: .2em; color: var(--amber); padding: 5px 12px; border: 1px solid var(--amber-dim); background: var(--amber-soft); }
+  .sec-title { font-family: var(--serif); font-size: clamp(28px, 4vw, 40px); font-weight: 400; letter-spacing: -.02em; }
+  .sec-meta { margin-left: auto; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-3); text-align: right; }
+  @media (max-width: 560px) { .sec-meta { display: none; } }
+
+  /* ══ DES / Profile ════════════════════════════ */
+  .des-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; align-items: start; }
+  @media (max-width: 900px) { .des-grid { grid-template-columns: 1fr; gap: 36px; } }
+
+  .prose p { font-family: var(--serif); font-weight: 300; font-size: 19px; line-height: 1.65; max-width: 56ch; }
+  .prose p + p { margin-top: 20px; }
+  .prose strong { font-weight: 500; color: var(--amber); }
+
+  .facts { background: var(--panel); border: 1px solid var(--line); }
+  .facts-h { padding: 11px 18px; border-bottom: 1px solid var(--line); font-size: 10.5px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--text-3); display: flex; justify-content: space-between; }
+  .facts-h b { color: var(--amber); }
+  .fact { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 12px 18px; border-bottom: 1px solid var(--line); font-size: 12.5px; }
+  .fact:last-child { border-bottom: none; }
+  .fact .k { color: var(--text-3); text-transform: uppercase; font-size: 10.5px; letter-spacing: .1em; }
+  .fact .v { text-align: right; }
+  .fact .v.hi { color: var(--green); font-weight: 600; }
+
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 48px; }
+  @media (max-width: 860px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+  .stat { background: var(--panel); border: 1px solid var(--line); padding: 22px 20px; transition: border-color .25s, transform .2s; }
+  .stat:hover { border-color: var(--line-hi); transform: translateY(-2px); }
+  .stat .v { font-size: 30px; font-weight: 600; letter-spacing: -.02em; }
+  .stat .v em { font-style: normal; color: var(--amber); }
+  .stat .k { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-3); margin-top: 8px; line-height: 1.5; }
+
+  /* ══ COV / Coverage board ═════════════════════ */
+  .board { background: var(--panel); border: 1px solid var(--line); }
+  .board-h { display: grid; grid-template-columns: 2.2fr 1.2fr 1.4fr 1.4fr 44px; gap: 14px; padding: 12px 20px; border-bottom: 1px solid var(--line-hi); font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--text-3); }
+  a.board-r { display: grid; grid-template-columns: 2.2fr 1.2fr 1.4fr 1.4fr 44px; gap: 14px; padding: 15px 20px; border-bottom: 1px solid var(--line); align-items: baseline; transition: background .18s; cursor: pointer; }
+  a.board-r:last-of-type { border-bottom: none; }
+  a.board-r:hover { background: var(--panel-2); }
+  a.board-r:hover .b-co { color: var(--amber); }
+  a.board-r:hover .b-go { color: var(--amber); transform: translateX(3px); }
+  .b-co { font-family: var(--serif); font-size: 18px; font-weight: 400; transition: color .2s; }
+  .b-tk { font-size: 11.5px; font-weight: 600; color: var(--amber); letter-spacing: .06em; }
+  .b-sc { font-size: 12px; color: var(--text-2); }
+  .b-fm { font-size: 11px; color: var(--text-3); text-transform: uppercase; letter-spacing: .08em; }
+  .b-go { font-size: 14px; color: var(--line-hi); text-align: right; transition: color .2s, transform .2s; }
+  .board-note { padding: 12px 20px; border-top: 1px solid var(--line-hi); font-size: 10.5px; color: var(--text-3); letter-spacing: .04em; }
+  .board-sub { padding: 11px 20px; border-top: 1px solid var(--line-hi); border-bottom: 1px solid var(--line); font-size: 10px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--text-3); background: var(--bg-2); }
+  @media (max-width: 760px) {
+    .board-h { display: none; }
+    a.board-r { grid-template-columns: 1fr 30px; grid-auto-flow: row; gap: 4px 10px; padding: 16px 18px; }
+    .b-co { grid-column: 1; }
+    .b-go { grid-column: 2; grid-row: 1; align-self: center; }
+    .b-tk, .b-sc, .b-fm { grid-column: 1 / -1; }
   }
 
-  /* Section Structural Layouts */
-  section { padding: 100px 0; border-top: 1px solid var(--border); }
-  @media (max-width: 768px) { section { padding: 80px 0; } }
-  
-  .grid-layout { display: grid; grid-template-columns: 280px 1fr; gap: 64px; }
-  @media (max-width: 900px) { .grid-layout { grid-template-columns: 1fr; gap: 32px; } }
+  /* ══ XPR / Experience ═════════════════════════ */
+  .xpr { display: flex; flex-direction: column; gap: 14px; }
+  .role { display: grid; grid-template-columns: 190px 1fr; background: var(--panel); border: 1px solid var(--line); transition: border-color .25s; }
+  .role:hover { border-color: var(--line-hi); }
+  @media (max-width: 760px) { .role { grid-template-columns: 1fr; } }
+  .role-side { padding: 24px 22px; border-right: 1px solid var(--line); display: flex; flex-direction: column; gap: 8px; }
+  @media (max-width: 760px) { .role-side { border-right: none; border-bottom: 1px solid var(--line); flex-direction: row; justify-content: space-between; align-items: baseline; padding: 16px 20px; } }
+  .role-when { font-size: 11.5px; color: var(--text-2); letter-spacing: .04em; }
+  .role-where { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--text-3); }
+  .role-main { padding: 24px 26px; }
+  .role-firm { font-size: 10.5px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--amber); margin-bottom: 6px; }
+  .role-title { font-family: var(--serif); font-size: 23px; font-weight: 400; letter-spacing: -.015em; margin-bottom: 14px; }
+  .role ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+  .role li { font-size: 13px; color: var(--text-2); line-height: 1.65; padding-left: 20px; position: relative; max-width: 72ch; }
+  .role li::before { content: '›'; position: absolute; left: 0; color: var(--amber-dim); font-weight: 700; }
 
-  .section-label {
-    font-family: var(--font-heading);
-    font-size: 32px;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    position: sticky; top: 100px;
-    display: flex;
-    align-items: center;
+  /* ══ WRK / Work ═══════════════════════════════ */
+  .wrk-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 760px) { .wrk-grid { grid-template-columns: 1fr; } }
+  .wcard {
+    display: flex; flex-direction: column; background: var(--panel); border: 1px solid var(--line);
+    padding: 26px; position: relative; overflow: hidden;
+    transition: border-color .25s, transform .2s;
   }
-  .section-label span { color: var(--accent); }
-  @media (max-width: 900px) { .section-label { position: static; font-size: 28px; } }
+  .wcard::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--amber); transform: scaleX(0); transform-origin: left; transition: transform .35s cubic-bezier(.2,.7,.2,1); }
+  .wcard:hover { border-color: var(--line-hi); transform: translateY(-3px); }
+  .wcard:hover::before { transform: scaleX(1); }
+  .wcard:hover .w-arrow { color: var(--amber); transform: translateX(4px); }
+  .w-kind { display: flex; justify-content: space-between; align-items: center; font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--text-3); }
+  .w-arrow { color: var(--line-hi); font-size: 14px; transition: color .2s, transform .2s; }
+  .w-title { font-family: var(--serif); font-size: 23px; font-weight: 400; letter-spacing: -.015em; margin: 14px 0 10px; }
+  .w-desc { font-size: 13px; color: var(--text-2); line-height: 1.65; max-width: 48ch; }
+  .w-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 20px; }
+  .w-tag { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--text-2); border: 1px solid var(--line-hi); padding: 4px 10px; }
 
-  /* Profile */
-  .about-text { font-size: 18px; color: var(--text-muted); max-width: 760px; margin-bottom: 48px; line-height: 1.6; }
-  @media (min-width: 768px) { .about-text { font-size: 20px; } }
-  .about-text p + p { margin-top: 24px; }
-  .about-text strong { color: var(--text-main); }
-  
-  .bento-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-  @media (max-width: 500px) { .bento-grid { grid-template-columns: 1fr; } }
-  
-  .bento-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    padding: 32px;
-    border-radius: 12px;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    position: relative;
-    overflow: hidden;
+  /* ══ MSG / Contact ════════════════════════════ */
+  .msg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+  @media (max-width: 860px) { .msg-grid { grid-template-columns: 1fr; gap: 36px; } }
+  .msg-note { font-family: var(--serif); font-weight: 300; font-size: 24px; line-height: 1.45; max-width: 28ch; }
+  .msg-note strong { font-weight: 500; color: var(--amber); }
+  .msg-status { margin-top: 26px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--text-3); line-height: 2.1; }
+  .msg-status b { color: var(--green); font-weight: 600; }
+  .msg-cv {
+    display: inline-flex; align-items: center; gap: 12px; margin-top: 30px;
+    padding: 13px 22px; background: var(--amber); color: var(--bg);
+    font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
+    border-bottom: 3px solid var(--amber-dim);
+    transition: background .2s, transform .18s, border-color .2s;
   }
-  .bento-card svg.bg-icon { position: absolute; right: -20px; bottom: -20px; width: 120px; height: 120px; stroke: var(--border-strong); opacity: 0.1; transition: all 0.4s ease; }
-  .bento-card:hover { border-color: var(--border-strong); background: var(--bg-card-hover); transform: translateY(-4px) scale(1.02); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-  .bento-card:hover svg.bg-icon { opacity: 0.2; transform: scale(1.1) rotate(-5deg); stroke: var(--accent); }
-  .bento-card .val { font-family: var(--font-heading); font-size: 40px; font-weight: 700; color: var(--accent); margin-bottom: 8px; line-height: 1.1; position: relative; z-index: 2; }
-  @media (min-width: 768px) { .bento-card .val { font-size: 48px; } }
-  .bento-card .desc { font-size: 15px; color: var(--text-muted); position: relative; z-index: 2; font-weight: 500; }
+  .msg-cv:hover { background: var(--text); border-bottom-color: var(--text-2); transform: translateY(-2px); color: var(--bg); }
+  .msg-cv:active { transform: translateY(0); border-bottom-width: 1px; }
 
-  /* Project/Tools Grid Layout */
-  .project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-  @media (max-width: 768px) { .project-grid { grid-template-columns: 1fr; } }
-  .project-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    padding: 32px;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    cursor: default;
-    height: 100%;
-  }
-  @media (max-width: 480px) { .project-card { padding: 24px; } }
-  .project-card:hover { border-color: var(--border-strong); background: var(--bg-card-hover); transform: translateY(-6px); box-shadow: 0 12px 24px rgba(0,0,0,0.08); }
-  .project-card:hover .project-title { color: var(--accent); }
-  .project-card:hover .project-type svg { transform: translateX(4px) translateY(-4px); stroke: var(--accent); }
-  .project-type { font-family: var(--font-mono); font-size: 11px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; }
-  .project-type svg { transition: all 0.3s ease; stroke: var(--text-muted); width: 16px; height: 16px; }
-  .project-title { font-family: var(--font-heading); font-size: 22px; font-weight: 600; margin-bottom: 16px; color: var(--text-main); transition: color 0.2s ease; }
-  @media (min-width: 768px) { .project-title { font-size: 24px; } }
-  .project-desc { font-size: 15px; color: var(--text-muted); margin-bottom: 32px; line-height: 1.5; }
-  .project-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
-  .project-tag { font-family: var(--font-mono); font-size: 11px; background: rgba(148, 163, 184, 0.05); color: var(--text-muted); padding: 4px 10px; border-radius: 20px; border: 1px solid var(--border); display: flex; align-items: center; gap: 4px;}
+  .ch { background: var(--panel); border: 1px solid var(--line); }
+  a.ch-row { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 18px 22px; border-bottom: 1px solid var(--line); transition: background .18s; }
+  a.ch-row:last-of-type { border-bottom: none; }
+  a.ch-row:hover { background: var(--panel-2); }
+  a.ch-row:hover .ch-v { color: var(--amber); }
+  .ch-k { font-size: 10.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--text-3); }
+  .ch-v { font-size: 13.5px; text-align: right; word-break: break-word; transition: color .2s; }
 
-  /* Stocks Section */
-  .stock-board { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 32px; transition: all 0.4s ease; }
-  .stock-board:hover { border-color: var(--border-strong); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-  @media (max-width: 480px) { .stock-board { padding: 24px; } }
-  .stock-buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-    margin-top: 24px;
-  }
-  @media (max-width: 900px) { .stock-buttons { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 400px) { .stock-buttons { grid-template-columns: 1fr; } }
-  
-  .stock-btn {
-    background: var(--bg-main);
-    border: 1px solid var(--border);
-    padding: 20px;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    cursor: default;
-  }
-  .stock-btn:hover { border-color: var(--accent); background: var(--bg-card-hover); transform: translateY(-4px) scale(1.02); box-shadow: 0 6px 16px rgba(0,0,0,0.08); }
-  .stock-btn .sym { font-family: var(--font-heading); font-size: 18px; font-weight: 700; color: var(--text-main); display: flex; align-items: center; gap: 6px; }
-  .stock-btn .change { font-family: var(--font-mono); font-size: 14px; font-weight: 500; display: flex; align-items: center; gap: 4px;}
-  .stock-btn .change svg { width: 14px; height: 14px; }
-  .stock-btn .change.up { color: #10b981; }
-  .stock-btn .change.down { color: #ef4444; }
+  /* ══ Footer ═══════════════════════════════════ */
+  footer { border-top: 1px solid var(--line); background: var(--bg-2); padding: 42px 0 56px; }
+  .disclosure { font-size: 11px; line-height: 1.9; color: var(--text-3); max-width: 86ch; letter-spacing: .01em; }
+  .disclosure b { color: var(--text-2); letter-spacing: .14em; text-transform: uppercase; }
+  .colophon { margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--text-3); }
+  .colophon span b { color: var(--amber); }
 
-  /* Timeline */
-  .timeline-container { display: flex; flex-direction: column; gap: 48px; }
-  .item-node { display: grid; grid-template-columns: 200px 1fr; gap: 32px; position: relative; transition: transform 0.3s ease; }
-  .item-node:hover { transform: translateX(8px); }
-  @media (max-width: 768px) { .item-node { grid-template-columns: 1fr; gap: 12px; } .item-node:hover { transform: translateX(4px); } }
-  .node-meta { font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); padding-top: 6px; display: flex; align-items: center; gap: 6px; }
-  .node-meta svg { width: 14px; height: 14px; stroke: var(--accent); }
-  .node-firm { font-size: 15px; color: var(--accent); font-weight: 600; margin-bottom: 4px; }
-  .node-title { font-family: var(--font-heading); font-size: 22px; font-weight: 600; margin-bottom: 12px; color: var(--text-main); }
-  @media (min-width: 768px) { .node-title { font-size: 24px; } }
-  .node-loc { font-size: 12px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 20px; font-weight: 500; display: flex; align-items: center; gap: 4px; }
-  .node-loc svg { width: 12px; height: 12px; }
-  .node-details { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-  .node-details li { font-size: 16px; color: var(--text-muted); padding-left: 28px; position: relative; line-height: 1.6; }
-  .node-details li svg { position: absolute; left: 0; top: 4px; width: 16px; height: 16px; stroke: var(--accent); }
+  /* ══ Motion ═══════════════════════════════════ */
+  .rv { opacity: 0; transform: translateY(16px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
+  .rv.in { opacity: 1; transform: none; }
 
-  /* Contact */
-  .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-  @media (max-width: 768px) { .contact-container { grid-template-columns: 1fr; } }
-  .contact-note { font-size: 18px; color: var(--text-muted); line-height: 1.6; }
-  @media (min-width: 768px) { .contact-note { font-size: 20px; } }
-  .contact-note strong { color: var(--text-main); }
-  
-  .link-list { display: flex; flex-direction: column; gap: 16px; }
-  .link-card {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 24px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    cursor: default;
-  }
-  @media (max-width: 480px) { .link-card { padding: 16px; flex-direction: column; align-items: flex-start; gap: 12px; } .link-card .icon { align-self: flex-end; } }
-  .link-card:hover { border-color: var(--accent); background: var(--bg-card-hover); transform: translateX(8px) scale(1.01); box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
-  .link-card .label { font-family: var(--font-mono); font-size: 12px; color: var(--text-dim); text-transform: uppercase; margin-bottom: 4px; font-weight: 600; display: flex; align-items: center; gap: 6px; }
-  .link-card .label svg { width: 14px; height: 14px; stroke: var(--text-dim); transition: stroke 0.3s ease; }
-  .link-card:hover .label svg { stroke: var(--accent); }
-  .link-card .value { font-weight: 600; font-size: 16px; color: var(--text-main); }
-  @media (min-width: 768px) { .link-card .value { font-size: 18px; } }
-  .link-card .icon { color: var(--text-dim); transition: all 0.3s ease; }
-  .link-card:hover .icon { color: var(--accent); transform: translateX(4px) translateY(-4px); }
-
-  /* Footer */
-  footer { padding: 40px 0; border-top: 1px solid var(--border); background: var(--bg-card); font-family: var(--font-mono); font-size: 12px; color: var(--text-dim); }
-  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-  footer span { color: var(--accent); }
-
-  /* Upgraded Animations */
-  .reveal { opacity: 0; transform: translateY(50px) scale(0.98); transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1); }
-  .reveal.in { opacity: 1; transform: translateY(0) scale(1); }
-
-  /* Disabled-link state: URLs are retained as data-href, but not clickable */
-  a.link-disabled {
-    pointer-events: none;
-    cursor: default;
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .rv, .hero-tag, .hero-name .l1, .hero-name .l2, .hero-lede, .keys, .hero-hint { opacity: 1 !important; transform: none !important; }
+    .hero-hint { transform: translateX(-50%) !important; }
+    .hero-name::after { transform: scaleX(1) !important; }
+    .strip-inner { animation: none !important; }
   }
 </style>
 </head>
 <body>
 
-<nav class="scrolled-nav" id="topNav">
+<div class="status">
   <div class="wrap">
-    <span class="brand link-disabled" data-href="#hero">
-      <svg class="icon" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-      ADITYA NAIR<span>.</span>
-    </span>
-    <div class="nav-right">
-      <div class="mini-nav-links">
-        <a href="#profile">Profile</a>
-        <a href="#stocks">Stocks</a>
-        <a href="#tools">Tools</a>
-        <a href="#work">Work</a>
-        <a href="#reports">Reports</a>
-        <a href="#connect">Connect</a>
-      </div>
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark/Light Mode">
-        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"/></svg>
-        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
-      </button>
+    <div class="st-cell st-brand">AN<b>·</b>EQUITY RESEARCH</div>
+    <div class="st-cell st-dim st-hide">Mumbai / India</div>
+    <div class="st-cell st-hide"><span class="st-live"><i></i>Publishing</span></div>
+    <div class="st-cell grow">
+      <span class="st-clock num st-hide" id="clock">--:--:-- IST</span>
+      <button class="st-toggle" id="themeToggle" aria-label="Switch colour theme"><span id="toggleText">Light</span></button>
     </div>
   </div>
-</nav>
+</div>
 
-<header class="hero-centered" id="hero">
-  <h1 class="hero-name">Aditya Nair<span>.</span></h1>
-  <nav class="hero-nav">
-    <a href="#profile">
-      <svg class="icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-      <span>Profile</span>
-    </a>
-    <a href="#stocks">
-      <svg class="icon" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
-      <span>Stocks</span>
-    </a>
-    <a href="#tools">
-      <svg class="icon" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-      <span>Tools</span>
-    </a>
-    <a href="#work">
-      <svg class="icon" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-      <span>Work</span>
-    </a>
-    <a href="#reports">
-      <svg class="icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
-      <span>Reports</span>
-    </a>
-    <a href="#connect">
-      <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="m22 6-10 7L2 6"/></svg>
-      <span>Connect</span>
-    </a>
+<header class="hero" id="top">
+  <div class="hero-ghost" aria-hidden="true">an</div>
+  <div class="hero-tag">Fundamental Equity Research — India</div>
+  <h1 class="hero-name">
+    <span class="l1">Aditya</span>
+    <span class="l2">Nair<span class="dot">.</span></span>
+  </h1>
+  <p class="hero-lede">Initiation-format notes and <b>full three-statement models</b> on Indian listed companies, published independently.</p>
+
+  <nav class="keys" aria-label="Site navigation">
+    <a class="key" href="#des"><span class="mn">DES</span><span class="fn">Profile</span></a>
+    <a class="key" href="#cov"><span class="mn">COV</span><span class="fn">Coverage</span></a>
+    <a class="key" href="#xpr"><span class="mn">XPR</span><span class="fn">Experience</span></a>
+    <a class="key" href="#wrk"><span class="mn">WRK</span><span class="fn">Work</span></a>
+    <a class="key" href="#msg"><span class="mn">MSG</span><span class="fn">Contact</span></a>
+    <!-- REPLACE href with your resume link (Drive share link or hosted PDF) -->
+    <a class="key cv" href="https://drive.google.com/REPLACE-WITH-RESUME-LINK" target="_blank" rel="noopener"><span class="mn">CV ↓</span><span class="fn">Resume</span></a>
   </nav>
-  <div class="scroll-indicator">
-    Scroll to Explore
-    <svg class="icon" style="width: 16px; height: 16px;" viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
-  </div>
+
+  <div class="hero-hint">Select a function · Scroll to browse</div>
 </header>
 
+<!-- Coverage ticker strip -->
+<div class="strip" aria-hidden="true">
+  <div class="strip-inner" id="stripInner">
+    <div class="strip-set">
+      <div class="strip-item"><span class="tk">ETERNAL IN</span><span class="st">Initiation + Model</span></div>
+      <div class="strip-item"><span class="tk">TITAN IN</span><span class="st">Note + Model</span></div>
+      <div class="strip-item"><span class="tk">APNT IN</span><span class="st">Note + Model</span></div>
+      <div class="strip-item"><span class="tk">ASTERDM IN</span><span class="st">Note + Model</span></div>
+      <div class="strip-item"><span class="tk">FMCG</span><span class="st">Sector Report</span></div>
+      <div class="strip-item"><span class="tk">IT SERVICES</span><span class="st">Sector Report</span></div>
+    </div>
+  </div>
+</div>
+
 <main>
-  <!-- PROFILE SECTION -->
-  <section id="profile">
-    <div class="wrap grid-layout">
-      <div class="section-label">
-        <svg class="icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        01 // <span> Profile</span>
+
+  <!-- DES -->
+  <section class="sec" id="des">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="sec-mn">DES</span>
+        <h2 class="sec-title">Profile</h2>
+        <span class="sec-meta">Analyst description</span>
       </div>
-      <div>
-        <div class="about-text reveal">
-          <p>MSc Finance graduate (Simon Business School) & CFA Level II candidate with 2.5 years of experience managing a ₹35 Cr discretionary HNI book.</p>
-          <p>Disciplined asset allocation combining quantitative macroeconomics and bottom-up fundamentals. Achieved 190 bps annualized outperformance managing a multi-asset framework at <strong>Lifelong Wealth</strong>.</p>
+      <div class="des-grid rv">
+        <div class="prose">
+          <p>I spent two and a half years at <strong>Lifelong Wealth</strong> in Mumbai, moving from analyst to senior analyst on a ₹35 Cr discretionary HNI book — asset allocation, AIF and PMS manager due diligence, and the bottom-up equity work underneath it. Roughly 190 bps of annualised outperformance against a blended Nifty 50 benchmark.</p>
+          <p>Since then, an MSc in Finance at Simon Business School and a remote research seat covering US defence, industrials and aerospace. What I publish here is the sell-side format applied to Indian names: three-statement models, DCF and SOTP, reverse-DCF cross-checks, and a written case that states its own failure points.</p>
         </div>
-        
-        <div class="bento-grid reveal">
-          <div class="bento-card">
-            <svg class="icon bg-icon" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-            <div class="val">2.5y</div>
-            <div class="desc">Buy-Side Research &amp; Advisory</div>
-          </div>
-          <div class="bento-card">
-            <svg class="icon bg-icon" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5zM6 12v5c3 3 9 3 12 0v-5"/></svg>
-            <div class="val">3.81</div>
-            <div class="desc">MSc Finance GPA · Simon Business School</div>
-          </div>
-          <div class="bento-card">
-            <svg class="icon bg-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-            <div class="val">CFA</div>
-            <div class="desc">Level I Passed · Level II Candidate</div>
-          </div>
-          <div class="bento-card">
-            <svg class="icon bg-icon" viewBox="0 0 24 24"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <div class="val">9.78</div>
-            <div class="desc">Undergrad Finance Rank · Top 1%</div>
-          </div>
+        <div class="facts">
+          <div class="facts-h"><span>Key data</span><b>AN</b></div>
+          <div class="fact"><span class="k">Base</span><span class="v">Mumbai, India</span></div>
+          <div class="fact"><span class="k">Focus</span><span class="v">Indian listed equities</span></div>
+          <div class="fact"><span class="k">Experience</span><span class="v num">2.5 yrs buy-side</span></div>
+          <div class="fact"><span class="k">Credential</span><span class="v">CFA Level II candidate</span></div>
+          <div class="fact"><span class="k">Education</span><span class="v">MSc Finance, Simon</span></div>
+          <div class="fact"><span class="k">Status</span><span class="v hi">Open to roles</span></div>
         </div>
+      </div>
+      <div class="stats rv">
+        <div class="stat"><div class="v num">2.5<em>y</em></div><div class="k">Buy-side research &amp; advisory</div></div>
+        <div class="stat"><div class="v num">₹35<em>Cr</em></div><div class="k">Discretionary book managed</div></div>
+        <div class="stat"><div class="v num">+190<em>bps</em></div><div class="k">Annualised vs Nifty 50 blend</div></div>
+        <div class="stat"><div class="v num">3.81</div><div class="k">MSc Finance GPA · Simon</div></div>
       </div>
     </div>
   </section>
 
-  <!-- STOCKS SECTION -->
-  <section id="stocks">
-    <div class="wrap grid-layout">
-      <div class="section-label">
-        <svg class="icon" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
-        02 // <span> Stocks</span>
+  <!-- COV -->
+  <section class="sec" id="cov">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="sec-mn">COV</span>
+        <h2 class="sec-title">Coverage</h2>
+        <span class="sec-meta">4 companies · 2 sector reports</span>
       </div>
-      <div>
-        <div class="stock-board reveal">
-          <h3 style="font-family: var(--font-heading); font-size: 24px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
-            <svg class="icon" style="color: var(--accent);" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-            Active Coverage Pipeline
-          </h3>
-          <p style="color: var(--text-muted); font-size: 15px;">Live tracking of domestic equity execution and institutional benchmarks.</p>
-          
-          <div class="stock-buttons">
-            <span class="stock-btn link-disabled" data-href="https://example.com/reliance">
-              <span class="sym">RELIANCE</span>
-              <span class="change up"><svg class="icon" viewBox="0 0 24 24"><path d="m18 15-6-6-6 6"/></svg> +1.2%</span>
-            </span>
-            <span class="stock-btn link-disabled" data-href="https://example.com/hdfcbank">
-              <span class="sym">HDFCBANK</span>
-              <span class="change down"><svg class="icon" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg> -0.4%</span>
-            </span>
-            <span class="stock-btn link-disabled" data-href="https://example.com/tcs">
-              <span class="sym">TCS</span>
-              <span class="change up"><svg class="icon" viewBox="0 0 24 24"><path d="m18 15-6-6-6 6"/></svg> +2.1%</span>
-            </span>
-            <span class="stock-btn link-disabled" data-href="https://example.com/lt">
-              <span class="sym">LT</span>
-              <span class="change down"><svg class="icon" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg> -1.1%</span>
-            </span>
-          </div>
-        </div>
+      <div class="board rv">
+        <div class="board-h"><span>Company</span><span>Ticker</span><span>Sector</span><span>Published</span><span></span></div>
+
+        <!-- REPLACE each href below with the Google Drive share link for that report -->
+        <a class="board-r" href="https://drive.google.com/REPLACE-ETERNAL" target="_blank" rel="noopener">
+          <span class="b-co">Eternal Ltd</span><span class="b-tk">ETERNAL IN</span><span class="b-sc">Consumer tech</span><span class="b-fm">Initiation + model</span><span class="b-go">→</span>
+        </a>
+        <a class="board-r" href="https://drive.google.com/REPLACE-TITAN" target="_blank" rel="noopener">
+          <span class="b-co">Titan Company</span><span class="b-tk">TITAN IN</span><span class="b-sc">Consumer discretionary</span><span class="b-fm">Note + model</span><span class="b-go">→</span>
+        </a>
+        <a class="board-r" href="https://drive.google.com/REPLACE-ASIANPAINTS" target="_blank" rel="noopener">
+          <span class="b-co">Asian Paints</span><span class="b-tk">APNT IN</span><span class="b-sc">Building materials</span><span class="b-fm">Note + model</span><span class="b-go">→</span>
+        </a>
+        <a class="board-r" href="https://drive.google.com/REPLACE-ASTERDM" target="_blank" rel="noopener">
+          <span class="b-co">Aster DM Healthcare</span><span class="b-tk">ASTERDM IN</span><span class="b-sc">Healthcare</span><span class="b-fm">Note + model</span><span class="b-go">→</span>
+        </a>
+
+        <div class="board-sub">Institutional sector reports</div>
+
+        <a class="board-r" href="https://drive.google.com/REPLACE-FMCG" target="_blank" rel="noopener">
+          <span class="b-co">Indian FMCG</span><span class="b-tk">SECTOR</span><span class="b-sc">Consumer staples</span><span class="b-fm">Sector report</span><span class="b-go">→</span>
+        </a>
+        <a class="board-r" href="https://drive.google.com/REPLACE-ITSECTOR" target="_blank" rel="noopener">
+          <span class="b-co">Indian IT Services</span><span class="b-tk">SECTOR</span><span class="b-sc">Information technology</span><span class="b-fm">Sector report</span><span class="b-go">→</span>
+        </a>
+
+        <div class="board-note">Click any row to open the full report · Built from filings and company disclosures · Estimates are my own</div>
       </div>
     </div>
   </section>
 
-  <!-- TOOLS SECTION -->
-  <section id="tools">
-    <div class="wrap grid-layout">
-      <div class="section-label">
-        <svg class="icon" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-        03 // <span> Tools</span>
+  <!-- XPR -->
+  <section class="sec" id="xpr">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="sec-mn">XPR</span>
+        <h2 class="sec-title">Experience</h2>
+        <span class="sec-meta">Most recent first</span>
       </div>
-      <div class="project-grid reveal">
-        <span class="project-card link-disabled" data-href="https://adxcodegit.github.io/GBA/">
-          <div>
-            <div class="project-type">Allocation Systems <svg class="icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
-            <div class="project-title">Goal-Based Allocation Engine</div>
-            <p class="project-desc">Multi-asset allocation framework aligned with institutional IPS standards for active HNI mandates.</p>
-          </div>
-          <div class="project-tags">
-            <span class="project-tag"><svg class="icon" style="width: 12px; height: 12px;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg> Multi-Asset</span>
-            <span class="project-tag"><svg class="icon" style="width: 12px; height: 12px;" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> IPS Engine</span>
-          </div>
-        </span>
+      <div class="xpr">
 
-        <span class="project-card link-disabled" data-href="https://example.com/portfolio-tracker">
-          <div>
-            <div class="project-type">Quantitative Tools <svg class="icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
-            <div class="project-title">Alpha Portfolio Tracker</div>
-            <p class="project-desc">Real-time domestic equity execution system featuring Nifty 50 benchmarking, Sharpe calibration, and factor attribution.</p>
+        <div class="role rv">
+          <div class="role-side">
+            <span class="role-when num">Jun 2026 — Present</span>
+            <span class="role-where">New York · Remote</span>
           </div>
-          <div class="project-tags">
-            <span class="project-tag"><svg class="icon" style="width: 12px; height: 12px;" viewBox="0 0 24 24"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg> Python</span>
-            <span class="project-tag"><svg class="icon" style="width: 12px; height: 12px;" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg> Analytics</span>
-          </div>
-        </span>
-      </div>
-    </div>
-  </section>
-
-  <!-- WORK SECTION -->
-  <section id="work">
-    <div class="wrap grid-layout">
-      <div class="section-label">
-        <svg class="icon" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-        04 // <span> Work</span>
-      </div>
-      <div class="timeline-container">
-        <div class="item-node reveal">
-          <div class="node-meta"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Jun 2026  Present</div>
-          <div>
-            <div class="node-firm">Leaf Group of NY LLC</div>
-            <div class="node-title">Equity Research Intern</div>
-            <div class="node-loc"><svg class="icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> New York, USA (Remote)</div>
-            <ul class="node-details">
-              <li><svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg> Conduct rigorous fundamental equity research targeting domestic defense and industrial corporate entities.</li>
-              <li><svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg> Execute deep financial statement analysis, dynamic macro valuation, and comparable-company benchmarking systems.</li>
-            </ul>
-          </div>
-        </div>
-        
-        <div class="item-node reveal">
-          <div class="node-meta"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Jan 2024  Apr 2025</div>
-          <div>
-            <div class="node-firm">Lifelong Wealth</div>
-            <div class="node-title">Senior Analyst, Investments</div>
-            <div class="node-loc"><svg class="icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Mumbai, India</div>
-            <ul class="node-details">
-              <li><svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg> Directed execution layers for a ₹35 Cr discretionary capital deployment system, driving a ~190 bps annualized alpha premium over a blended Nifty 50 benchmark structure.</li>
-              <li><svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg> Conducted formal asset fit models and Alternate Investment Fund (AIF) / Portfolio Management Services (PMS) manager due diligence.</li>
+          <div class="role-main">
+            <div class="role-firm">Leaf Group of NY LLC</div>
+            <div class="role-title">Equity Research Intern</div>
+            <ul>
+              <li>Fundamental coverage of US defence, industrials and aerospace names.</li>
+              <li>Financial statement analysis, valuation build-outs and comparable-company work feeding investment memos.</li>
             </ul>
           </div>
         </div>
 
-        <div class="item-node reveal">
-          <div class="node-meta"><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Dec 2022  Dec 2023</div>
-          <div>
-            <div class="node-firm">Lifelong Wealth</div>
-            <div class="node-title">Analyst, Investments</div>
-            <div class="node-loc"><svg class="icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Mumbai, India</div>
-            <ul class="node-details">
-              <li><svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg> Built fundamental research configurations across 40+ NSE/BSE equities and 60+ distinct mutual fund profiles in consumer, financial, and healthcare spaces.</li>
+        <div class="role rv">
+          <div class="role-side">
+            <span class="role-when num">Jan 2024 — Apr 2025</span>
+            <span class="role-where">Mumbai</span>
+          </div>
+          <div class="role-main">
+            <div class="role-firm">Lifelong Wealth</div>
+            <div class="role-title">Senior Analyst, Investments</div>
+            <ul>
+              <li>Ran execution on a ₹35 Cr discretionary book, delivering roughly 190 bps annualised over a blended Nifty 50 benchmark.</li>
+              <li>Led AIF and PMS manager due diligence and built the suitability framework mapping mandates to client IPS constraints.</li>
             </ul>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- REPORTS SECTION -->
-  <section id="reports">
-    <div class="wrap grid-layout">
-      <div class="section-label">
-        <svg class="icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
-        05 // <span> Reports</span>
-      </div>
-      <div class="project-grid reveal">
-        <span class="project-card link-disabled" data-href="https://example.com/sector-primers">
-          <div>
-            <div class="project-type">Equity Publications <svg class="icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
-            <div class="project-title">Sector Primers & DCF Models</div>
-            <p class="project-desc">Bottom-up multi-scenario DCF and SOTP models covering consumer-tech, healthcare, defense, and electronics.</p>
+        <div class="role rv">
+          <div class="role-side">
+            <span class="role-when num">Dec 2022 — Dec 2023</span>
+            <span class="role-where">Mumbai</span>
           </div>
-          <div class="project-tags">
-            <span class="project-tag"><svg class="icon" style="width: 12px; height: 12px;" viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg> DCF</span>
-            <span class="project-tag"><svg class="icon" style="width: 12px; height: 12px;" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg> SOTP</span>
+          <div class="role-main">
+            <div class="role-firm">Lifelong Wealth</div>
+            <div class="role-title">Analyst, Investments</div>
+            <ul>
+              <li>Fundamental work across 40+ NSE and BSE listed names and 60+ mutual fund schemes in consumer, financials and healthcare.</li>
+            </ul>
           </div>
-        </span>
-
-        <span class="project-card link-disabled" data-href="https://example.com/data-repository">
-          <div>
-            <div class="project-type">Data Repository <svg class="icon" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div>
-            <div class="project-title">Institutional Data Room</div>
-            <p class="project-desc">Direct access to live research models, valuation spreadsheets, company coverage notes, and macroeconomic sector primers.</p>
-          </div>
-          <div class="project-tags">
-            <span class="project-tag"><svg class="icon" style="width: 12px; height: 12px;" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg> Models</span>
-            <span class="project-tag"><svg class="icon" style="width: 12px; height: 12px;" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Secure Data</span>
-          </div>
-        </span>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONNECT SECTION -->
-  <section id="connect">
-    <div class="wrap grid-layout">
-      <div class="section-label">
-        <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="m22 6-10 7L2 6"/></svg>
-        06 // <span> Connect</span>
-      </div>
-      <div class="contact-container reveal">
-        <div class="contact-note">
-          <p>Open to roles in <strong>Asset Management, Buy-Side Research, and Corporate Valuation</strong>.</p>
-          <p style="margin-top: 24px; font-size: 15px; color: var(--text-dim); display: flex; align-items: center; gap: 8px;">
-            <svg class="icon" style="width: 16px; height: 16px;" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Based in Rochester, NY & Mumbai, India. Available starting August 1, 2026.
-          </p>
         </div>
-        
-        <div class="link-list">
-          <span class="link-card link-disabled" data-href="mailto:adityanair.cv@gmail.com">
-            <div>
-              <div class="label"><svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="m22 6-10 7L2 6"/></svg> Corporate Email</div>
-              <div class="value">adityanair.cv@gmail.com</div>
-            </div>
-            <svg class="icon icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </span>
-          <span class="link-card link-disabled" data-href="https://linkedin.com/in/adityanair19">
-            <div>
-              <div class="label"><svg class="icon" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg> LinkedIn Profile</div>
-              <div class="value">/in/adityanair19</div>
-            </div>
-            <svg class="icon icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </span>
-          <span class="link-card link-disabled" data-href="tel:+917977868846">
-            <div>
-              <div class="label"><svg class="icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Direct Voice Call</div>
-              <div class="value">+91 79778 68846</div>
-            </div>
-            <svg class="icon icon" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </span>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WRK -->
+  <section class="sec" id="wrk">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="sec-mn">WRK</span>
+        <h2 class="sec-title">Work</h2>
+        <span class="sec-meta">Notes, models &amp; tools</span>
+      </div>
+      <div class="wrk-grid rv">
+
+        <!-- REPLACE hrefs with your links -->
+        <a class="wcard" href="https://drive.google.com/REPLACE-RESEARCH-FOLDER" target="_blank" rel="noopener">
+          <div class="w-kind"><span>Research</span><span class="w-arrow">→</span></div>
+          <div class="w-title">Initiations &amp; sector primers</div>
+          <p class="w-desc">Sell-side format notes with three-statement models, DCF and SOTP valuation, WACC builds, sensitivity grids and reverse-DCF cross-checks.</p>
+          <div class="w-tags"><span class="w-tag">DCF</span><span class="w-tag">SOTP</span><span class="w-tag">Reverse DCF</span></div>
+        </a>
+
+        <a class="wcard" href="https://drive.google.com/REPLACE-MODEL-LIBRARY" target="_blank" rel="noopener">
+          <div class="w-kind"><span>Model library</span><span class="w-arrow">→</span></div>
+          <div class="w-title">Working files</div>
+          <p class="w-desc">The Excel behind each note — forecast drivers, valuation output and scenario tabs, in the state I actually work in them.</p>
+          <div class="w-tags"><span class="w-tag">Excel</span><span class="w-tag">Live files</span></div>
+        </a>
+
+        <a class="wcard" href="https://adxcodegit.github.io/GBA/" target="_blank" rel="noopener">
+          <div class="w-kind"><span>Allocation tool</span><span class="w-arrow">→</span></div>
+          <div class="w-title">Goal-based allocation engine</div>
+          <p class="w-desc">Multi-asset allocation built around IPS constraints — horizon, liquidity and risk capacity in, target weights out.</p>
+          <div class="w-tags"><span class="w-tag">Multi-asset</span><span class="w-tag">IPS</span></div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MSG -->
+  <section class="sec" id="msg">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="sec-mn">MSG</span>
+        <h2 class="sec-title">Contact</h2>
+        <span class="sec-meta">Mumbai · Available now</span>
+      </div>
+      <div class="msg-grid rv">
+        <div>
+          <p class="msg-note">Open to <strong>equity research, asset management and buy-side</strong> roles in Mumbai.</p>
+          <div class="msg-status">
+            Mumbai, India<br>
+            Available <b>now</b><br>
+            Reply within 24 hours
+          </div>
+          <!-- REPLACE href with your resume link -->
+          <a class="msg-cv" href="https://drive.google.com/REPLACE-WITH-RESUME-LINK" target="_blank" rel="noopener">Download Resume <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="ch">
+          <a class="ch-row" href="mailto:adityanair.cv@gmail.com">
+            <span class="ch-k">Email</span><span class="ch-v">adityanair.cv@gmail.com</span>
+          </a>
+          <a class="ch-row" href="https://linkedin.com/in/adityanair19" target="_blank" rel="noopener">
+            <span class="ch-k">LinkedIn</span><span class="ch-v">/in/adityanair19</span>
+          </a>
+          <a class="ch-row" href="tel:+917977868846">
+            <span class="ch-k">Phone</span><span class="ch-v num">+91 79778 68846</span>
+          </a>
         </div>
       </div>
     </div>
   </section>
+
 </main>
 
 <footer>
   <div class="wrap">
-    <div style="display: flex; align-items: center; gap: 8px;">
-      <svg class="icon" style="width: 14px; height: 14px;" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      © 2026 Aditya Nair <span>◆</span> Secure Portfolio Node
-    </div>
-    <div style="display: flex; align-items: center; gap: 8px;">
-      Rochester, NY <svg class="icon" style="width: 12px; height: 12px; stroke: var(--accent);" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg> Mumbai, IN
+    <p class="disclosure">
+      <b>Disclosure —</b> This site is a personal portfolio of independent research. Everything published here reflects my own analysis and estimates, produced from public filings and company disclosures. It is for information only, is not investment advice, and is not a recommendation to buy or sell any security. I may hold positions in companies I write about. No compensation is received from any covered company.
+    </p>
+    <div class="colophon">
+      <span>© 2026 Aditya Nair</span>
+      <span>AN<b>·</b>EQUITY RESEARCH — Mumbai, India</span>
     </div>
   </div>
 </footer>
 
 <script>
-  // Intersection Observer for upgraded staggered scroll animations
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
+  // Live IST clock
+  const clockEl = document.getElementById('clock');
+  const tick = () => {
+    clockEl.textContent = new Date().toLocaleTimeString('en-GB', { timeZone: 'Asia/Kolkata', hour12: false }) + ' IST';
+  };
+  tick(); setInterval(tick, 1000);
 
-  // Stagger delays based on child index within sections
-  document.querySelectorAll('section').forEach(sec => {
-    const reveals = sec.querySelectorAll('.reveal');
-    reveals.forEach((el, index) => {
-      el.style.transitionDelay = `${index * 150}ms`;
-      observer.observe(el);
-    });
+  // Seamless marquee loop
+  const strip = document.getElementById('stripInner');
+  strip.appendChild(strip.querySelector('.strip-set').cloneNode(true));
+
+  // Scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+  // Theme toggle — dark is default
+  const root = document.documentElement;
+  const btn = document.getElementById('themeToggle');
+  const label = document.getElementById('toggleText');
+
+  const setTheme = (mode) => {
+    if (mode === 'light') { root.setAttribute('data-theme', 'light'); label.textContent = 'Dark'; }
+    else { root.removeAttribute('data-theme'); label.textContent = 'Light'; }
+  };
+
+  let saved = null;
+  try { saved = localStorage.getItem('theme'); } catch (e) {}
+  setTheme(saved === 'light' ? 'light' : 'dark');
+
+  btn.addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    setTheme(next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
   });
-
-  // Sticky Top Nav on scroll past Hero
-  const topNav = document.getElementById('topNav');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > window.innerHeight - 100) {
-      topNav.classList.add('visible');
-    } else {
-      topNav.classList.remove('visible');
-    }
-  });
-
-  // Theme Toggler Logic
-  const themeToggleBtn = document.getElementById('themeToggle');
-  const rootElement = document.documentElement;
-  
-  // Check localStorage for saved theme preference
-  const currentTheme = localStorage.getItem('theme');
-  if (currentTheme === 'light') {
-    rootElement.setAttribute('data-theme', 'light');
-  }
-
-  themeToggleBtn.addEventListener('click', () => {
-    let theme = rootElement.getAttribute('data-theme');
-    if (theme === 'light') {
-      rootElement.removeAttribute('data-theme');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      rootElement.setAttribute('data-theme', 'light');
-      localStorage.setItem('theme', 'light');
-    }
-  });
-
-  // NOTE: All links across the page are temporarily disabled (pointer-events: none)
-  // via the .link-disabled class. Every original URL/href is preserved in the
-  // data-href attribute of its element, so re-enabling is a matter of converting
-  // these <span class="link-disabled" data-href="..."> back into <a href="...">
-  // (or removing the .link-disabled class + pointer-events rule) whenever needed.
 </script>
 
 </body>
